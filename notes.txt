@@ -1,0 +1,5 @@
+open files from terminal 
+    c9 open 'file names'
+
+Run server
+    rails s -b $IP -p $PORT
