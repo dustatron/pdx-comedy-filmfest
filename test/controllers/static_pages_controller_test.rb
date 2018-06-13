@@ -20,5 +20,10 @@ class StaticPagesControllerTest < ActionDispatch::IntegrationTest
     get static_pages_submit_url
     assert_response :success
   end
+  
+  test "should get login" do
+    get static_pages_login_url
+    assert_response :success
+  end
 
 end
