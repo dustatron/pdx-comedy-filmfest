@@ -2,4 +2,7 @@ open files from terminal
     c9 open 'file names'
 
 Run server
-    rails s -b $IP -p $PORT
+    $ rails s -b $IP -p $PORT
+    
+Create Branch and go to it.    
+    $ git checkout -b basic_login

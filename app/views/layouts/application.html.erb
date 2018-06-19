@@ -29,7 +29,7 @@
             <li><%= link_to "About", static_pages_about_path %></li>
             <li><%= link_to "Submit", static_pages_submit_path %></li>
             <li><%= link_to "Help", static_pages_help_path %></li>
-            <li><%= link_to "Login", static_pages_login_path %></li>
+            <li><%= link_to "Signup", users_new_path %></li>
 
             
         </div><!--/.nav-collapse -->
@@ -39,6 +39,9 @@
     <div class="container">
       <div class="jumbotron">
         <%= yield %>
+        </br>
+        <%= debug(params) if Rails.env.development? %>
+
     </div>
     </div>
   </body>
