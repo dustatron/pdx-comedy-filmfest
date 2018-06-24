@@ -56,10 +56,12 @@ gem 'jbuilder', '~> 2.5'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 
-group :production do
-  gem 'pg',             '0.17.1'
-  gem 'rails_12factor', '0.0.2'
-end
+gem 'pg', '~> 0.20', group: :production
+
+# group :production do
+#   gem 'pg',             '0.17.1'
+#   gem 'rails_12factor', '0.0.2'
+# end
 
 
 group :development, :test do
