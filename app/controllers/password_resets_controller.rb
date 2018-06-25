@@ -62,18 +62,4 @@ class PasswordResetsController < ApplicationController
         redirect_to new_password_reset_url
       end
     end
-    
-    private
-
-    def get_user
-      @user = User.find_by(email: params[:email])
-    end
-
-    # Confirms a valid user.
-    def valid_user
-      unless (@user && @user.activated? &&
-              @user.authenticated?(:reset, params[:id]))
-        redirect_to root_url
-      end
-    end
 end
