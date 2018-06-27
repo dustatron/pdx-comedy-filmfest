@@ -10,8 +10,10 @@ gem 'bcrypt',                  '~> 3.1.12'
 gem 'faker',                   '~>1.7.3'
 gem 'will_paginate',           '3.1.6'
 gem 'bootstrap-will_paginate', '1.0.0'
-gem 'carrierwave',             '1.2.2'
-gem 'mini_magick',             '4.7.0'
+
+# For image uploading.
+# gem 'carrierwave',             '1.2.2'
+# gem 'mini_magick',             '4.7.0'
 
 
 
@@ -66,7 +68,7 @@ group :production do
     gem 'pg'
     gem 'rails_12factor'
     gem 'heroku-deflater'  
-    # gem 'fog', '~> 2'
+    # gem 'fog'
 end
 
 
