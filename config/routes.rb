@@ -7,9 +7,11 @@ Rails.application.routes.draw do
   get 'users/new'
   get  '/signup',  to: 'users#new'
   post '/signup',  to: 'users#create'
-  
-  get 'submissions/submit'
-  get '/submit', to: "submissions#create"
+
+  resources :submissions  
+  # get 'submissions/submit'
+  # get '/submit', to: 'submissions#new'
+  # post '/submit', to: 'submissions#creat'
   
   get 'static_pages/home'
   get 'static_pages/help'

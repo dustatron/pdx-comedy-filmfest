@@ -1,0 +1,21 @@
+<h2>Submission</h2>
+<%= form_for(@submit) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+
+  <%= f.label :title %>
+  <%= f.text_field :title, class: 'form-control' %>
+
+  <%= f.label :length %>
+  <%= f.text_field:length, class: 'form-control' %>
+
+  <%= f.label :link %>
+  <%= f.text_field :link, class: 'form-control' %>
+  
+  <%= f.label :contact %>
+  <%= f.text_field :contact, class: 'form-control' %>
+  
+  <%= f.label :description %>
+  <%= f.text_field :description, class: 'form-control' %>
+
+  <%= f.submit "Submit", class: "btn btn-primary btn-lg btn-block" %>
+<% end %>

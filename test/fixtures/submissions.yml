@@ -4,16 +4,8 @@
 # model remove the '{}' from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
 #
-# one: {}
+one: {}
 # column: value
 #
-# two: {}
+two: {}
 # column: value
-
-first_movie:
-  title: movie title
-  length: 7
-  link: www.links.com
-  contact: dan dan
-  description: has many
-  reuse: true
