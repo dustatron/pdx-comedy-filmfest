@@ -1,9 +1,8 @@
-Submit A Film
 <%= form_for(@submit) do |f| %>
   <div class="form-group">
   <%= render 'shared/error_messages', object: f.object %>
   <div class="row">
-    <div class="col-md-2 text-right">
+    <div class="col-md-2 text-left">
       <%= f.label :title, "Film Title" %>
     </div>
     <div class="col-md-10">
@@ -11,7 +10,7 @@ Submit A Film
     </div>
   </div>
   <div class="row">
-    <div class="col-md-2 text-right">
+    <div class="col-md-2 text-left">
         <%= f.label :length, "Run Time" %>
     </div>
     <div class="col-md-10">
@@ -19,7 +18,7 @@ Submit A Film
     </div>
   </div>
   <div class="row">
-    <div class="col-md-2 text-right">
+    <div class="col-md-2 text-left">
         <%= f.label :link, "Link to Film" %>
     </div>
     <div class="col-md-10">
@@ -27,7 +26,7 @@ Submit A Film
     </div>
   </div>
   <div class="row">
-    <div class="col-md-2  text-right">
+    <div class="col-md-2  text-left">
         <%= f.label :description, "Brief Synopsis" %>
     </div>
     <div class="col-md-10">
@@ -35,7 +34,7 @@ Submit A Film
     </div>
   </div>
   <div class="row">
-    <div class="col-md-2 text-right">
+    <div class="col-md-2 text-left">
         <%= f.label :contact, "Contact info" %>
     </div>
     <div class="col-md-10">
@@ -43,15 +42,20 @@ Submit A Film
     </div>
   </div>
   <div class="row">
-    <div class="col-md-2 text-right">
-      <%= f.label :reuse %>  
+    <div class='col-sm-2'></div>
+    <div class="col-sm-8">
+      <%= f.label :reuse, "Allow Curious Comedy to replay film at other events." %>
+      <%= f.check_box :reuse, {:checked => "checked"}%> 
     </div>
-    <div class="col-md-10">
-      <%= f.check_box :reuse, {:checked => "checked"}  %>
-    </div>
-  </div>  
 
-  <%= f.submit "Submit", class: "btn btn-primary btn-lg btn-block" %>
+  </div>  
+  <div class="row">
+    <div class="col-md-10 col-md-offset-2">
+        <%= f.submit "Submit", class: "btn btn-primary btn-lg btn-block" %>
+    </div>
+    
+  </div>
+
+
   </div>
 <% end %>
-Brief Synopsis(English)

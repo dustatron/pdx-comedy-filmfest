@@ -1,6 +1,9 @@
 class SubmissionsController < ApplicationController
     before_action :logged_in_user, only: [:create, :destroy]
-
+    
+    def index
+        @subs = Submission.all
+    end
     
     def new
         @submit = Submission.new
@@ -19,6 +22,7 @@ class SubmissionsController < ApplicationController
     end
     
     def show
+        @submission = Submission.find(params[:id])
     end
     
     private

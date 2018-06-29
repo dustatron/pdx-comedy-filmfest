@@ -1,7 +1,5 @@
-<h2>Submission</h2>
-<% if logged_in? && current_user.admin? %>
-   <%= render '/shared/submissions' %>
-<% elsif logged_in? %>
+<h2 class= "text-center">Submission A Short Film</h2>
+<% if logged_in? %>
    <%= render '/shared/submit_form' %>
 <%else%>
   <%= render '/shared/please_log_in' %>
