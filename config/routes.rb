@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   post '/signup',  to: 'users#create'
 
   resources :submissions  
-  # get 'submissions/submit'
+  get 'submissions/submit'
   # get '/submit', to: 'submissions#new'
   # post '/submit', to: 'submissions#creat'
   

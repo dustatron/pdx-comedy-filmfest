@@ -1,4 +1,5 @@
 class SubmissionsController < ApplicationController
+    before_action :logged_in_user, only: [:create, :destroy]
 
     
     def new
@@ -8,6 +9,7 @@ class SubmissionsController < ApplicationController
     
     def create
         @submit = Submission.new(submit_params)
+        # @submit = current_user.Submission.build(submit_params)
         if @submit.save
             flash[:success] = "Your Video has been submitted"
             redirect_to root_url
@@ -22,7 +24,8 @@ class SubmissionsController < ApplicationController
     private
   
     def submit_params
-      params.permit(:title, :length, :link, :contact, :description)
+        params.require(:submission).permit(:title, :length, :link, :contact, :description, :reuse)
+        # params.permit(submission[:title, :length, :link, :contact, :description])
     end
     
 end
