@@ -1,6 +1,11 @@
 <il>
     <p>
-         <span class="user"><%= link_to submission.title %></span>   
+         <span class="user"><%= link_to submission.id, submission %></span>
+          <% if current_user.admin? %>
+            <%= link_to "delete", submission, method: :delete,
+                                  data: { confirm: "You sure?" } %>
+          <% end %>
     </p>
 
 </il>
+

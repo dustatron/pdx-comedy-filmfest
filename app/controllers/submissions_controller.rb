@@ -9,7 +9,6 @@ class SubmissionsController < ApplicationController
         @submit = Submission.new
     end
     
-    
     def create
         @submit = Submission.new(submit_params)
         # @submit = current_user.Submission.build(submit_params)
@@ -23,6 +22,14 @@ class SubmissionsController < ApplicationController
     
     def show
         @submission = Submission.find(params[:id])
+        # @submission = Submission.paginate(page: params[:id])
+        
+    end
+    
+    def destroy
+        Submission.find(params[:id]).destroy
+        flash[:success] = "submission deleted"
+        redirect_to submissions_url
     end
     
     private
