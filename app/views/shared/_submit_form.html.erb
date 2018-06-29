@@ -1,0 +1,57 @@
+Submit A Film
+<%= form_for(@submit) do |f| %>
+  <div class="form-group">
+  <%= render 'shared/error_messages', object: f.object %>
+  <div class="row">
+    <div class="col-md-2 text-right">
+      <%= f.label :title, "Film Title" %>
+    </div>
+    <div class="col-md-10">
+      <%= f.text_field :title, class: 'form-control' %>  
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-2 text-right">
+        <%= f.label :length, "Run Time" %>
+    </div>
+    <div class="col-md-10">
+        <%= f.text_field:length, class: 'form-control' %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-2 text-right">
+        <%= f.label :link, "Link to Film" %>
+    </div>
+    <div class="col-md-10">
+        <%= f.text_field :link, class: 'form-control' %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-2  text-right">
+        <%= f.label :description, "Brief Synopsis" %>
+    </div>
+    <div class="col-md-10">
+        <%= f.text_area :description, class: 'form-control', rows: '4', placeholder: "Tell us about your film in to lines." %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-2 text-right">
+        <%= f.label :contact, "Contact info" %>
+    </div>
+    <div class="col-md-10">
+        <%= f.text_field :contact, class: 'form-control', placeholder: 'If different than logged in user.' %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-2 text-right">
+      <%= f.label :reuse %>  
+    </div>
+    <div class="col-md-10">
+      <%= f.check_box :reuse, {:checked => "checked"}  %>
+    </div>
+  </div>  
+
+  <%= f.submit "Submit", class: "btn btn-primary btn-lg btn-block" %>
+  </div>
+<% end %>
+Brief Synopsis(English)

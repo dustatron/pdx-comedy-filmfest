@@ -2,7 +2,7 @@
 <% if logged_in? && current_user.admin? %>
    <%= render '/shared/submissions' %>
 <% elsif logged_in? %>
-   <%= render '/shared/formsub' %>
+   <%= render '/shared/submit_form' %>
 <%else%>
   <%= render '/shared/please_log_in' %>
 <%end%>
