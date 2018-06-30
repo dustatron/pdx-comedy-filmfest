@@ -29,7 +29,7 @@ class SubmissionsController < ApplicationController
     def destroy
         Submission.find(params[:id]).destroy
         flash[:success] = "submission deleted"
-        redirect_to submissions_url
+        redirect_to current_user
     end
     
     private
