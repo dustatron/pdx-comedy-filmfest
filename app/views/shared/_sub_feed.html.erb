@@ -1,0 +1,11 @@
+      <% if @submissions != nil %>
+         <h3>Submissions (<%= @submissions.count %>)</h3>
+         <ol class="microposts">
+            <%= render @submissions %>
+        </ol>
+      <%= will_paginate @submissions %>
+      <% else %>
+          <div class="well text-center">
+            <h3> You Have No Submissions Yet </h3>
+          </div> 
+      <% end %>

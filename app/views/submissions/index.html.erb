@@ -1,9 +1,14 @@
 <% if current_user.admin? %>
+  <h2 class= "text-center">Submissions (<%= @submissions.count %>)</h2>
+  <%= will_paginate @submissions, class: "text-center" %>
   <ul class="users">
     <% @subs.each do |submission| %>
       <%= render submission %>
     <% end %>
   </ul>
+  <%= will_paginate @submissions, class: "text-center" %>
+<% else %>
+  <h3>You do not have permission to view this page</h3>
 <% end %>
 
 

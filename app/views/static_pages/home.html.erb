@@ -1,16 +1,19 @@
-<% if logged_in? %>
+<% if logged_in? && current_user.admin? %>
+    <%= render '/shared/admin_view'%>
+
+<% elsif logged_in? %>
     <div class="row">
         <aside class="col-md-4">
             <section class="user_info">
                 <%= render 'shared/user_info' %>
             </section>
-            <section class="micropost_form">
-                <%= render 'shared/micropost_form' %>
-            </section>
         </aside>
         <div class="col-md-8">
-          <h3>Micropost Feed</h3>
-          <%= render 'shared/feed' %>
+          <h3 class="text-center">Welcome!</h3>
+         
+            <div class="row">
+                This section will be for event details?
+            </div>
         </div>
 
     </div>
