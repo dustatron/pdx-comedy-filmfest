@@ -1,11 +1,23 @@
-<il>
-    <p>
-         <span class="user"><%= link_to submission.id, submission %></span>
-          <% if current_user.admin? %>
-            <%= link_to "delete", submission, method: :delete,
-                                  data: { confirm: "You sure?" } %>
-          <% end %>
-    </p>
-
-</il>
+<div class= "well">
+    <div class="row">
+        <%= link_to submission do%>
+            
+            <div class="col-md-3 text-left">
+                <h5>[ <%= submission.title%> ]</h5> 
+            </div>
+            <div class="col-md-3">
+                Length ( <%= submission.length %> Minutes )
+            </div>
+            <div class="col-md-3">
+                Submitted by <%= submission.user.name %> </br> 
+                (<%= time_ago_in_words(submission.created_at) %> )
+            </div>
+            
+        <% end %>
+        <div class="col-md-2">
+             <%= link_to "delete", submission, method: :delete, data: { confirm: "You sure?" }, class: 'btn btn-danger' %> 
+        </div>
+        </div>
+ 
+</div>
 

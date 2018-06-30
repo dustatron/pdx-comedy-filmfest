@@ -1,10 +1,10 @@
-
-<ul class="users">
-  <% @subs.each do |submission| %>
-    <%= render submission %>
-  <% end %>
-</ul>
-
+<% if current_user.admin? %>
+  <ul class="users">
+    <% @subs.each do |submission| %>
+      <%= render submission %>
+    <% end %>
+  </ul>
+<% end %>
 
 
 

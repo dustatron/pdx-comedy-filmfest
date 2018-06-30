@@ -1,17 +1,70 @@
-<div class=row>
-    <%= @submission.title %>    
-</div>
+<div class="well">
+    <div class="col-md-offset-3">
+        
+    <!--USER-->
+    <div class="row">
+        <div class="col-md-2 text-right">
+            User :
+        </div>
+        <div class="col-md-3 text-left">
+            <%= link_to @user.name,@user %>            
+        </div>
+    </div>
+    <!--TITLE-->
+    <div class="row">
+        <div class="col-md-2 text-right">
+            Title : 
+        </div>
+        <div class="col-md-3 text-left">
+            <%= @submission.title %>            
+        </div>
+    </div>
+    <!--RUN TIME-->
+    <div class="row">
+        <div class="col-md-2 text-right">
+            Run Time : 
+        </div>
+        <div class="col-md-3 text-left">
+           <%= @submission.length %>             
+        </div>
+    </div>
+    <!--LINK-->
+    <div class="row">
+        <div class="col-md-2 text-right">
+            Link : 
+        </div>
+        <div class="col-md-3 text-left">
+           <%= @submission.link %>             
+        </div>
+    </div>
+    <!--DESCRIOTION-->
+    <div class="row">
+        <div class="col-md-2 text-right">
+            Description : 
+        </div>
+        <div class="col-md-3 text-left">
+           <%= @submission.description %>           
+        </div>
+    </div>
+    <!--CONTACT-->
+    <div class="row">
+        <div class="col-md-2 text-right">
+            Contact : 
+        </div>
+        <div class="col-md-3 text-left">
+           <%= @submission.contact %>             
+        </div>
+    </div>
+    <!--REUSE-->
+    <div class="row">
+        <div class="col-md-2 text-right">
+            Re-Play : 
+        </div>
+        <div class="col-md-3 text-left">
+           <%= @submission.reuse %>             
+        </div>
 
-<div class="row">
-    <%= @submission.length %>    
+    </div>
+    </div>
+
 </div>
-<div class="row">
-    <%= @submission.contact %>    
-</div>
-<div class="row">
-    <%= @submission.description %>
-</div>
-<div class="row">
-    <%= @submission.reuse %>    
-</div>
-    <%= @submission.user %>

@@ -10,7 +10,7 @@ class SubmissionsController < ApplicationController
     end
     
     def create
-        @submit = Submission.new(submit_params)
+        @submit = current_user.submissions.build(submit_params)
         # @submit = current_user.Submission.build(submit_params)
         if @submit.save
             flash[:success] = "Your Video has been submitted"
@@ -22,8 +22,7 @@ class SubmissionsController < ApplicationController
     
     def show
         @submission = Submission.find(params[:id])
-        # @submission = Submission.paginate(page: params[:id])
-        
+        @user = User.find(@submission.user_id)
     end
     
     def destroy
