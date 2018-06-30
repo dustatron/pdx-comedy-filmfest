@@ -2,7 +2,7 @@ class SubmissionsController < ApplicationController
     before_action :logged_in_user, only: [:create, :destroy]
     
     def index
-        @subs = Submission.all
+        @subs = Submission.all.paginate(page: params[:page])
     end
     
     def new
@@ -21,7 +21,7 @@ class SubmissionsController < ApplicationController
     end
     
     def show
-        @submission = Submission.find(params[:id])
+        @submission = Submission.find(params[:id]).paginate(page: params[:page])
         @user = User.find(@submission.user_id)
     end
     
