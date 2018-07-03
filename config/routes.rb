@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
+  root :to => 'static_pages#home'
   get 'password_resets/new'
   get 'password_resets/edit'
-  root :to => 'static_pages#home'
-  
+
   get 'sessions/new'
   get 'users/new'
   get  '/signup',  to: 'users#new'
@@ -10,6 +10,8 @@ Rails.application.routes.draw do
 
   resources :submissions  
   get 'submissions/submit'
+  post 'submissions/:id', to: 'submissions#approved'
+  post 'submissions/:id', to: 'submissions#unapproved'
   # get '/submit', to: 'submissions#new'
   # post '/submit', to: 'submissions#creat'
   

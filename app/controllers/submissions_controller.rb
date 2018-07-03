@@ -29,8 +29,33 @@ class SubmissionsController < ApplicationController
     def destroy
         Submission.find(params[:id]).destroy
         flash[:success] = "submission deleted"
-        redirect_to current_user
+        redirect_to submissions_url
     end
+    
+    def approved
+       @approve = Submission.find(params[:id])
+       if @approve.approved != true 
+        @approve.approved = true
+            if @approve.save
+                flash[:success] = "#{@approve.title} has been approved"
+                redirect_to submissions_url
+            else
+                flash[:error] = @approve.errors.full_messages
+                redirect_to submissions_url
+            end
+        elsif @approve.approved = true
+            @approve.approved = false
+            if @approve.save
+                flash[:success] = "#{@approve.title} is no longer approved"
+                redirect_to submissions_url
+            else
+                flash[:error] = @approve.errors.full_messages
+                redirect_to submissions_url
+            end
+        end
+    end
+    
+    
     
     private
   
