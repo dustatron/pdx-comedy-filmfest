@@ -1,5 +1,5 @@
 <% if current_user.admin? %>
-  <h2 class= "text-center">Approved (<%= @approval.count %>)</h2>
+  <h2 class= "text-center">Approved (<%= @approval.count %>) Current Run <%= @runtime %></h2>
   <%= will_paginate @approval, class: "text-center" %>
   <ul class="users">
     <% @approval.each do |accept| %>

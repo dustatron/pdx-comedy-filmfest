@@ -28,6 +28,7 @@ class SubmissionsController < ApplicationController
     
     def approved_index
         @approval = Submission.where(approved: true).paginate(page: params[:page], :per_page => 8) 
+        @runtime = @approval.sum {|h| h[:length].to_i }
     end
     
     def destroy
