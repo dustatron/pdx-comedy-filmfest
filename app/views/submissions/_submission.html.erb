@@ -6,6 +6,7 @@
                 <h5>[ <%= submission.title%> ]</h5> 
             </div>
             <div class="col-md-3">
+                <%= get_video_iframe(submission.link) %>
                 Length ( <%= submission.length %> Minutes )
             </div>
             <div class="col-md-3">
