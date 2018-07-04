@@ -3,12 +3,14 @@
   <%= will_paginate @submissions, class: "text-center" %>
   <ul class="users">
     <% @subs.each do |submission| %>
-      <%= render submission %>
+      
+        <%= render submission %>
+    
     <% end %>
   </ul>
   <%= will_paginate @submissions, class: "text-center" %>
 <% else %>
-  <h3>You do not have permission to view this page</h3>
+  <h3 class="text Center">You do not have permission to view this page</h3>
 <% end %>
 
 

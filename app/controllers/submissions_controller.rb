@@ -53,6 +53,7 @@ class SubmissionsController < ApplicationController
             if @approve.save
                 flash[:success] = "#{@approve.title} is no longer approved"
                 redirect_to submissions_url
+
             else
                 flash[:error] = @approve.errors.full_messages
                 redirect_to submissions_url

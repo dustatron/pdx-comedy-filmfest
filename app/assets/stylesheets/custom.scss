@@ -4,7 +4,7 @@ input, textarea, select, .uneditable-input {
   border: 1px solid #bbb;
   width: 100%;
   margin-bottom: 15px;
-  @include box_sizing;
+  // @include box_sizing;
 }
 
 input {
@@ -135,4 +135,27 @@ span.picture {
   input {
     border: 0;
   }
+}
+
+
+.submission {
+  background-color: #afbbce;
+}
+
+.approved {
+  background-color: #b8f9b6;
+}
+
+.sub-details {
+  margin-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 5px;
+  border-width:2px;
+  border-style:solid;
+  border-color:#2eb9ce;
+}
+
+.player-right {
+  padding-right: 30px;
+  padding-left: 30px;
 }
