@@ -1,0 +1,12 @@
+<% if current_user.admin? %>
+  <h2 class= "text-center">Approved (<%= @approval.count %>)</h2>
+  <%= will_paginate @approval, class: "text-center" %>
+  <ul class="users">
+    <% @approval.each do |accept| %>
+      <%= render accept %>
+    <% end %>
+  </ul>
+  <%= will_paginate @approval, class: "text-center" %>
+<% else %>
+  <h3>You do not have permission to view this page</h3>
+<% end %>

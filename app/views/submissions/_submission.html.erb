@@ -16,9 +16,9 @@
         <% end %>
         <div class="col-md-2">
             <%if submission.approved %>
-                <%= link_to "Approve", submission, method: :approved, data: { confirm: "You sure?" }, class: 'btn btn-success' %>
+                <%= link_to "Unapprove", submission, method: :approved, data: { confirm: "You sure?" }, class: 'btn btn-success' %>
             <%else%>
-                 <%= link_to "Unapprove", submission, method: :approved, data: { confirm: "You sure?" }, class: 'btn btn-info' %>
+                 <%= link_to "Approve", submission, method: :approved, data: { confirm: "You sure?" }, class: 'btn btn-info' %>
             <%end%>
              <%= link_to "delete", submission, method: :delete, data: { confirm: "You sure?" }, class: 'btn btn-danger' %> 
         </div>

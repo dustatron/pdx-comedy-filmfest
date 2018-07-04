@@ -26,6 +26,10 @@ class SubmissionsController < ApplicationController
         @user = User.find(@submission.user_id)
     end
     
+    def approved_index
+        @approval = Submission.where(approved: true).paginate(page: params[:page], :per_page => 8) 
+    end
+    
     def destroy
         Submission.find(params[:id]).destroy
         flash[:success] = "submission deleted"
@@ -53,6 +57,8 @@ class SubmissionsController < ApplicationController
                 redirect_to submissions_url
             end
         end
+        
+
     end
     
     

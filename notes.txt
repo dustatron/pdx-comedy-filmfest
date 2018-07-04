@@ -45,3 +45,16 @@ Create Branch and go to it.
             <% flash.each do |message_type, message| %>
               <div class="alert alert-<%= message_type %>"><%= message %></div>
             <% end %>
+            
+<% if current_user.admin? %>
+  <h2 class= "text-center">Approved (<%= @accepted.count %>)</h2>
+  <%= will_paginate @accepted, class: "text-center" %>
+  <ul class="users">
+    <% @accepted.each do |accept| %>
+      <%= render accept %>
+    <% end %>
+  </ul>
+  <%= will_paginate @accepted, class: "text-center" %>
+<% else %>
+  <h3>You do not have permission to view this page</h3>
+<% end %>

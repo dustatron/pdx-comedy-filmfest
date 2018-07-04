@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   get 'static_pages/about'
   get 'static_pages/submit'
   get 'static_pages/login'
+  get 'static_pages/approved_index', to: 'submissions#approved_index'
   
   get    '/login',   to: 'sessions#new'
   post   '/login',   to: 'sessions#create'
