@@ -54,6 +54,15 @@ module VideosHelper
     json = JSON.parse response
     json['html'].html_safe
   end
+  
+  #Fall back in Youtube or Vimeo Link not there. 
+  def backup_url width, height
+    id = "Srmdij0CU1U"
+    backup_url = %(<iframe title="YouTube video player" width= "#{width}"
+                height="#{height}" src="//www.youtube.com/embed/#{ id }"
+                frameborder="0" allowfullscreen></iframe>)
+    backup_url.html_safe
+  end
 
   # Main function
   # Return a video iframe
@@ -63,6 +72,8 @@ module VideosHelper
       get_vimeo_iframe(url, width, height) 
     elsif find_youtube_id(url)
       get_youtube_iframe(url, width, height) 
+    else
+      backup_url(width, height)
     end
   end
 end
