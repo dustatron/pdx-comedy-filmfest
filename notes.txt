@@ -75,3 +75,5 @@ Create Branch and go to it.
             Submitted 
             <%= time_ago_in_words(submission.created_at) %>
         </div>
+        
+        <embed class="player" src="https://www.youtube.com/embed/<%= @movie.trailer %>?rel=0&amp;showinfo=0" frameborder="0">
