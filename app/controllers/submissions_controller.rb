@@ -26,6 +26,20 @@ class SubmissionsController < ApplicationController
         @user = User.find(@submission.user_id)
     end
     
+    def edit
+        @submission = Submission.find(params[:id])
+    end
+    
+    def update
+        @submission = Submission.find(params[:id])
+        if @submission.update_attributes(submit_params)
+            flash[:success] = "Submission Details were updated"
+            redirect_to @submission
+        else
+            render 'edit'
+        end
+    end
+    
     def approved_index
         @approval = Submission.where(approved: true).paginate(page: params[:page], :per_page => 8) 
         @runtime = @approval.sum {|h| h[:length].to_i }

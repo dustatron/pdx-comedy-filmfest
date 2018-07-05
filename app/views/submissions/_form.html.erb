@@ -1,0 +1,31 @@
+<%= form_for(@submission) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+
+  <%= f.label :title, "Film Title" %>
+  <%= f.text_field :title, class: 'form-control' %>
+
+  <%= f.label :length, "Runtime" %>
+  <%= f.text_field :length, class: 'form-control' %>
+  
+  <%= f.label :Link %>
+  <%= f.text_field :link, class: 'form-control' %>
+
+  <%= f.label :description, "Brief Synopsis" %>
+  <%= f.text_area :description, class: 'form-control', rows: '4', placeholder: "Tell us about your film in to lines." %>
+  
+  <%= f.label :contact, "Contact Info" %>
+  <%= f.text_field :contact, class: 'form-control' %>
+  
+  <div class="row">
+    <div class="col-md-1 col-md-offset-3">
+      <%= f.check_box :reuse, {:checked => "checked"}, class: 'text-right form-check-input'%> 
+    </div>
+    <div class="col-md-6">
+      <%= f.label :reuse, "Allow Curious Comedy to replay film at other events.", class: 'text-left' %>
+    </div>
+    
+  </div>
+  <br></br>
+
+  <%= f.submit "Update", class: "btn btn-primary btn-lg btn-block" %>
+<% end %>
