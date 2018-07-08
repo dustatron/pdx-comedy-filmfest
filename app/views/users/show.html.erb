@@ -1,13 +1,16 @@
 <div class="row">
-    <section class="user_info">
+  <div class="col-md-6">
+    <%= gravatar_for @user %>
+    <h3>
+      <%= @user.name %>
+    </h3>
+    A Member for <%= time_ago_in_words(current_user.created_at) %></br>
+    <%= mail_to @user.email %>
+  </div>
+  <div class="col-md-6">
+  </div>
 
-      <h3>
-        <%= gravatar_for @user %>
-        <%= @user.name %>
-      </h3>
-         A Member for <%= time_ago_in_words(current_user.created_at) %>
-    </section>
-</div>
+</div><!--END ROW-->
 <div class="row">
   
     
