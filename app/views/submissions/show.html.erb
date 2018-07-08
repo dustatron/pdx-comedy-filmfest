@@ -1,73 +1,81 @@
-<div class="well">
-    <div class="col-md-offset-3">
-        
-    <!--USER-->
-    <div class="row">
-        <div class="col-md-2 text-right">
-            User :
-        </div>
-        <div class="col-md-3 text-left">
-            <%= link_to @user.name,@user %>            
-        </div>
+<!--TITLE-->
+<div class="row">
+    <div class="col-md-12 text-center">
+       <h3><%= @submission.title %></h3>             
     </div>
-    <!--TITLE-->
-    <div class="row">
-        <div class="col-md-2 text-right">
-            Title : 
-        </div>
-        <div class="col-md-3 text-left">
-            <%= @submission.title %>            
-        </div>
-    </div>
-    <!--RUN TIME-->
-    <div class="row">
-        <div class="col-md-2 text-right">
-            Run Time : 
-        </div>
-        <div class="col-md-3 text-left">
-           <%= @submission.length %>             
-        </div>
-    </div>
-    <!--LINK-->
-    <div class="row">
-        <div class="col-md-2 text-right">
-            Link : 
-        </div>
-        <div class="col-md-3 text-left">
-           <%= @submission.link %>             
-        </div>
-    </div>
-    <!--DESCRIOTION-->
-    <div class="row">
-        <div class="col-md-2 text-right">
-            Description : 
-        </div>
-        <div class="col-md-3 text-left">
-           <%= @submission.description %>           
-        </div>
-    </div>
-    <!--CONTACT-->
-    <div class="row">
-        <div class="col-md-2 text-right">
-            Contact : 
-        </div>
-        <div class="col-md-3 text-left">
-           <%= @submission.contact %>             
-        </div>
-    </div>
-    <!--REUSE-->
-    <div class="row">
-        <div class="col-md-2 text-right">
-            Re-Play : 
-        </div>
-        <div class="col-md-3 text-left">
-           <%= @submission.reuse %>             
-        </div>
-
-    </div>
-    </div>
-    <div class="row">
-        <%= link_to "EDIT", edit_submission_path, class: "btn btn-info" %>
-    </div>
-
 </div>
+
+<!--DETAILS-->
+<div class="well">
+    <div class="">
+        <div class="row">
+            <div class="col-xs-6 text-right simple-label">
+                User :
+            </div>
+             <div class="col-xs-6 text-left simple-label">
+                 <%= link_to @user.name, @user %> 
+             </div> 
+        </div>
+        <div class="row">
+            <div class="col-xs-6 text-right simple-label">
+                Email : 
+            </div>
+            <div class="col-xs-6 simple-label text-left">
+                <%= mail_to @user.email %>    
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-6 text-right simple-label">
+                Run Time : 
+            </div>
+            <div class="col-xs-6 text-left simple-label">
+                <%= @submission.length %>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-6 text-right simple-label">
+                Link : 
+            </div>
+            <div class="col-xs-6 text-left simple-label">
+                <%= @submission.link %>   
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-6 text-right simple-label">
+                Description : 
+            </div>
+            <div class="col-xs-6 text-left simple-label">
+                <%= @submission.description %>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-6 text-right simple-label">
+                Contact :  
+            </div>
+            <div class="col-xs-6 text-left simple-label">
+                <%= @submission.contact %>   
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-6 text-right simple-label">
+                Re-Play :  
+            </div>
+            <div class="col-xs-6 text-left simple-label">
+                <%= @submission.reuse %>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1 pad-top">
+            <%= link_to "EDIT", edit_submission_path, class: "btn btn-info btn-block" %>    
+        </div>
+    </div>
+      
+</div>
+
+<!--VIDEO PLAYER-->
+<div class="well text-center">
+    <div class="flex-video widescreen"><%= get_video_iframe(@submission.link) %> </div>
+</div>
+           
+

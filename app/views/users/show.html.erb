@@ -18,7 +18,10 @@
       </ol>
       <%= will_paginate @submissions %>
       <div class="row">
-        <%= link_to "Submit Video", new_submission_path, class: "btn btn-primary btn-lg btn-block" %>
+        <div class="col-md-8 col-md-offset-2">
+          <%= link_to "Submit Video", new_submission_path, class: "btn btn-primary btn-lg btn-block" %>
+        </div>
+        
       </div>
     <% else %>
       <h3 class= "text-center">Submissions</h3>

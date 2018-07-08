@@ -45,6 +45,14 @@
     </div>
   </div>
   <div class="row">
+    <div class="col-md-2 text-left">
+        <%= f.label :password, "Vimeo Password" %>
+    </div>
+    <div class="col-md-10">
+        <%= f.text_field :password, class: 'form-control', placeholder: 'If link is password protected.' %>
+    </div>
+  </div>
+  <div class="row">
     <div class="col-md-2">
       <%= f.label :reuse, "Repeat Showings", class: "form-check-label pad-left" %>
     </div>

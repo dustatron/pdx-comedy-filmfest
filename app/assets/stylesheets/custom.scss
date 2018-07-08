@@ -149,13 +149,16 @@ span.picture {
   }
 }
 
+.well {
+  background-color: #3C3C3C;
+}
 
 .submission {
-  background-color: #afbbce;
+  background-color: #3C3C3C;
 }
 
 .approved {
-  background-color: #b8f9b6;
+  background-color: #25213B;
 }
 
 .sub-details {
@@ -164,7 +167,8 @@ span.picture {
   padding-left: 5px;
   border-width:2px;
   border-style:solid;
-  border-color:#2eb9ce;
+  border-radius: 6px;
+  border-color:grey;
 }
 
 .player-right {
@@ -202,5 +206,18 @@ span.picture {
 // END VIDEO PLAYER
 
 .pad-left {
-  margin-left: 4px;
+  margin-left: 20px;
 }
+
+.pad-top {
+  margin-top: 10px;
+}
+
+.simple-label {
+  font-weight: bold;
+}
+
+.admin {
+  padding-top: 60px;
+}
+

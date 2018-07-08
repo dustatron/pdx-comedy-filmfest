@@ -1,0 +1,20 @@
+<div class="row">
+    <div class="col-md-7">    
+        <h2>Portlands Funniest Video</h2>
+        <p>Portland monthly Short film competition</p>
+        <div class="well">
+            List of dates here?
+        </div>
+    </div>
+    <div class="col-md-5">
+        <div class="well">
+            <% if logged_in? %>
+                <%= render 'shared/user_info' %>
+            <% else %>
+                <h2 class="text-center">Log in</h2>
+                <%= render '/sessions/login_form' %>
+            <% end %>
+        </div>
+</div>
+
+   

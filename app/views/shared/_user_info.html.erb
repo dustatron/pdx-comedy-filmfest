@@ -4,12 +4,9 @@
         <%= link_to current_user.name, current_user %>
     </h3>    
 </div>
-<div class="row text-left">
-    <div class="col-md-9">
-        <p><%= link_to "Submit", new_submission_path, class: "btn btn-primary btn-block" %></p>
-        <p> <%= link_to "Submissions", current_user, class: "btn btn-default btn-block" %> </p>        
-    </div>
 
-</div>
+    <div class="col-md-6 pad-top">
+         <%= link_to "Submissions", current_user, class: "btn btn-default btn-block" %>       
+    </div>
 
 
