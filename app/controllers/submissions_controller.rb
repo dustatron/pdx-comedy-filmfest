@@ -1,5 +1,6 @@
 class SubmissionsController < ApplicationController
     before_action :logged_in_user, only: [:create, :destroy]
+    include VideosHelper
     
     def index
         @subs = Submission.all.paginate(page: params[:page], :per_page => 8)
