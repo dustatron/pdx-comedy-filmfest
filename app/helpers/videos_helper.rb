@@ -50,16 +50,30 @@ module VideosHelper
     vimeo_id = find_vimeo_id url
     uri = "https://vimeo.com/api/oembed.json?url=https%3A//vimeo.com/#{ vimeo_id }&width=#{ width }&height=#{ height }"
     # see -> https://stackoverflow.com/a/4581095/1498118
+    
     response = Net::HTTP.get( URI.parse( uri ))
-    json = JSON.parse response
-    json['html'].html_safe
+    
+    if valid_json?(response)
+      json = JSON.parse response
+      json['html'].html_safe
+    else
+      backup_url
+    end
+
+  end
+  
+  def valid_json?(json)
+      JSON.parse(json)
+      true
+  rescue
+      false
   end
   
   #Fall back in Youtube or Vimeo Link not there. 
-  def backup_url width, height
+  def backup_url
     id = "Srmdij0CU1U"
-    backup_url = %(<iframe title="YouTube video player" width= "#{width}"
-                height="#{height}" src="//www.youtube.com/embed/#{ id }"
+    backup_url = %(<iframe title="YouTube video player" width= "560px"
+                height="315px" src="//www.youtube.com/embed/#{ id }"
                 frameborder="0" allowfullscreen></iframe>)
     backup_url.html_safe
   end
@@ -73,7 +87,7 @@ module VideosHelper
     elsif find_youtube_id(url)
       get_youtube_iframe(url, width, height) 
     else
-      backup_url(width, height)
+      backup_url
     end
   end
 end
