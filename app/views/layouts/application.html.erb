@@ -27,7 +27,7 @@
           <ul class="nav navbar-nav">
             <li class="active"><%= link_to "Home", static_pages_home_path %></li>
             <li><%= link_to "About", static_pages_about_path %></li>
-            <li><%= link_to "Help", static_pages_help_path %></li>            
+            <li><%= link_to "HowTo", static_pages_help_path %></li>            
             <li><%= link_to "Submit", new_submission_path %></li>
             <% if logged_in? %>
               <li class="dropdown">
@@ -44,7 +44,7 @@
                 </ul>
               </li>
             <% else %>
-              <li><%= link_to "Log in", login_path %></li>
+              <li><%= link_to "Signup", signup_path %></li>
             <% end %>
 
 

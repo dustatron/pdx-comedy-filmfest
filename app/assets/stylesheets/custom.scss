@@ -1,8 +1,29 @@
+body{
+  background:
+  radial-gradient(black 15%, transparent 16%) 0 0,
+  radial-gradient(black 15%, transparent 16%) 8px 8px,
+  radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 0 1px,
+  radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 8px 9px;
+  background-color:#282828;
+  background-size:16px 16px;
+  
+  color: white;
+}
+
+.jumbotron {
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&0.9+15,0.1+100 */
+  background: -moz-linear-gradient(top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.9) 15%, rgba(0,0,0,0.1) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, rgba(0,0,0,0.9) 0%,rgba(0,0,0,0.9) 15%,rgba(0,0,0,0.1) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, rgba(0,0,0,0.9) 0%,rgba(0,0,0,0.9) 15%,rgba(0,0,0,0.1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e6000000', endColorstr='#1a000000',GradientType=0 ); /* IE6-9 */
+}
+
 /* forms */
 
 input, textarea, select, .uneditable-input {
+  color: black;
   border: 1px solid #bbb;
-  width: 100%;
+  // hwidth: 100%;
   margin-bottom: 15px;
   // @include box_sizing;
 }
@@ -62,15 +83,6 @@ aside {
 
 .gravatar_edit {
   margin-top: 15px;
-}
-
-.checkbox {
-  margin-top: -10px;
-  margin-bottom: 10px;
-  span {
-    margin-left: 20px;
-    font-weight: normal;
-  }
 }
 
 #session_remember_me {
@@ -188,3 +200,7 @@ span.picture {
 }
 
 // END VIDEO PLAYER
+
+.pad-left {
+  margin-left: 4px;
+}
