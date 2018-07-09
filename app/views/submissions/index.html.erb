@@ -1,16 +1,28 @@
 <% if current_user.admin? %>
-  <h2 class= "text-center">Submissions (<%= @submissions.count %>)</h2>
-  <%= will_paginate @submissions, class: "text-center" %>
-  <ul class="users">
+<div class="row">
+  <h2 class= "text-center">Submissions : <%= @submissions.count %></h2> 
+</div>
+
+<div class="row">
+  <%= will_paginate @submissions, class: "text-center" %>  
+</div>
+
+<div class="row">
+ 
     <% @submissions.each do |submission| %>
       
         <%= render submission %>
     
     <% end %>
-  </ul>
+
+</div>
+
+<div class="row">
   <%= will_paginate @submissions, class: "text-center" %>
+</div>
+
 <% else %>
-  <h3 class="text Center">You do not have permission to view this page</h3>
+  <h3 class="text-center">You do not have permission to view this page</h3>
 <% end %>
 
 

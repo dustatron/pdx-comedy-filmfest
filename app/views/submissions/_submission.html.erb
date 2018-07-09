@@ -1,8 +1,7 @@
 <div class="well <%= submission.approved ? 'approved' : 'submission' %>">
-
     <div class="row">
         <!--PLAYER-->
-        <div class="col-md-8 text-left video_player">
+        <div class="col-md-8 video_player">
             <div class="flex-video widescreen"><%= get_video_iframe(submission.link) %>  </div>
         </div>
         <div class="col-md-4 player-right">
