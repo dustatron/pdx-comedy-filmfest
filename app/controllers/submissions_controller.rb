@@ -3,8 +3,7 @@ class SubmissionsController < ApplicationController
     include VideosHelper
     
     def index
-        @subs = Submission.all.paginate(page: params[:page], :per_page => 8)
-        @submissions = Submission.all.paginate(page: params[:page], :per_page => 8)
+        @submissions = Submission.all.paginate(page: params[:page])
     end
     
     def new

@@ -2,7 +2,7 @@
   <h2 class= "text-center">Submissions (<%= @submissions.count %>)</h2>
   <%= will_paginate @submissions, class: "text-center" %>
   <ul class="users">
-    <% @subs.each do |submission| %>
+    <% @submissions.each do |submission| %>
       
         <%= render submission %>
     

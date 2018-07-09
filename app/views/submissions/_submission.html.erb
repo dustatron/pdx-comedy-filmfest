@@ -1,24 +1,12 @@
 <div class="well <%= submission.approved ? 'approved' : 'submission' %>">
-    <!--PLAYER-->
+
     <div class="row">
         <!--PLAYER-->
         <div class="col-md-8 text-left video_player">
             <div class="flex-video widescreen"><%= get_video_iframe(submission.link) %>  </div>
-            
         </div>
-
         <div class="col-md-4 player-right">
-            <div class="row">
-                <%if current_user.admin %>
-                    <%if submission.approved %>
-                        <%= link_to "Unapprove", submission, method: :approved, class: 'btn btn-info btn-block' %>
-                    <%else%>
-                         <%= link_to "Approve", submission, method: :approved, class: 'btn btn-success btn-block' %>
-                    <%end%>  
-                <% end %>
-                <%= link_to "Edit", submission, class: 'btn btn-warning btn-block' %>
-                <%= link_to "delete", submission, method: :delete, data: { confirm: "You sure?" }, class: 'btn btn-danger btn-block' %>
-           </div>
+           <!--DETAILS-->
            <div class="row sub-details">
                <div class="row ">
                    <div class="col-xs-6 text-right">
@@ -76,7 +64,27 @@
                        <%= submission.approved ? 'Accepted' : 'Under Review' %>
                    </div>
                 </div>
+                <div class="row">
+                   <div class="col-xs-6 text-right">
+                       <strong>Submitted: </strong> 
+                   </div>
+                   <div class="col-xs-6 text-left">
+                       <%= time_ago_in_words(submission.created_at) %> Ago.
+                   </div>
+                </div>
                </div>
+            <!--BUTTONS-->
+            <div class="row pad-top">
+                <%if current_user.admin %>
+                    <%if submission.approved %>
+                        <%= link_to "Unapprove", submission, method: :approved, class: 'btn btn-info btn-block' %>
+                    <%else%>
+                         <%= link_to "Approve", submission, method: :approved, class: 'btn btn-success btn-block' %>
+                    <%end%>  
+                <% end %>
+                <%= link_to "Edit", submission, class: 'btn btn-warning btn-block' %>
+                <%= link_to "delete", submission, method: :delete, data: { confirm: "You sure?" }, class: 'btn btn-danger btn-block' %>
+           </div>               
            </div>
-        </div>
-</div>
+        </div><!--END ROW-->
+</div><!--END WELL-->
