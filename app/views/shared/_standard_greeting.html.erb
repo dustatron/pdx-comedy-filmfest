@@ -1,11 +1,16 @@
-<div class="row">
-    <h2>Portlands Funniest Video</h2>
+<div class="row pad-small">
+    <span class="portland">Portland's </br> Funniest Video </span> 
+    <p >A Short film competition for locally filmed comedy.</p>
+
 </div>
 <div class="row">
     <div class="col-md-7">    
-        <p>Portland monthly Short film competition</p>
         <div class="well">
-            List of dates here?
+            <!--VIDEO PLAYER-->
+           <div class="flex-video widescreen"> 
+               <iframe src="https://player.vimeo.com/video/167566292" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+           </div>
+            <p class="text-center"> <em>A VIDEO HERE DESCRIBING WHAT THIS EVENT IS</em></p>
         </div>
     </div>
     <div class="col-md-5">
@@ -16,6 +21,13 @@
                 <h2 class="text-center">Log in</h2>
                 <%= render '/sessions/login_form' %>
             <% end %>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+        <div class="well text-center">
+            <em>LIST OF DATES HERE?</em>
         </div>
 </div>
 
