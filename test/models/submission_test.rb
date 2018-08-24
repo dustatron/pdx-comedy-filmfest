@@ -33,7 +33,7 @@ class SubmissionTest < ActiveSupport::TestCase
   end
   
   test "link should not be too long" do 
-    @submission.link = 'a' * 101
+    @submission.link = 'a' * 201
     assert_not @submission.valid?
   end
   
