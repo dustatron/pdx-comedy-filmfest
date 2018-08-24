@@ -1,0 +1,21 @@
+model:
+    play-date : month or archive
+    rejected-for: reason
+    availible dates : 
+    status : reviewing, approved  for ..., reject.
+    rejected : reasons
+
+submisison:
+    has all rights checkbox
+    dates filmmaker can attend - text
+    
+Month views.
+    have a button for each month.
+    have a button for archived subs. 
+    
+Mailer look and feel should be updated.
+
+copy for site. 
+
+    
+    
