@@ -1,16 +1,37 @@
 
 <div class="row admin">
-    
-    <div class="col-sm-2 col-sm-offset-3">
+    <!--ALL USERS-->
+    <div class="col-sm-2 col-sm-offset-2 top-bump">
       <p> <%= link_to "Users", users_path, class: "btn btn-primary btn-block" %>  </p>
     </div>
-    <div class="col-sm-2">
+    
+    <!--ALL SUBMISSIONS-->
+    <div class="col-sm-2 top-bump">
         <p> <%= link_to "Submissions", submissions_path, class: "btn btn-danger btn-block" %></p>
     </div>
-    <div class="col-sm-2">
-     <p> <%= link_to "Approved", static_pages_approved_index_path, class: "btn btn-success btn-block" %></p>
+    
+    <!--APPROVED SUBMISSION-->
+    <div class="col-sm-2 top-bump">
+       
+            <div class="dropdown">
+                <button class="btn btn-success btn-block dropdown-toggle" type="button" data-toggle="dropdown">Approved
+                  <span class="caret"></span></button>
+                  <ul class="dropdown-menu">
+                    <li><%= link_to "All", static_pages_approved_index_path, class: "" %></li>
+                    <li><a href="#">October</a></li>
+                    <li><a href="#">November</a></li>
+                    <li><a href="#">December</a></li>
+                    <li><a href="#">January</a></li>
+                    <li><a href="#">February</a></li>
+                    <li><a href="#">March - "BEST OF"</a></li>
+                  </ul>
+            </div> 
+    </div>
+    
+    <!--ARCHIVE-->
+    <div class="col-sm-2 top-bump">
+        <p> <%= link_to "Archive", submissions_path, class: "btn btn-warning btn-block" %></p>
     </div>
        
-    </div>
 </div>
     

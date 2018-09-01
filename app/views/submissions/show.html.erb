@@ -1,81 +1,189 @@
-<!--TITLE-->
-<div class="row">
-    <div class="col-md-12 text-center">
-       <h3><%= @submission.title %></h3>             
-    </div>
-</div>
+<div class="well"> 
+    <div class="row"> <!--TITLE START-->
+      <div class="col-md-8 text-center">
+          <h4><%= @submission.title %></h4> 
+      </div>  
+      <div class="col-md-4 text-center">
+          <h4>Details</h4>
+      </div>
+    </div><!--TITLE END-->
+    
+    
+    <div class="row"><!--CONTENT START -->
+    
+        <div class="col-md-8"><!-- Video Player Start-->
+            <div class="flex-video widescreen"><%= get_video_iframe(@submission.link) %> </div>
+        </div> <!-- Video Player End -->
+        
+        <div class="col-md-4"><!-- Video Details Start-->
+            <!--USER NAME-->
+            <div class="row">
+                <div class="col-xs-4 text-right simple-label">
+                    User :
+                </div>
+                 <div class="col-xs-8 text-left simple-label">
+                     <%= link_to @user.name, @user %> 
+                 </div> 
+            </div>
+            
+            <!--EMAIL-->
+            <div class="row">
+                <div class="col-xs-4 text-right simple-label">
+                    Email : 
+                </div>
+                <div class="col-xs-8 simple-label text-left">
+                    <%= mail_to @user.email %>    
+                </div>
+            </div>
+            
+            <!--RUN TIME-->
+            <div class="row">
+                <div class="col-xs-4 text-right simple-label">
+                    length : 
+                </div>
+                <div class="col-xs-8 text-left simple-label">
+                    <%= @submission.length %> Minutes
+                </div>
+            </div>
+            
+            <!--LINK-->
+            <div class="row">
+                <div class="col-xs-4 text-right simple-label">
+                    Link : 
+                </div>
+                <div class="col-xs-8 text-left simple-label">
+                    <%= @submission.link %>   
+                </div>
+            </div>
+            
+            <!--Contact-->
+            <div class="row">
+                <div class="col-xs-4 text-right simple-label">
+                    Contact :  
+                </div>
+                <div class="col-xs-8 text-left simple-label">
+                    <%= @submission.contact %>   
+                </div>
+            </div>
+            
+            <!--Re-Play True-->
+            <div class="row">
+                <div class="col-xs-4 text-right simple-label">
+                    Re-Play :  
+                </div>
+                <div class="col-xs-8 text-left simple-label">
+                    <%= @submission.reuse %>
+                </div>
+            </div>
+            
+            <!-- Has Rights -->
+            <div class="row">
+                <div class="col-xs-4 text-right simple-label">
+                    Has Rights :  
+                </div>
+                <div class="col-xs-8 text-left simple-label">
+                   Need to Add
+                </div>
+            </div>
+            
+            <!-- Status -->
+            <div class="row">
+                <div class="col-xs-4 text-right simple-label">
+                    Status :  
+                </div>
+                <div class="col-xs-8 text-left simple-label">
+                    <%= @submission.reuse %>
+                </div>
+            </div>
+            <hr>
+            <!--Description-->
+            <div class="row">
+                <div class="col-xs-4 text-right simple-label">
+                    Detials : 
+                </div>
+                <div class="col-xs-8 text-left simple-label box">
+                    <%= @submission.description %>
+                </div>
+            </div>
+            <hr>
 
-<!--DETAILS-->
+        </div><!-- Video Details End-->
+        
+    </div><!--CONTENT END-->
+    
+    <div class="row"> <!-- BUTTONS START-->
+        <div class="col-md-4">
+             <!-- Edit -->
+                <div class="top-bump">
+                    <%= link_to "EDIT", edit_submission_path, class: "btn btn-info btn-block" %>   
+                </div>
+            <!-- Reject -->
+                <div class="top-bump">
+                  <%= link_to "ARCHIVE", edit_submission_path, class: "btn btn-warning btn-block" %>   
+                </div>
+            <!-- Delete -->
+        </div>
+        
+        <div class="col-md-4">
+            <!-- Approve -->
+                <div class="top-bump">
+                    <%if  @submission.approved %>
+                        <%= link_to "UNAPPROVE", @submission, method: :approved, class: 'btn btn-info btn-block' %>
+                    <%else%>
+                         <%= link_to "APPROVE", @submission, method: :approved, class: 'btn btn-success btn-block' %>
+                    <%end%>  
+                </div>
+            <!-- Month To Play -->
+                <div class="top-bump">
+                    <div class="dropdown">
+                        <button class="btn btn-success btn-block dropdown-toggle" type="button" data-toggle="dropdown">Pick Month
+                          <span class="caret"></span></button>
+                          <ul class="dropdown-menu">
+                            <li><a href="#">October</a></li>
+                            <li><a href="#">November</a></li>
+                            <li><a href="#">December</a></li>
+                            <li><a href="#">January</a></li>
+                            <li><a href="#">February</a></li>
+                            <li><a href="#">March</a></li>
+                          </ul>
+                    </div> 
+                </div>
+        </div>
+        
+        <div class="col-md-4">
+            <!-- Reject -->
+                <div class="top-bump">
+                  <%= link_to "REJECT", edit_submission_path, class: "btn btn-danger btn-block" %>   
+                </div>
+            
+            <!-- Rejection Reason-->
+                <div class="top-bump">
+                    <div class="dropdown">
+                        <button class="btn btn-danger btn-block dropdown-toggle" type="button" data-toggle="dropdown">Give Reason
+                          <span class="caret"></span></button>
+                          <ul class="dropdown-menu">
+                            <li><a href="#">Time</a></li>
+                            <li><a href="#">Content</a></li>
+                            <li><a href="#">Sound Quality</a></li>
+                            <li><a href="#">Techinal Issues</a></li>
+                            <li><a href="#">Not a Comedy</a></li>
+                            <li><a href="#">Needs updates</a></li>
+                          </ul>
+                    </div> 
+                </div>
+        </div>
+    </div>
+    
+</div>
+ 
 <div class="well">
-    <div class="">
-        <div class="row">
-            <div class="col-xs-6 text-right simple-label">
-                User :
-            </div>
-             <div class="col-xs-6 text-left simple-label">
-                 <%= link_to @user.name, @user %> 
-             </div> 
-        </div>
-        <div class="row">
-            <div class="col-xs-6 text-right simple-label">
-                Email : 
-            </div>
-            <div class="col-xs-6 simple-label text-left">
-                <%= mail_to @user.email %>    
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-xs-6 text-right simple-label">
-                Run Time : 
-            </div>
-            <div class="col-xs-6 text-left simple-label">
-                <%= @submission.length %>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-xs-6 text-right simple-label">
-                Link : 
-            </div>
-            <div class="col-xs-6 text-left simple-label">
-                <%= @submission.link %>   
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-xs-6 text-right simple-label">
-                Description : 
-            </div>
-            <div class="col-xs-6 text-left simple-label">
-                <%= @submission.description %>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-xs-6 text-right simple-label">
-                Contact :  
-            </div>
-            <div class="col-xs-6 text-left simple-label">
-                <%= @submission.contact %>   
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-xs-6 text-right simple-label">
-                Re-Play :  
-            </div>
-            <div class="col-xs-6 text-left simple-label">
-                <%= @submission.reuse %>
-            </div>
-        </div>
-    </div>
     <div class="row">
-        <div class="col-md-10 col-md-offset-1 pad-top">
-            <%= link_to "EDIT", edit_submission_path, class: "btn btn-info btn-block" %>    
+
+        <div class="col-md-3 col-md-offset-2">
+            <h4>Delete This Submission</h4>
         </div>
-    </div>
-      
+        <div class="col-md-5">
+            <%= link_to "DELETE", @submission, method: :delete, data: { confirm: "You sure?" }, class: 'btn btn-danger btn-block top-bump' %>
+        </div>
+    </div>    
 </div>
-
-<!--VIDEO PLAYER-->
-<div class="well text-center">
-    <div class="flex-video widescreen"><%= get_video_iframe(@submission.link) %> </div>
-</div>
-           
-
