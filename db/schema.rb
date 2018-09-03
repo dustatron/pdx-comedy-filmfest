@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_02_033650) do
+ActiveRecord::Schema.define(version: 2018_09_03_193505) do
 
   create_table "microposts", force: :cascade do |t|
     t.text "content"
@@ -37,6 +37,8 @@ ActiveRecord::Schema.define(version: 2018_09_02_033650) do
     t.string "status", default: "Being Reviewed"
     t.string "month", default: "None"
     t.string "reason", default: "None"
+    t.string "preferred_month", default: "None"
+    t.boolean "has_rights", default: false
     t.index ["user_id"], name: "index_submissions_on_user_id"
   end
 
