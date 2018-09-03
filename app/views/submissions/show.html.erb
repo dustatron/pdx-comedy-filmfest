@@ -52,19 +52,10 @@
                     Link : 
                 </div>
                 <div class="col-xs-8 text-left simple-label">
-                    <%= @submission.link %>   
+                    <a href= "<%= @submission.link %>" target = "blank"><%= @submission.title %> </a>  
                 </div>
             </div>
             
-            <!--Contact-->
-            <div class="row">
-                <div class="col-xs-4 text-right simple-label">
-                    Contact :  
-                </div>
-                <div class="col-xs-8 text-left simple-label">
-                    <%= @submission.contact %>   
-                </div>
-            </div>
             
             <!--Re-Play True-->
             <div class="row">
@@ -87,6 +78,29 @@
             </div>
             
             <!-- Status -->
+        
+            <div class="row">
+                <div class="col-xs-4 text-right simple-label">
+                    Status :  
+                </div>
+                <div class="col-xs-8 text-left simple-label">
+                    <%= @submission.status %>
+                </div>
+            </div>
+            
+            <% if @submission.status == 'Rejected'%>
+                <div class="row">
+                    <div class="col-xs-4 text-right simple-label">
+                        reason :  
+                    </div>
+                    <div class="col-xs-8 text-left simple-label">
+                        <%= @submission.reason %>
+                    </div>
+                </div>
+            <% end %>
+            
+            <!-- Status -->
+        
             <div class="row">
                 <div class="col-xs-4 text-right simple-label">
                     Status :  
@@ -111,8 +125,9 @@
         
     </div><!--CONTENT END-->
     
+<% if current_user.admin? %>
     <div class="row"> <!-- BUTTONS START-->
-        <div class="col-md-4">
+        <div class="col-md-4 col-md-offset-2">
              <!-- Edit -->
                 <div class="top-bump">
                     <%= link_to "EDIT", edit_submission_path, class: "btn btn-info btn-block" %>   
@@ -120,18 +135,10 @@
         </div>
         
         <div class="col-md-4">
-            <!-- Approve -->
-                <div class="top-bump">
-                    <%if  @submission.approved %>
-                        <%= link_to "UNAPPROVE", @submission, method: :approved, class: 'btn btn-info btn-block' %>
-                    <%else%>
-                         <%= link_to "APPROVE", @submission, method: :post, class: 'btn btn-success btn-block' %>
-                    <%end%>  
-                </div>
             <!-- Change Status -->
                 <div class="top-bump">
                     <div class="dropdown">
-                        <button class="btn btn-success btn-block dropdown-toggle" type="button" data-toggle="dropdown">Status: <%= @submission.status %>
+                        <button class="btn btn-success btn-block dropdown-toggle" type="button" data-toggle="dropdown"><%= @submission.status %>
                           <span class="caret"></span></button>
                           <ul class="dropdown-menu">
                             <li><%= link_to "October", submission_path(:status => 'oct'), method: :status_change %></li>
@@ -147,29 +154,6 @@
                     </div> 
                 </div>
         </div>
-        
-        <div class="col-md-4">
-            <!-- Reject -->
-                <div class="top-bump">
-                  <%= link_to "REJECT", edit_submission_path, class: "btn btn-danger btn-block" %>   
-                </div>
-            
-            <!-- Rejection Reason-->
-                <div class="top-bump">
-                    <div class="dropdown">
-                        <button class="btn btn-danger btn-block dropdown-toggle" type="button" data-toggle="dropdown">Give Reason
-                          <span class="caret"></span></button>
-                          <ul class="dropdown-menu">
-                            <li><a href="#">Time</a></li>
-                            <li><a href="#">Content</a></li>
-                            <li><a href="#">Sound Quality</a></li>
-                            <li><a href="#">Techinal Issues</a></li>
-                            <li><a href="#">Not a Comedy</a></li>
-                            <li><a href="#">Needs updates</a></li>
-                          </ul>
-                    </div> 
-                </div>
-        </div>
     </div>
     
 </div>
@@ -177,11 +161,9 @@
 <div class="well">
     <div class="row">
 
-        <div class="col-md-3 col-md-offset-2">
-            <h4>Delete This Submission</h4>
-        </div>
-        <div class="col-md-5">
-            <%= link_to "DELETE", @submission, method: :delete, data: { confirm: "You sure?" }, class: 'btn btn-danger btn-block top-bump' %>
+        <div class="col-md-4 col-md-offset-4">
+            <%= link_to "Delete Submission", @submission, method: :delete, data: { confirm: "You sure?" }, class: 'btn btn-danger btn-block top-bump' %>
         </div>
     </div>    
 </div>
+<%end%>
