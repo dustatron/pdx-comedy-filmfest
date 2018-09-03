@@ -1,50 +1,75 @@
-<%= form_for(@submission) do |f| %>
-  <%= render 'shared/error_messages', object: f.object %>
-
-  <%= f.label :title, "Title" %>
-  <%= f.text_field :title, class: 'form-control' %>
-
-  <%= f.label :length, "Runtime in minutes" %>
-  <%= f.select :length, ['1','2','3','4','5','6', '7','8','9','10'], class: 'form-control' %>  <span class="pad-left">Round up.</span> <br>
-  
-  <%= f.label :Link, 'Vimeo or Youtube Link' %>
-  <%= f.text_field :link, class: 'form-control' %>
-  
-  <%= f.label :password, 'Vimeo Password' %>
-  <%= f.text_field :password, class: 'form-control' %>
-
-  <%= f.label :description, "Brief Synopsis" %>
-  <%= f.text_area :description, class: 'form-control', rows: '4', placeholder: "Tell us about your film in to lines." %>
-  
-  <% if current_user.admin? %>
-  <h3>Admin stuff</h3>
-    <%= f.label :contact, "Contact Details" %>
-    <%= f.text_field :contact, class: 'form-control' %>
-  
-    <%= f.label :status, "Status" %> <br>
-    <%= f.select :status, ['October','November','December','January','February','March', 'Rejected','Archive','Being Reviewed'], class: 'form-control' %>  <br>
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
     
-    <%= f.label :reason %>
-    <%= f.text_field :reason, class: 'form-control' %>
+    <%= form_for(@submission) do |f| %>
+      <%= render 'shared/error_messages', object: f.object %>
     
-    <%= f.label :contact, "Archived" %>
-    <%= f.text_field :archive, class: 'form-control' %>
-  
-  <%end%>
-  
-  
-  
-  <div class="row">
-    <div class="col-md-1">
-      <%= f.check_box :reuse, {:checked => "checked"}, class: 'text-right form-check-input'%> 
-    </div>
-    <div class="col-md-6">
-      <%= f.label :reuse, "Allow Curious Comedy to replay film at other events.", class: 'text-left' %>
-    </div>
+      <%= f.label :title, "Title" %>
+      <%= f.text_field :title, class: 'form-control' %>
     
+      <%= f.label :length, "Runtime in minutes" %>
+      <%= f.select :length, ['1','2','3','4','5','6', '7','8','9','10'], class: 'form-control' %>  <span class="pad-left">Round up.</span> <br>
+      
+      <%= f.label :Link, 'Vimeo or Youtube Link' %>
+      <%= f.text_field :link, class: 'form-control' %>
+      
+      <%= f.label :password, 'Vimeo Password' %>
+      <%= f.text_field :password, class: 'form-control' %>
+    
+      <%= f.label :description, "Brief Synopsis" %>
+      <%= f.text_area :description, class: 'form-control', rows: '4', placeholder: "Tell us about your film in to lines." %>
+      
+      <%= f.label :preferred_month, "Preferred Month " %>
+      <%= f.select :preferred_month, ['Any Month', 'October','November','December','January','February','March'], class: 'form-control' %>  
+      
+      
+      <% if current_user.admin? %>
+      <div class="well">
+        <div class="row text-center">
+               <h4>Admin</h4>
+        </div>
+  
+          <%= f.label :contact, "Contact Details" %>
+          <%= f.text_field :contact, class: 'form-control', placeholder: "best way to get in touch" %>
+        
+          <%= f.label :status, "Status" %> <br>
+          <%= f.select :status, ['October','November','December','January','February','March', 'Rejected','Archive','Being Reviewed'], class: 'form-control' %>  <br>
+          
+          <%= f.label :reason %>
+          <%= f.text_field :reason, class: 'form-control' %>
+          
+          <%= f.label :contact, "Archived" %>
+          <%= f.text_field :archive, class: 'form-control' %>
+        </div>
+        
+      <%end%>
+      
+      
+      
+      <div class="row">
+        <div class="col-md-1">
+          <%= f.check_box :reuse, class: 'text-right form-check-input'%> 
+        </div>
+        <div class="col-md-6">
+          <%= f.label :reuse, "Allow Curious Comedy to replay film at other events.", class: 'text-left' %>
+        </div>
+        
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-md-1">
+          <%= f.check_box :has_rights, class: 'text-right form-check-input'%> 
+        </div>
+        <div class="col-md-6">
+          <%= f.label :has_rights, "You have all necessary right to play this video at Curious Comedy Theater.", class: 'text-left' %>
+        </div>
+        
+      </div>
+      <br></br>
+    
+      <%= f.submit "Update", class: "btn btn-primary btn-lg btn-block" %>
+      
+    <% end %>
+
   </div>
-  <br></br>
-
-  <%= f.submit "Update", class: "btn btn-primary btn-lg btn-block" %>
-  
-<% end %>
+</div>

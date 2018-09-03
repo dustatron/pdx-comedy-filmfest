@@ -1,74 +1,106 @@
-<%= form_for(@submit) do |f| %>
-  <div class="form-group">
-  <%= render 'shared/error_messages', object: f.object %>
-  <div class="row">
-    <div class="col-md-2 text-left">
-      <%= f.label :title, "Film Title" %>
-    </div>
-    <div class="col-md-10">
-      <%= f.text_field :title, class: 'form-control' %>  
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-2 text-left">
-        <%= f.label :length, "Run Time" %>
-    </div>
-    <div class="col-md-4">
-        <%= f.select :length, ['1','2','3','4','5','6', '7','8','9','10'], class: 'form-control' %>  <span class="pad-left">Round up.</span>
-    </div>
-    <div class="col-md-6">
-      
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-2 text-left">
-        <%= f.label :link, "Link to Film" %>
-    </div>
-    <div class="col-md-10">
-        <%= f.text_field :link, class: 'form-control' %>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-2  text-left">
-        <%= f.label :description, "Brief Synopsis" %>
-    </div>
-    <div class="col-md-10">
-        <%= f.text_area :description, class: 'form-control', rows: '4', placeholder: "Tell us about your film in to lines." %>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-2 text-left">
-        <%= f.label :contact, "Contact info" %>
-    </div>
-    <div class="col-md-10">
-        <%= f.text_field :contact, class: 'form-control', placeholder: 'If different than logged in user.' %>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-2 text-left">
-        <%= f.label :password, "Vimeo Password" %>
-    </div>
-    <div class="col-md-10">
-        <%= f.text_field :password, class: 'form-control', placeholder: 'If link is password protected.' %>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-2">
-      <%= f.label :reuse, "Repeat Showings", class: "form-check-label text-left" %>
-    </div>
-    <div class="col-md-10">
-      <%= f.check_box :reuse, {:checked => "checked"}%> 
-      <span class="pad-left">Allow Curious Comedy to replay this film at other events.</span>
-    </div>
-
-  </div>  
-  <div class="row">
-    <div class="col-md-10 col-md-offset-2">
-        <%= f.submit "Submit", class: "btn btn-primary btn-lg btn-block" %>
+<div class="row">
+  
+<div class="col-md-8 col-md-offset-2">
+  
+  <%= form_for(@submit) do |f| %>
+    <div class="form-group">
+    <%= render 'shared/error_messages', object: f.object %>
+    <!--TITLE-->
+    <div class="row">
+      <div class="col-md-2 text-right">
+        <%= f.label :title, "Film Title" %>
+      </div>
+      <div class="col-md-10">
+        <%= f.text_field :title, class: 'form-control' %>  
+      </div>
     </div>
     
-  </div>
-
-
-  </div>
-<% end %>
+    <!--RUN TIME-->
+    <div class="row">
+      <div class="col-md-2 text-right">
+          <%= f.label :length, "Run Time In Minutes" %>
+      </div>
+      <div class="col-md-4">
+          <%= f.select :length, ['1','2','3','4','5','6', '7','8','9','10'], class: 'form-control' %>  <span class="pad-left">Round up.</span>
+      </div>
+      <div class="col-md-6">
+        
+      </div>
+    </div>
+    <!--LINK-->
+    <div class="row">
+      <div class="col-md-2 text-right">
+          <%= f.label :link, "Link to Film" %>
+      </div>
+      <div class="col-md-10">
+          <%= f.text_field :link, class: 'form-control' %>
+      </div>
+    </div>
+    
+    <!--VIMEO PASSWORD-->
+    <div class="row">
+      <div class="col-md-2 text-right">
+          <%= f.label :password, "Vimeo Password" %>
+      </div>
+      <div class="col-md-10">
+          <%= f.text_field :password, class: 'form-control', placeholder: 'If link is password protected.' %>
+      </div>
+    </div>
+    
+    <!--DESCRIPTION-->
+    <div class="row">
+      <div class="col-md-2  text-right">
+          <%= f.label :description, "Brief Synopsis" %>
+      </div>
+      <div class="col-md-10">
+          <%= f.text_area :description, class: 'form-control', rows: '4', placeholder: "Tell us about your film in to lines." %>
+      </div>
+    </div>
+    
+    <!--PREFERRED MONTH-->
+    <div class="row">
+      <div class="col-md-2 text-right">
+          <%= f.label :preferred_month, "Preferred Month " %>
+      </div>
+      <div class="col-md-2">
+          <%= f.select :preferred_month, ['Any Month', 'October','November','December','January','February','March'], class: 'form-control' %>  
+  
+      </div>
+      <div class="col-md-8 text-left">
+        what month would you prefer to have this submission play?
+      </div>
+    </div>
+    
+    <!--REUSE-->
+    <div class="row">
+      <div class="col-md-3 col-md-offset-2 text-right">
+        <%= f.label :reuse, "Repeat Showings", class: "form-check-label text-right" %>
+      </div>
+      <div class="col-md-7">
+        <%= f.check_box :reuse, {:checked => "checked"}%> 
+        <span class="pad-left">Allow us to replay this film at other events.</span>
+      </div>
+    </div> 
+    
+    <!--HAS RIGHTS-->
+    <div class="row">
+      <div class="col-md-3 col-md-offset-2 text-right">
+        <%= f.label :has_rights, "Copyright Holder", class: "form-check-label text-right" %>
+      </div>
+      <div class="col-md-7">
+        <%= f.check_box :has_rights %> 
+        <span class="pad-left">You have all necessary right to play this video.</span>
+      </div>
+    </div> 
+    <div class="row">
+      <div class="col-md-10 col-md-offset-2 top-bump">
+          <%= f.submit "Submit", class: "btn btn-primary btn-lg btn-block" %>
+      </div>
+      
+    </div>
+  
+  
+    </div>
+  <% end %>
+</div>
+</div>
