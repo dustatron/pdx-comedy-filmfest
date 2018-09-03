@@ -3,7 +3,8 @@ class SubmissionsController < ApplicationController
     include VideosHelper
     
     def index
-        @submissions = Submission.all.paginate(page: params[:page])
+        
+        @submissions = Submission.where(approved: false).paginate(page: params[:page], :per_page => 8) 
     end
     
     def new
@@ -40,8 +41,23 @@ class SubmissionsController < ApplicationController
         end
     end
     
+    def get_all 
+        @submissions = Submission.all.paginate(page: params[:page])
+    end
+    
     def approved_index
         @approval = Submission.where(approved: true).paginate(page: params[:page], :per_page => 8) 
+        @runtime = @approval.sum {|h| h[:length].to_i }
+    end
+    
+    def approved_month
+        @month = params[:month]
+        @approval = Submission.where(status: @month).paginate(page: params[:page], :per_page => 8) 
+        @runtime = @approval.sum {|h| h[:length].to_i }
+    end
+    
+    def archive
+        @approval = Submission.where(status: 'Archive').paginate(page: params[:page], :per_page => 8) 
         @runtime = @approval.sum {|h| h[:length].to_i }
     end
     
@@ -165,7 +181,7 @@ class SubmissionsController < ApplicationController
     private
   
     def submit_params
-        params.require(:submission).permit(:title, :length, :link, :contact, :description, :reuse, :password, :status)
+        params.require(:submission).permit(:title, :length, :link, :contact, :description, :reuse, :password, :status, :reason)
         # params.permit(submission[:title, :length, :link, :contact, :description])
     end
     

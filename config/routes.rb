@@ -20,6 +20,10 @@ Rails.application.routes.draw do
   get 'static_pages/submit'
   get 'static_pages/login'
   get 'static_pages/approved_index', to: 'submissions#approved_index'
+  get 'static_pages/approved_month', to: 'submissions#approved_month'
+  get 'static_pages/archive', to: 'submissions#archive'
+  get 'static_pages/all', to: 'submissions#get_all'
+   
   
   get    '/login',   to: 'sessions#new'
   post   '/login',   to: 'sessions#create'

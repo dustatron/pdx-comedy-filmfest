@@ -33,14 +33,6 @@
                </div>
                <div class="row">
                    <div class="col-xs-6 text-right">
-                        <strong> Brief : </strong>   
-                   </div>
-                   <div class="col-xs-6 text-left">
-                       <%= submission.description %>
-                   </div>
-               </div>
-               <div class="row">
-                   <div class="col-xs-6 text-right">
                         <strong> password : </strong> 
                    </div>
                    <div class="col-xs-6 text-left">
@@ -60,7 +52,7 @@
                        <strong>Status : </strong> 
                    </div>
                    <div class="col-xs-6 text-left">
-                       <%= submission.approved ? 'Accepted' : 'Under Review' %>
+                       <%= submission.status %>
                    </div>
                 </div>
                 <div class="row">
@@ -71,6 +63,15 @@
                        <%= time_ago_in_words(submission.created_at) %> Ago.
                    </div>
                 </div>
+                <hr>
+                <div class="row">
+                   <div class="col-xs-6 text-right">
+                        <strong> Brief : </strong>   
+                   </div>
+                   <div class="col-xs-6 text-left box">
+                       <%= submission.description %>
+                   </div>
+               </div>
                </div>
             <!--BUTTONS-->
             <div class="row pad-top">

@@ -99,16 +99,6 @@
                 </div>
             <% end %>
             
-            <!-- Status -->
-        
-            <div class="row">
-                <div class="col-xs-4 text-right simple-label">
-                    Status :  
-                </div>
-                <div class="col-xs-8 text-left simple-label">
-                    <%= @submission.status %>
-                </div>
-            </div>
             <hr>
             <!--Description-->
             <div class="row">
@@ -157,13 +147,5 @@
     </div>
     
 </div>
- 
-<div class="well">
-    <div class="row">
+ <% end  %>
 
-        <div class="col-md-4 col-md-offset-4">
-            <%= link_to "Delete Submission", @submission, method: :delete, data: { confirm: "You sure?" }, class: 'btn btn-danger btn-block top-bump' %>
-        </div>
-    </div>    
-</div>
-<%end%>

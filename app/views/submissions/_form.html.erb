@@ -1,32 +1,36 @@
 <%= form_for(@submission) do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
 
-  <%= f.label :title, "Film Title" %>
+  <%= f.label :title, "Title" %>
   <%= f.text_field :title, class: 'form-control' %>
 
-  <%= f.label :length, "Runtime" %>
-  <%= f.text_field :length, class: 'form-control' %>
+  <%= f.label :length, "Runtime in minutes" %>
+  <%= f.select :length, ['1','2','3','4','5','6', '7','8','9','10'], class: 'form-control' %>  <span class="pad-left">Round up.</span> <br>
   
-  <%= f.label :Link %>
+  <%= f.label :Link, 'Vimeo or Youtube Link' %>
   <%= f.text_field :link, class: 'form-control' %>
   
-  <%= f.label :password %>
+  <%= f.label :password, 'Vimeo Password' %>
   <%= f.text_field :password, class: 'form-control' %>
 
   <%= f.label :description, "Brief Synopsis" %>
   <%= f.text_area :description, class: 'form-control', rows: '4', placeholder: "Tell us about your film in to lines." %>
   
-  <%= f.label :contact, "Contact Details" %>
-  <%= f.text_field :contact, class: 'form-control' %>
+  <% if current_user.admin? %>
+  <h3>Admin stuff</h3>
+    <%= f.label :contact, "Contact Details" %>
+    <%= f.text_field :contact, class: 'form-control' %>
   
-  <%= f.label :contact, "Status" %>
-  <%= f.text_field :status, class: 'form-control' %>
+    <%= f.label :status, "Status" %> <br>
+    <%= f.select :status, ['October','November','December','January','February','March', 'Rejected','Archive','Being Reviewed'], class: 'form-control' %>  <br>
+    
+    <%= f.label :reason %>
+    <%= f.text_field :reason, class: 'form-control' %>
+    
+    <%= f.label :contact, "Archived" %>
+    <%= f.text_field :archive, class: 'form-control' %>
   
-  <%= f.label :contact, "Month" %>
-  <%= f.text_field :month, class: 'form-control' %>
-  
-  <%= f.label :contact, "Archived" %>
-  <%= f.text_field :archive, class: 'form-control' %>
+  <%end%>
   
   
   
