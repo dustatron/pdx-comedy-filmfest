@@ -92,7 +92,7 @@
                     Status :  
                 </div>
                 <div class="col-xs-8 text-left simple-label">
-                    <%= @submission.reuse %>
+                    <%= @submission.status %>
                 </div>
             </div>
             <hr>
@@ -117,11 +117,6 @@
                 <div class="top-bump">
                     <%= link_to "EDIT", edit_submission_path, class: "btn btn-info btn-block" %>   
                 </div>
-            <!-- Reject -->
-                <div class="top-bump">
-                  <%= link_to "ARCHIVE", edit_submission_path, class: "btn btn-warning btn-block" %>   
-                </div>
-            <!-- Delete -->
         </div>
         
         <div class="col-md-4">
@@ -130,21 +125,24 @@
                     <%if  @submission.approved %>
                         <%= link_to "UNAPPROVE", @submission, method: :approved, class: 'btn btn-info btn-block' %>
                     <%else%>
-                         <%= link_to "APPROVE", @submission, method: :approved, class: 'btn btn-success btn-block' %>
+                         <%= link_to "APPROVE", @submission, method: :post, class: 'btn btn-success btn-block' %>
                     <%end%>  
                 </div>
-            <!-- Month To Play -->
+            <!-- Change Status -->
                 <div class="top-bump">
                     <div class="dropdown">
-                        <button class="btn btn-success btn-block dropdown-toggle" type="button" data-toggle="dropdown">Pick Month
+                        <button class="btn btn-success btn-block dropdown-toggle" type="button" data-toggle="dropdown">Status: <%= @submission.status %>
                           <span class="caret"></span></button>
                           <ul class="dropdown-menu">
-                            <li><a href="#">October</a></li>
-                            <li><a href="#">November</a></li>
-                            <li><a href="#">December</a></li>
-                            <li><a href="#">January</a></li>
-                            <li><a href="#">February</a></li>
-                            <li><a href="#">March</a></li>
+                            <li><%= link_to "October", submission_path(:status => 'oct'), method: :status_change %></li>
+                            <li><%= link_to "November", submission_path(:status => 'nov'), method: :status_change %></li>
+                            <li><%= link_to "December", submission_path(:status => 'dec'), method: :status_change %></li>
+                            <li><%= link_to "January", submission_path(:status => 'jan'), method: :status_change %></li>
+                            <li><%= link_to "February", submission_path(:status => 'feb'), method: :status_change %></li>
+                            <li><%= link_to "March", submission_path(:status => 'mar'), method: :status_change %></li>
+                            <li><%= link_to "Reject", submission_path(:status => 'reject'), method: :status_change %></li>
+                            <li><%= link_to "Archive", submission_path(:status => 'archive'), method: :status_change %></li>
+                            <li><%= link_to "Being Reviewed", submission_path(:status => 'review'), method: :status_change %></li>
                           </ul>
                     </div> 
                 </div>
