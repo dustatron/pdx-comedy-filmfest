@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="col-md-6">
+  <div class="col-md-4">
     <%= gravatar_for @user %>
     <h3>
       <%= @user.name %>
@@ -7,7 +7,8 @@
     A Member for <%= time_ago_in_words(current_user.created_at) %></br>
     <%= mail_to @user.email %>
   </div>
-  <div class="col-md-6">
+  <div class="col-md-4 top-bump">
+    <%= link_to "Submit A Video", new_submission_path, class: "btn btn-primary btn-lg btn-block" %>
   </div>
 
 </div><!--END ROW-->
@@ -21,8 +22,8 @@
       </ol>
       <%= will_paginate @submissions %>
       <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-          <%= link_to "Submit Video", new_submission_path, class: "btn btn-primary btn-lg btn-block" %>
+        <div class="col-md-4 col-md-offset-4">
+          <%= link_to "Submit A Video", new_submission_path, class: "btn btn-primary btn-lg btn-block" %>
         </div>
         
       </div>

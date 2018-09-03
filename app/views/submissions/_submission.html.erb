@@ -7,6 +7,7 @@
         <div class="col-md-4 player-right">
            <!--DETAILS-->
            <div class="row sub-details">
+               <!--TITLE-->
                <div class="row ">
                    <div class="col-xs-6 text-right">
                        <strong>Title :</strong>  
@@ -15,6 +16,7 @@
                       <%= submission.title %>
                   </div>
                </div>
+               <!--POSTED BY-->
                <div class="row ">
                    <div class="col-xs-6 text-right">
                        <strong>Posted By :</strong>  
@@ -23,6 +25,7 @@
                        <%= submission.user.name %>
                    </div>
                </div>
+               <!--RUNTIME-->
                <div class="row">
                    <div class="col-xs-6 text-right">
                        <strong> Runtime :</strong> 
@@ -31,6 +34,7 @@
                        <%= submission.length %> Minutes
                    </div>
                </div>
+               <!--PASSWORD-->
                <div class="row">
                    <div class="col-xs-6 text-right">
                         <strong> password : </strong> 
@@ -39,6 +43,7 @@
                        <%= submission.password %> 
                    </div>
                </div>
+               <!--REPLAY-->
                 <div class="row">
                    <div class="col-xs-6 text-right">
                        <strong> Replay :    </strong>
@@ -47,6 +52,18 @@
                        <%= submission.reuse ? 'Yes' : 'No' %>
                    </div>
                 </div>
+                
+                <!--PREFERRED MONTH-->
+                <div class="row">
+                   <div class="col-xs-6 text-right">
+                       <strong> Referred Month :    </strong>
+                   </div>
+                   <div class="col-xs-6 text-left">
+                       <%= submission.preferred_month %>
+                   </div>
+                </div>
+                
+                <!--STATUS-->
                 <div class="row">
                    <div class="col-xs-6 text-right">
                        <strong>Status : </strong> 
@@ -55,6 +72,8 @@
                        <%= submission.status %>
                    </div>
                 </div>
+                
+                <!--SUBMIT DATE-->
                 <div class="row">
                    <div class="col-xs-6 text-right">
                        <strong>Submitted: </strong> 
@@ -64,6 +83,8 @@
                    </div>
                 </div>
                 <hr>
+                
+                <!--BREIF-->
                 <div class="row">
                    <div class="col-xs-6 text-right">
                         <strong> Brief : </strong>   
