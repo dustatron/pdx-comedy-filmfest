@@ -97,7 +97,32 @@
             <!--BUTTONS-->
             <div class="row pad-top">
                 <%= link_to "DASH BOARD", submission, class: 'btn btn-warning btn-block' %>
-           </div>               
+           </div>
+                       <% if current_user.admin? %>
+                <div class="row"> <!-- BUTTONS START-->
+                    
+                    
+            <!-- Change Status -->
+                <div class="top-bump">
+                    <div class="dropdown">
+                        <button class="btn btn-success btn-block dropdown-toggle" type="button" data-toggle="dropdown"><%= submission.status %>
+                          <span class="caret"></span></button>
+                          <ul class="dropdown-menu">
+                            <li><%= link_to "October", submission_path(:id => submission, :status => 'oct'), method: :status_change %></li>
+                            <li><%= link_to "November", submission_path(:id => submission, :status => 'nov'), method: :status_change %></li>
+                            <li><%= link_to "December", submission_path(:id => submission, :status => 'dec'), method: :status_change %></li>
+                            <li><%= link_to "January", submission_path(:id => submission, :status => 'jan'), method: :status_change %></li>
+                            <li><%= link_to "February", submission_path(:id => submission, :status => 'feb'), method: :status_change %></li>
+                            <li><%= link_to "March", submission_path(:id => submission, :status => 'mar'), method: :status_change %></li>
+                            <li><%= link_to "Reject", submission_path(:id => submission, :status => 'reject'), method: :status_change %></li>
+                            <li><%= link_to "Archive", submission_path(:id => submission, :status => 'archive'), method: :status_change %></li>
+                            <li><%= link_to "Being Reviewed", submission_path(:id => submission, :status => 'review'), method: :status_change %></li>
+                          </ul>
+                    </div> 
+                </div>
+       
+                </div>
+            <% end  %>
            </div>
         </div><!--END ROW-->
 </div><!--END WELL-->
