@@ -66,10 +66,17 @@
         
       </div>
       <br></br>
-    
-      <%= f.submit "Update", class: "btn btn-primary btn-lg btn-block" %>
+      <div class="col-md-8 col-md-offset-2">
+        <%= f.submit "Update", class: "btn btn-primary btn-lg btn-block" %>
+      </div>
       
+    
+        <div class="col-md-8 col-md-offset-2 top-bump">
+            <%= link_to "Delete Submission", @submission, method: :delete, data: { confirm: "You sure?" }, class: 'btn btn-danger btn-block top-bump' %>
+        </div>
+    </div> 
     <% end %>
+    
 
   </div>
 </div>
