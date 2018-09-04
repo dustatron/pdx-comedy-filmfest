@@ -8,7 +8,7 @@
     <!--TITLE-->
     <div class="row">
       <div class="col-md-2 text-right">
-        <%= f.label :title, "Film Title" %>
+        <%= f.label :title, "Title" %>
       </div>
       <div class="col-md-10">
         <%= f.text_field :title, class: 'form-control' %>  
@@ -18,7 +18,7 @@
     <!--RUN TIME-->
     <div class="row">
       <div class="col-md-2 text-right">
-          <%= f.label :length, "Run Time In Minutes" %>
+          <%= f.label :length, "Runtime " %>
       </div>
       <div class="col-md-4">
           <%= f.select :length, ['1','2','3','4','5','6', '7','8','9','10'], class: 'form-control' %>  <span class="pad-left">Round up.</span>
@@ -30,17 +30,17 @@
     <!--LINK-->
     <div class="row">
       <div class="col-md-2 text-right">
-          <%= f.label :link, "Link to Film" %>
+          <%= f.label :link, "Link" %>
       </div>
       <div class="col-md-10">
-          <%= f.text_field :link, class: 'form-control' %>
+          <%= f.text_field :link, class: 'form-control', placeholder: 'Youtube or Vimeo links onlys' %>
       </div>
     </div>
     
     <!--VIMEO PASSWORD-->
     <div class="row">
       <div class="col-md-2 text-right">
-          <%= f.label :password, "Vimeo Password" %>
+          <%= f.label :password, "Password", placeholder: "If vimeo link is password protected" %>
       </div>
       <div class="col-md-10">
           <%= f.text_field :password, class: 'form-control', placeholder: 'If link is password protected.' %>
@@ -50,10 +50,10 @@
     <!--DESCRIPTION-->
     <div class="row">
       <div class="col-md-2  text-right">
-          <%= f.label :description, "Brief Synopsis" %>
+          <%= f.label :description, "Synopsis" %>
       </div>
       <div class="col-md-10">
-          <%= f.text_area :description, class: 'form-control', rows: '4', placeholder: "Tell us about your film in to lines." %>
+          <%= f.text_area :description, class: 'form-control', rows: '4', placeholder: "Tell us about your film in 200 characters." %>
       </div>
     </div>
     
@@ -74,7 +74,7 @@
     <!--REUSE-->
     <div class="row">
       <div class="col-md-3 col-md-offset-2 text-right">
-        <%= f.label :reuse, "Repeat Showings", class: "form-check-label text-right" %>
+        <%= f.label :reuse, "Allow replays", class: "form-check-label text-right" %>
       </div>
       <div class="col-md-7">
         <%= f.check_box :reuse, {:checked => "checked"}%> 
@@ -89,7 +89,7 @@
       </div>
       <div class="col-md-7">
         <%= f.check_box :has_rights %> 
-        <span class="pad-left">You have all necessary right to play this video.</span>
+        <span class="pad-left">You have the all necessary rights to play this video.</span>
       </div>
     </div> 
     <div class="row">
