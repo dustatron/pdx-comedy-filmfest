@@ -7,17 +7,17 @@
     <%= render 'shared/error_messages', object: f.object %>
     <!--TITLE-->
     <div class="row">
-      <div class="col-md-2 text-left">
+      <div class="col-md-12 text-left">
         <%= f.label :title, "Title" %>
       </div>
-      <div class="col-md-10">
+      <div class="col-md-12">
         <%= f.text_field :title, class: 'form-control' %>  
       </div>
     </div>
     
     <!--RUN TIME-->
     <div class="row">
-      <div class="col-md-2 text-left">
+      <div class="col-md-12 text-left">
           <%= f.label :length, "Runtime " %>
       </div>
       <div class="col-md-4">
@@ -29,37 +29,37 @@
     </div>
     <!--LINK-->
     <div class="row">
-      <div class="col-md-2 text-left">
+      <div class="col-md-12 text-left">
           <%= f.label :link, "Link" %>
       </div>
-      <div class="col-md-10">
+      <div class="col-md-12">
           <%= f.text_field :link, class: 'form-control', placeholder: 'Youtube or Vimeo links onlys' %>
       </div>
     </div>
     
     <!--VIMEO PASSWORD-->
     <div class="row">
-      <div class="col-md-2 text-left">
+      <div class="col-md-12 text-left">
           <%= f.label :password, "Password", placeholder: "If vimeo link is password protected" %>
       </div>
-      <div class="col-md-10">
+      <div class="col-md-12">
           <%= f.text_field :password, class: 'form-control', placeholder: 'If link is password protected.' %>
       </div>
     </div>
     
     <!--DESCRIPTION-->
     <div class="row">
-      <div class="col-md-2  text-left">
+      <div class="col-md-12  text-left">
           <%= f.label :description, "Synopsis" %>
       </div>
-      <div class="col-md-10">
+      <div class="col-md-12">
           <%= f.text_area :description, class: 'form-control', rows: '4', placeholder: "Tell us about your film in 200 characters." %>
       </div>
     </div>
     <br>
     <!--PREFERRED MONTH-->
     <div class="row">
-      <div class="col-md-2 text-left">
+      <div class="col-md-12 text-left">
           <%= f.label :preferred_month, "Preferred Month " %>
       </div>
       <div class="col-md-2">
@@ -81,7 +81,7 @@
         <span class="pad-left">Can we replay this film at other events.</span>
       </div>
     </div> 
-    
+        <br></br>
     <!--HAS RIGHTS-->
     <div class="row">
       <div class="col-xs-3 text-left">
@@ -91,7 +91,9 @@
         <%= f.check_box :has_rights %> 
         <span class="pad-left">You have the all rights to play this video.</span>
       </div>
+          
     </div> 
+        <br></br>
     <div class="row">
       <div class="col-md-10 col-md-offset-2 top-bump">
           <%= f.submit "Submit", class: "btn btn-primary btn-lg btn-block" %>
