@@ -5,7 +5,7 @@ class SubmissionTest < ActiveSupport::TestCase
   def setup
     @user = User.new(name: "Example User", email: "user@example.com",
                     password: "foobar", password_confirmation: "foobar", id: 1)
-    @submission = Submission.new(title: "movie title", length: "7 ", link: "link to movie", contact: "non", description: "its great", reuse: true, user: @user)
+    @submission = Submission.new(title: "movie title", length: "7 ", link: "link to movie", contact: "non", description: "its great", reuse: true, user: @user, has_rights: true )
   end
   
   test "should be valid" do
@@ -27,7 +27,7 @@ class SubmissionTest < ActiveSupport::TestCase
     assert_not @submission.valid?
   end
   
-  test "name should not be too long" do 
+  test "Title should not be too long" do 
     @submission.title = 'a' * 51
     assert_not @submission.valid?
   end
@@ -39,6 +39,11 @@ class SubmissionTest < ActiveSupport::TestCase
   
   test "description should not be too long" do 
     @submission.description = 'a' * 251
+    assert_not @submission.valid?
+  end
+  
+  test "Has rights should not be false" do
+    @submission.has_rights = false
     assert_not @submission.valid?
   end
   
