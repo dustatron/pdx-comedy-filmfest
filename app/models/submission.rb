@@ -8,7 +8,5 @@ class Submission < ApplicationRecord
     validates :description, presence: true, length: { maximum: 250 }
     validates :has_rights, :acceptance => true
 
-    
-
 end
 

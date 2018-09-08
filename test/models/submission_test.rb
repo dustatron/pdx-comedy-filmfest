@@ -12,6 +12,11 @@ class SubmissionTest < ActiveSupport::TestCase
     assert @submission.valid?
   end
   
+  test "Should have user id" do
+    @submission.user_id = "bad"
+    assert_not @submission.valid?
+  end
+  
   test "title should be present" do
     @submission.title = " "
     assert_not @submission.valid?
@@ -46,6 +51,6 @@ class SubmissionTest < ActiveSupport::TestCase
     @submission.has_rights = false
     assert_not @submission.valid?
   end
-  
 
+  
 end
