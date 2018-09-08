@@ -1,27 +1,35 @@
 <div class="well <%= submission.approved ? 'approved' : 'submission' %>">
     <div class="row">
+    <!--TITLE-->
+    <div class="col-md-7">
+        <div class="text-center box simple-label">
+            <h3> <%= link_to submission.title, submission %></h3>   
+        </div>    
+    </div>
+    <div class="col-md-5 text-center simple-label">
+        <h3>Details</h3>
+    </div>
+
+
+    </div>
+    <div class="row">
         <!--PLAYER-->
-        <div class="col-md-8 video_player">
-            <div class="flex-video widescreen"><%= get_video_iframe(submission.link) %>  </div>
+        <div class="col-md-7 video_player">
+            <div class="row">
+                <div class="flex-video widescreen"><%= get_video_iframe(submission.link) %>  </div>   
+            </div>
+           
         </div>
-        <div class="col-md-4 player-right">
+        <div class="col-md-5 player-right">
            <!--DETAILS-->
            <div class="row sub-details">
-               <!--TITLE-->
-               <div class="row ">
-                   <div class="col-xs-6 text-right">
-                       <strong>Title :</strong>  
-                   </div>
-                  <div class="col-xs-6 text-left">
-                      <%= submission.title %>
-                  </div>
-               </div>
+              
                <!--POSTED BY-->
                <div class="row ">
-                   <div class="col-xs-6 text-right">
+                   <div class="col-xs-6 text-right top-bump">
                        <strong>Posted By :</strong>  
                    </div>
-                   <div class="col-xs-6 text-left">
+                   <div class="col-xs-6 text-left top-bump">
                        <%= submission.user.name %>
                    </div>
                </div>
@@ -82,21 +90,11 @@
                        <%= time_ago_in_words(submission.created_at) %> Ago.
                    </div>
                 </div>
-                <hr>
                 
-                <!--BREIF-->
-                <div class="row">
-                   <div class="col-xs-6 text-right">
-                        <strong> Brief : </strong>   
-                   </div>
-                   <div class="col-xs-6 text-left box">
-                       <%= submission.description %>
-                   </div>
-               </div>
                </div>
             <!--BUTTONS-->
             <div class="row pad-top">
-                <%= link_to "DASH BOARD", submission, class: 'btn btn-warning btn-block' %>
+                <%= link_to "Full Details", submission, class: 'btn btn-warning btn-block' %>
            </div>
                        <% if current_user.admin? %>
                 <div class="row"> <!-- BUTTONS START-->
@@ -125,4 +123,15 @@
             <% end  %>
            </div>
         </div><!--END ROW-->
+                    <!--BREIF-->
+            <div class="row">
+        
+                <div class="col-md-12 bottom-border">
+                    <h4> Description : </h4>  
+                </div>
+                <div class="col-md-12 box top-bump">
+                    
+                  <p><%= submission.description %></p>
+                </div>
+            </div>
 </div><!--END WELL-->

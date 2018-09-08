@@ -1,14 +1,25 @@
 body{
-  background:
-  radial-gradient(black 15%, transparent 16%) 0 0,
-  radial-gradient(black 15%, transparent 16%) 8px 8px,
-  radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 0 1px,
-  radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 8px 9px;
-  background-color:#282828;
-  background-size:16px 16px;
+  // background:
+  // radial-gradient(black 15%, transparent 16%) 0 0,
+  // radial-gradient(black 15%, transparent 16%) 8px 8px,
+  // radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 0 1px,
+  // radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 8px 9px;
+  // background-color:#282828;
+  // background-size:16px 16px;
+  background-image: url(/assets/dark-wood-back.jpg);
   
   color: white;
 }
+
+.portrait {
+  height: auto;
+  width: 100%;
+}
+
+.bottom-border {
+  border-bottom: 2px solid grey;
+}
+
 
 .jumbotron {
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&0.9+15,0.1+100 */
@@ -180,8 +191,8 @@ span.picture {
 
 .flex-video {
   position: relative;
-  padding-top: 25px;
-  padding-bottom: 67.5%;
+  padding-top: 10px;
+  padding-bottom: 10px;
   height: 0;
   margin-bottom: 16px;
   overflow: hidden;

@@ -7,7 +7,7 @@
     <%= render 'shared/error_messages', object: f.object %>
     <!--TITLE-->
     <div class="row">
-      <div class="col-md-2 text-right">
+      <div class="col-md-2 text-left">
         <%= f.label :title, "Title" %>
       </div>
       <div class="col-md-10">
@@ -17,7 +17,7 @@
     
     <!--RUN TIME-->
     <div class="row">
-      <div class="col-md-2 text-right">
+      <div class="col-md-2 text-left">
           <%= f.label :length, "Runtime " %>
       </div>
       <div class="col-md-4">
@@ -29,7 +29,7 @@
     </div>
     <!--LINK-->
     <div class="row">
-      <div class="col-md-2 text-right">
+      <div class="col-md-2 text-left">
           <%= f.label :link, "Link" %>
       </div>
       <div class="col-md-10">
@@ -39,7 +39,7 @@
     
     <!--VIMEO PASSWORD-->
     <div class="row">
-      <div class="col-md-2 text-right">
+      <div class="col-md-2 text-left">
           <%= f.label :password, "Password", placeholder: "If vimeo link is password protected" %>
       </div>
       <div class="col-md-10">
@@ -49,47 +49,47 @@
     
     <!--DESCRIPTION-->
     <div class="row">
-      <div class="col-md-2  text-right">
+      <div class="col-md-2  text-left">
           <%= f.label :description, "Synopsis" %>
       </div>
       <div class="col-md-10">
           <%= f.text_area :description, class: 'form-control', rows: '4', placeholder: "Tell us about your film in 200 characters." %>
       </div>
     </div>
-    
+    <br>
     <!--PREFERRED MONTH-->
     <div class="row">
-      <div class="col-md-2 text-right">
+      <div class="col-md-2 text-left">
           <%= f.label :preferred_month, "Preferred Month " %>
       </div>
       <div class="col-md-2">
           <%= f.select :preferred_month, ['Any Month', 'October','November','December','January','February','March'], class: 'form-control' %>  
   
       </div>
-      <div class="col-md-8 text-left">
-        what month would you prefer to have this submission play?
+      <div class="col-md-7 col-md-offset-1  text-left">
+        Prefered month to have this submission play?
       </div>
     </div>
-    
+    <br>
     <!--REUSE-->
     <div class="row">
-      <div class="col-md-3 col-md-offset-2 text-right">
+      <div class="col-xs-3 col-md-offset-0 text-left">
         <%= f.label :reuse, "Allow replays", class: "form-check-label text-right" %>
       </div>
-      <div class="col-md-7">
-        <%= f.check_box :reuse, {:checked => "checked"}%> 
-        <span class="pad-left">Allow us to replay this film at other events.</span>
+      <div class="col-xs-9">
+        <%= f.check_box :reuse, {:checked=> "checked"}%> 
+        <span class="pad-left">Can we replay this film at other events.</span>
       </div>
     </div> 
     
     <!--HAS RIGHTS-->
     <div class="row">
-      <div class="col-md-3 col-md-offset-2 text-right">
-        <%= f.label :has_rights, "Copyright Holder", class: "form-check-label text-right" %>
+      <div class="col-xs-3 text-left">
+        <%= f.label :has_rights, "All Rights", class: "form-check-label text-right" %>
       </div>
-      <div class="col-md-7">
+      <div class="col-xs-9">
         <%= f.check_box :has_rights %> 
-        <span class="pad-left">You have the all necessary rights to play this video.</span>
+        <span class="pad-left">You have the all rights to play this video.</span>
       </div>
     </div> 
     <div class="row">

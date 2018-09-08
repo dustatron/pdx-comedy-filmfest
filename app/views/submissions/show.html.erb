@@ -1,21 +1,21 @@
 <div class="well"> 
     <div class="row"> <!--TITLE START-->
-      <div class="col-md-8 text-center">
-          <h4><%= @submission.title %></h4> 
+      <div class="col-md-7 text-center">
+          <h3><%= @submission.title %></h3> 
       </div>  
-      <div class="col-md-4 text-center">
-          <h4>Details</h4>
+      <div class="col-md-5 text-center">
+          <h3>Details</h3>
       </div>
     </div><!--TITLE END-->
     
     
     <div class="row"><!--CONTENT START -->
     
-        <div class="col-md-8"><!-- Video Player Start-->
+        <div class="col-md-7"><!-- Video Player Start-->
             <div class="flex-video widescreen"><%= get_video_iframe(@submission.link) %> </div>
         </div> <!-- Video Player End -->
         
-        <div class="col-md-4"><!-- Video Details Start-->
+        <div class="col-md-5"><!-- Video Details Start-->
             <!--USER NAME-->
             <div class="row">
                 <div class="col-xs-4 text-right simple-label">
@@ -98,17 +98,7 @@
                     </div>
                 </div>
             <% end %>
-            
-            <hr>
-            <!--Description-->
-            <div class="row">
-                <div class="col-xs-4 text-right simple-label">
-                    Detials : 
-                </div>
-                <div class="col-xs-8 text-left simple-label box">
-                    <%= @submission.description %>
-                </div>
-            </div>
+
             <hr>
         <div class="row">
              <!-- Edit -->
@@ -143,7 +133,20 @@
             <% end  %>
         </div><!-- Video Details End-->
         
-    </div><!--CONTENT END-->
+        </div>
+        <div class="row ">
+            <div class="col-xs-12 text-left bottom-border ">
+               <h4> Description : </h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 text-left box top-bump">
+              <p>  <%= @submission.description %> </p>
+            </div>
+        </div>
+        
+        
+    </div><!--END WELL-->
     
 
 
