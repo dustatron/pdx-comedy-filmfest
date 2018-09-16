@@ -1,4 +1,7 @@
-<div class="well <%= submission.approved ? 'approved' : 'submission' %>">
+<div class="well <% if submission.status == "Rejected" %> reject 
+                <% elsif submission.status =="Being Reviewed" %> review
+                <% else %> approved
+                <%end%> ">
     <div class="row">
     <!--TITLE-->
     <div class="col-md-7">
@@ -7,7 +10,7 @@
         </div>    
     </div>
     <div class="col-md-5 text-center simple-label">
-        <h3>Details</h3>
+        <h3>Status: <%= submission.status %></h3>
     </div>
 
 

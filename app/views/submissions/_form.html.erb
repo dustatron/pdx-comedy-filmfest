@@ -39,7 +39,7 @@
           <%= f.text_field :reason, class: 'form-control' %>
           
           <%= f.label :contact, "Archived" %>
-          <%= f.text_field :archive, class: 'form-control' %>
+          <%= f.select :archive, ['true', 'false' ]  %>
         </div>
         
       <%end%>

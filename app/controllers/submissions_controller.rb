@@ -4,7 +4,7 @@ class SubmissionsController < ApplicationController
     
     def index
         
-        @submissions = Submission.where(approved: false).paginate(page: params[:page], :per_page => 8) 
+        @submissions = Submission.where.not(status: 'Archive').paginate(page: params[:page], :per_page => 8) 
     end
     
     def new
