@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_03_193505) do
+ActiveRecord::Schema.define(version: 2018_10_21_065859) do
 
   create_table "microposts", force: :cascade do |t|
     t.text "content"
@@ -65,6 +65,7 @@ ActiveRecord::Schema.define(version: 2018_09_03_193505) do
     t.boolean "activated", default: false
     t.datetime "activated_at"
     t.string "reset_digest"
+    t.datetime "reset_sent_at"
   end
 
 end
