@@ -1,13 +1,18 @@
 
 <div class="row admin">
     <!--ALL USERS-->
-    <div class="col-sm-2 col-sm-offset-1 top-bump">
+    <div class="col-sm-2 col-sm-offset-2 top-bump">
       <p> <%= link_to "Users", users_path, class: "btn btn-primary btn-block" %>  </p>
     </div>
     
-    <!--ALL SUBMISSIONS-->
+    <!--NEW SUBMISSIONS-->
     <div class="col-sm-2 top-bump">
         <p> <%= link_to "New Submissions", submissions_path, class: "btn btn-danger btn-block" %></p>
+    </div>
+    
+    <!--All Submissions-->
+    <div class="col-sm-2 top-bump">
+        <p> <%= link_to "All Submissions", static_pages_all_path, class: "btn btn-warning btn-block" %></p>
     </div>
     
     <!--APPROVED SUBMISSION-->
@@ -26,16 +31,6 @@
                     <li><%= link_to "March", static_pages_approved_month_path(:month => 'March') %></li>
                   </ul>
             </div> 
-    </div>
-    
-    <!--ARCHIVE-->
-    <div class="col-sm-2 top-bump">
-        <p> <%= link_to "Archive", static_pages_archive_path, class: "btn btn-warning btn-block" %></p>
-    </div>
-    
-    <!--All Submissions-->
-    <div class="col-sm-2 top-bump">
-        <p> <%= link_to "All Submissions", static_pages_all_path, class: "btn btn-primary btn-block" %></p>
     </div>
        
 </div>

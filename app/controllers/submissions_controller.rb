@@ -3,8 +3,7 @@ class SubmissionsController < ApplicationController
     include VideosHelper
     
     def index
-        
-        @submissions = Submission.where.not(status: 'Archive').paginate(page: params[:page], :per_page => 8) 
+        @submissions = Submission.where(status: 'Being Reviewed').paginate(page: params[:page], :per_page => 8) 
     end
     
     def new
@@ -52,7 +51,7 @@ class SubmissionsController < ApplicationController
     
     def approved_month
         @month = params[:month]
-        @approval = Submission.where(status: @month).paginate(page: params[:page], :per_page => 8) 
+        @approval = Submission.where(status: @month)
         @runtime = @approval.sum {|h| h[:length].to_i }
     end
     

@@ -1,17 +1,9 @@
 <% if current_user.admin? %>
-    
-  <div class="row">
-      <%= will_paginate @approval, class: "text-center" %>
-  </div>
-  
+
   <div class="row">
     <% @approval.each do |accept| %>
       <%= render accept %>
     <% end %>
-  </div>
-  
-  <div class="row">
-    <%= will_paginate @approval, class: "text-center" %>  
   </div>
   
   <% else %>
