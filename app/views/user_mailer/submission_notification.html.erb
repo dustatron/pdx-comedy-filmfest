@@ -1,9 +1,12 @@
 <h1>Portland's Funniest Video New Submission</h1>
 
-<p>Submission Title: <%= @submission.title %>,</p>
-<p>Submission Link: <%= @submission.link %>,</p>
+<p><%= @submission.user.name %> submitted : <%= @submission.title %> </p>
+<p>Submission Link : <%= @submission.link %></p>
+<p>Password : <%= @submission.password %> </p>
+<p>Length : <%= @submission.length %> </p>
+<p>Synopsis : <%= @submission.description %> </p>
 
 <p>
-Welcome to Portland's Funniest Video Submission site! Click on the link below to activate your account:
+ <%= link_to "See Submission here", @submission %>
 </p>
 
