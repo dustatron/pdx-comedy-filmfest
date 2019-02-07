@@ -4,18 +4,11 @@
 </div>
 
 
-<ul class="users">
+<div class="row users">
   <% @users.each do |user| %>
-  
-     
-        <%= render user %>   
-   <hr></hr>
-
-     
- 
-   
+  <div class="col-md-12"><%= render user %> </div>
   <% end %>
-</ul>
+</div>
 <div class="row text-center">
   <%= will_paginate %>  
 </div>

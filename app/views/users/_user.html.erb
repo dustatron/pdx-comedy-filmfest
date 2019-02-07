@@ -1,36 +1,11 @@
-<!--NAME-->
+
 <div class="row">
-   <!--RIGHT DETAILS-->
-   <div class="col-md-8 col-md-offset-1">
-       <!--NAME-->
-       <div class="row text-left">
-          <p>Name: <%= link_to user.name, user %></p> 
-       </div>
-       <div class="row">
-           <p>Email: <%= mail_to user.email %></p>
-           <p>Submission #:  <%= user.submissions.count %></p>
-           
-           
-           <% if current_user.admin? && !current_user?(user) %>
-            <%= link_to "Delete user", user, method: :delete,
-                                  data: { confirm: "You sure?" }, class: "btn btn-danger" %>
-            <%= link_to "Edit User", user, class: "btn btn-info" %>
-                                  
-            
-           <% end %>
-            
-       </div>
-       
-   </div>
-       <!--LEFT PICUTRE-->
-   <div class="col-md-3">
-      <%= gravatar_for user, size: 100 %> 
-   </div>
-</div>
-<div class="row text-center">
-          <% if user.activated? %>
-               Member for <%= time_ago_in_words(user.created_at) %>
-        <% else %>
-               Not Yet Activated
-       <% end %>
-</div>
+    
+    <div class="col-md-4"><strong><%= user.id %> : <%= gravatar_for user, size: 30 %><%= link_to user.name, user %></strong></div>    
+    <div class="col-md-4"><strong><%= user.email %></strong></div>
+    <div class="col-md-4"><strong> Subs # <%= user.submissions.count %> | Joined : <%= time_ago_in_words(user.created_at) %></strong></div>
+ 
+     
+</div>    
+<hr></hr>
+
