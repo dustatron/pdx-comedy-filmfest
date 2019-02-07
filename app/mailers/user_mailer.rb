@@ -12,11 +12,19 @@ class UserMailer < ApplicationMailer
   
   def submission_notification(submission)
         @submission = submission
-        administrator = User.where(admin: true)
+        admins = User.where(admin: true)
         
-        administrator.each do |admin|
-          mail to: admin.email, subject: "PFV New Submission"
+        mail(
+                 to: admins.map(&:email).uniq, 
+                  subject: "New PFV Submission", 
+                ) do |format|
+                  format.html
         end
+        # mail to: admin, subject: "PFV New Submission"
+        
+        # administrator.each do |admin|
+        #   mail to: admin.email, subject: "PFV New Submission"
+        # end
   end
   
 

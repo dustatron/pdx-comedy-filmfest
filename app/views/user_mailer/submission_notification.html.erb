@@ -1,12 +1,12 @@
 <h1>Portland's Funniest Video New Submission</h1>
 
-<p><%= @submission.user.name %> submitted : <%= @submission.title %> </p>
+<p><%= @submission.user_id %> submitted : <%= @submission.title %> </p>
 <p>Submission Link : <%= @submission.link %></p>
 <p>Password : <%= @submission.password %> </p>
 <p>Length : <%= @submission.length %> </p>
 <p>Synopsis : <%= @submission.description %> </p>
 
 <p>
- <%= link_to "See Submission here", @submission %>
-</p>
+ <a href="http://www.portlandsfunniestvideo.com/submissions/<%= @submission.id %>">Click here to view sub</a>
+ </p>
 
