@@ -7,6 +7,10 @@ class Submission < ApplicationRecord
     validates :link, presence: true, length: { maximum: 200 }
     validates :description, presence: true, length: { maximum: 250 }
     validates :has_rights, :acceptance => true
+    
+    def send_new_submission_email
+        UserMailer.submission_notification(self).deliver_now
+    end
 
 end
 

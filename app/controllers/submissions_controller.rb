@@ -14,6 +14,7 @@ class SubmissionsController < ApplicationController
         @submit = current_user.submissions.build(submit_params)
         # @submit = current_user.Submission.build(submit_params)
         if @submit.save
+            @submit.send_new_submission_email
             flash[:success] = "Your Video has been submitted"
             redirect_to current_user
         else
