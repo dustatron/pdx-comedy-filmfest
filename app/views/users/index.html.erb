@@ -1,4 +1,4 @@
-<h1>All users</h1>
+<h1 class="text-center">All users</h1>
 <div class="row text-center">
   <%= will_paginate %>  
 </div>
@@ -6,9 +6,14 @@
 
 <ul class="users">
   <% @users.each do |user| %>
-    <div class="well">
-      <%= render user %>    
-    </div>
+  
+     
+        <%= render user %>   
+   <hr></hr>
+
+     
+ 
+   
   <% end %>
 </ul>
 <div class="row text-center">
