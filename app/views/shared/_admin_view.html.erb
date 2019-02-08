@@ -2,7 +2,7 @@
 <div class="row admin">
     <!--ALL USERS-->
     <div class="col-sm-2 col-sm-offset-2 top-bump">
-      <p> <%= link_to "Users", users_path, class: "btn btn-primary btn-block" %>  </p>
+      <%= link_to "Users", users_path, class: "btn btn-primary btn-block" %>  
     </div>
     
     <!--NEW SUBMISSIONS-->
@@ -23,12 +23,19 @@
                   <span class="caret"></span></button>
                   <ul class="dropdown-menu">
                     <li><%= link_to "All", static_pages_approved_index_path, class: "" %></li>
-                    <li><%= link_to "October", static_pages_approved_month_path(:month => 'October') %></li>
-                    <li><%= link_to "November", static_pages_approved_month_path(:month => 'November') %></li>
-                    <li><%= link_to "December", static_pages_approved_month_path(:month => 'December') %></li>
-                    <li><%= link_to "January", static_pages_approved_month_path(:month => 'January') %></li>
-                    <li><%= link_to "February", static_pages_approved_month_path(:month => 'February') %></li>
-                    <li><%= link_to "March", static_pages_approved_month_path(:month => 'March') %></li>
+                    <li><%= link_to "01 October", static_pages_approved_month_path(:month => 'October') %></li>
+                    <li><%= link_to "02 November", static_pages_approved_month_path(:month => 'November') %></li>
+                    <li><%= link_to "03 December", static_pages_approved_month_path(:month => 'December') %></li>
+                    <li><%= link_to "04 January", static_pages_approved_month_path(:month => 'January') %></li>
+                    <li><%= link_to "05 February", static_pages_approved_month_path(:month => 'February') %></li>
+                    <li class="admin--best-of"><%= link_to "06 March | Best" , static_pages_approved_month_path(:month => 'March') %></li>
+                    <li><%= link_to "07 April", static_pages_approved_month_path(:month => 'April') %></li>
+                    <li><%= link_to "08 May", static_pages_approved_month_path(:month => 'May') %></li>
+                    <li><%= link_to "09 Jun", static_pages_approved_month_path(:month => 'Jun') %></li>
+                    <li><%= link_to "10 July", static_pages_approved_month_path(:month => 'July') %></li>
+                    <li><%= link_to "11 August", static_pages_approved_month_path(:month => 'August') %></li>
+                    <li class="admin--best-of"><%= link_to "12 September | Best", static_pages_approved_month_path(:month => 'September') %></li>
+
                   </ul>
             </div> 
     </div>

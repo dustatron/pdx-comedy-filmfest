@@ -119,12 +119,18 @@
                                     <button class="btn btn-success btn-block dropdown-toggle" type="button" data-toggle="dropdown"><%= @submission.status %>
                                       <span class="caret"></span></button>
                                       <ul class="dropdown-menu">
-                                        <li><%= link_to "October", submission_path(:status => 'oct'), method: :status_change %></li>
-                                        <li><%= link_to "November", submission_path(:status => 'nov'), method: :status_change %></li>
-                                        <li><%= link_to "December", submission_path(:status => 'dec'), method: :status_change %></li>
-                                        <li><%= link_to "January", submission_path(:status => 'jan'), method: :status_change %></li>
-                                        <li><%= link_to "February", submission_path(:status => 'feb'), method: :status_change %></li>
-                                        <li><%= link_to "March", submission_path(:status => 'mar'), method: :status_change %></li>
+                                        <li><%= link_to "01 October", submission_path(:status => 'oct'), method: :status_change %></li>
+                                        <li><%= link_to "02 November", submission_path(:status => 'nov'), method: :status_change %></li>
+                                        <li><%= link_to "03 December", submission_path(:status => 'dec'), method: :status_change %></li>
+                                        <li><%= link_to "04 January", submission_path(:status => 'jan'), method: :status_change %></li>
+                                        <li><%= link_to "05 February", submission_path(:status => 'feb'), method: :status_change %></li>
+                                        <li><%= link_to "06 March", submission_path(:status => 'mar'), method: :status_change %></li>
+                                        <li><%= link_to "07 April", submission_path(:status => 'apr'), method: :status_change %></li>
+                                        <li><%= link_to "08 May", submission_path(:status => 'may'), method: :status_change %></li>
+                                        <li><%= link_to "09 June", submission_path(:status => 'jun'), method: :status_change %></li>
+                                        <li><%= link_to "10 July", submission_path(:status => 'jul'), method: :status_change %></li>
+                                        <li><%= link_to "11 August", submission_path(:status => 'aug'), method: :status_change %></li>
+                                        <li><%= link_to "12 September", submission_path(:status => 'sep'), method: :status_change %></li>
                                         <li><%= link_to "Reject", submission_path(:status => 'reject'), method: :status_change %></li>
                                         <li><%= link_to "Archive", submission_path(:status => 'archive'), method: :status_change %></li>
                                         <li><%= link_to "Being Reviewed", submission_path(:status => 'review'), method: :status_change %></li>
