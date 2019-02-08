@@ -1,13 +1,17 @@
-<h1 class="text-center">All users</h1>
+<h2 class="text-center"><%= @users.count %> Users </h2>
 <div class="row text-center">
   <%= will_paginate %>  
 </div>
 
 
-<div class="row users">
-  <% @users.each do |user| %>
-  <div class="col-md-12"><%= render user %> </div>
-  <% end %>
+<div class="row">
+  <ul class="user--table">
+    <% @users.each do |user| %>
+      <li><%= render user %></li>
+          
+    <% end %>
+  </ul>
+  
 </div>
 <div class="row text-center">
   <%= will_paginate %>  
