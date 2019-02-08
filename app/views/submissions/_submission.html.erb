@@ -114,16 +114,16 @@
                             <li><%= link_to "December", submission_path(:id => submission, :status => 'dec'), method: :status_change %></li>
                             <li><%= link_to "January", submission_path(:id => submission, :status => 'jan'), method: :status_change %></li>
                             <li><%= link_to "February", submission_path(:id => submission, :status => 'feb'), method: :status_change %></li>
-                            <li><%= link_to "March", submission_path(:id => submission, :status => 'mar'), method: :status_change %></li>
+                            <li class="admin--best-of"><%= link_to "March", submission_path(:id => submission, :status => 'mar'), method: :status_change %></li>
                             <li><%= link_to "April", submission_path(:id => submission, :status => 'apr'), method: :status_change %></li>
                             <li><%= link_to "May", submission_path(:id => submission, :status => 'may'), method: :status_change %></li>
                             <li><%= link_to "June", submission_path(:id => submission, :status => 'jun'), method: :status_change %></li>
                             <li><%= link_to "July", submission_path(:id => submission, :status => 'jul'), method: :status_change %></li>
                             <li><%= link_to "August", submission_path(:id => submission, :status => 'aug'), method: :status_change %></li>
-                            <li><%= link_to "September", submission_path(:id => submission, :status => 'sep'), method: :status_change %></li>
-                            <li><%= link_to "Reject", submission_path(:id => submission, :status => 'reject'), method: :status_change %></li>
-                            <li><%= link_to "Archive", submission_path(:id => submission, :status => 'archive'), method: :status_change %></li>
-                            <li><%= link_to "Being Reviewed", submission_path(:id => submission, :status => 'review'), method: :status_change %></li>
+                            <li class="admin--best-of"><%= link_to "September", submission_path(:id => submission, :status => 'sep'), method: :status_change %></li>
+                            <li class="admin--reject"><%= link_to "Reject", submission_path(:id => submission, :status => 'reject'), method: :status_change %></li>
+                            <li class="admin--archive"><%= link_to "Archive", submission_path(:id => submission, :status => 'archive'), method: :status_change %></li>
+                            <li class="admin--review"><%= link_to "Being Reviewed", submission_path(:id => submission, :status => 'review'), method: :status_change %></li>
                           </ul>
                     </div> 
                 </div>

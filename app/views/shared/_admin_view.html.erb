@@ -22,7 +22,6 @@
                 <button class="btn btn-success btn-block dropdown-toggle" type="button" data-toggle="dropdown">Approved
                   <span class="caret"></span></button>
                   <ul class="dropdown-menu">
-                    <li><%= link_to "All", static_pages_approved_index_path, class: "" %></li>
                     <li><%= link_to "01 October", static_pages_approved_month_path(:month => 'October') %></li>
                     <li><%= link_to "02 November", static_pages_approved_month_path(:month => 'November') %></li>
                     <li><%= link_to "03 December", static_pages_approved_month_path(:month => 'December') %></li>
@@ -35,7 +34,8 @@
                     <li><%= link_to "10 July", static_pages_approved_month_path(:month => 'July') %></li>
                     <li><%= link_to "11 August", static_pages_approved_month_path(:month => 'August') %></li>
                     <li class="admin--best-of"><%= link_to "12 September | Best", static_pages_approved_month_path(:month => 'September') %></li>
-
+                    <li><%= link_to "Rejected", static_pages_approved_month_path(:month => 'Rejected') %></li>
+                    <li><%= link_to "Archive", static_pages_approved_month_path(:month => 'Archive') %></li>
                   </ul>
             </div> 
     </div>
