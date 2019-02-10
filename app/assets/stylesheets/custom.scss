@@ -4,9 +4,9 @@ body{
   // radial-gradient(black 15%, transparent 16%) 8px 8px,
   // radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 0 1px,
   // radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 8px 9px;
-  background-color:#282828;
+  background-color:grey;
   // background-size:16px 16px;
-  background-image: url(/assets/dark-wood-back.jpg);
+  //background-image: url(/assets/dark-wood-back.jpg);
   
   color: white;
 }
@@ -198,9 +198,19 @@ span.picture {
   padding-top: 10px;
   padding-bottom: 10px;
   height: 0;
-  margin-bottom: 16px;
+  margin-bottom: 0;
   overflow: hidden;
 }
+
+.add-pad {
+  position: relative;
+  // padding-top: 10px;
+  // padding-bottom: 10px;
+  // height: 0;
+  // margin-bottom: 0;
+  // overflow: hidden;
+}
+
 
 .flex-video.widescreen { padding-bottom: 57.25%; }
 .flex-video.vimeo { padding-top: 0; }

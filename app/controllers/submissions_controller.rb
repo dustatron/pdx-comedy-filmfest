@@ -1,5 +1,6 @@
 class SubmissionsController < ApplicationController
     before_action :logged_in_user, only: [:create, :destroy]
+    before_action :require_login
     include VideosHelper
     
     def index
@@ -137,72 +138,6 @@ class SubmissionsController < ApplicationController
                 flash[:error] = @approve.errors.full_messages
                 redirect_to @approve
             end
-        elsif status == 'apr'
-            @approve.status = 'April'
-            @approve.approved = true
-       
-            if @approve.save
-                flash[:success] = "#{@approve.title} has been approved for April"
-                redirect_to @approve
-            else
-                flash[:error] = @approve.errors.full_messages
-                redirect_to @approve
-            end
-        elsif status == 'may'
-            @approve.status = 'May'
-            @approve.approved = true
-       
-            if @approve.save
-                flash[:success] = "#{@approve.title} has been approved for May"
-                redirect_to @approve
-            else
-                flash[:error] = @approve.errors.full_messages
-                redirect_to @approve
-            end
-        elsif status == 'jun'
-            @approve.status = 'June'
-            @approve.approved = true
-       
-            if @approve.save
-                flash[:success] = "#{@approve.title} has been approved for June"
-                redirect_to @approve
-            else
-                flash[:error] = @approve.errors.full_messages
-                redirect_to @approve
-            end
-        elsif status == 'jul'
-            @approve.status = 'July'
-            @approve.approved = true
-       
-            if @approve.save
-                flash[:success] = "#{@approve.title} has been approved for July"
-                redirect_to @approve
-            else
-                flash[:error] = @approve.errors.full_messages
-                redirect_to @approve
-            end
-        elsif status == 'aug'
-            @approve.status = 'August'
-            @approve.approved = true
-       
-            if @approve.save
-                flash[:success] = "#{@approve.title} has been approved for August"
-                redirect_to @approve
-            else
-                flash[:error] = @approve.errors.full_messages
-                redirect_to @approve
-            end
-        elsif status == 'sep'
-            @approve.status = 'September'
-            @approve.approved = true
-       
-            if @approve.save
-                flash[:success] = "#{@approve.title} has been approved for September"
-                redirect_to @approve
-            else
-                flash[:error] = @approve.errors.full_messages
-                redirect_to @approve
-            end
         elsif status == 'reject'
             @approve.status = 'Rejected'
             @approve.approved = false
@@ -247,8 +182,15 @@ class SubmissionsController < ApplicationController
     private
   
     def submit_params
-        params.require(:submission).permit(:title, :length, :link, :contact, :description, :reuse, :has_rights, :preferred_month, :password, :status, :reason, :winning_month, :winning_place, :best_of_month, :best_of_award)
+        params.require(:submission).permit(:title, :length, :link, :contact, :description, :reuse, :has_rights, :preferred_month, :password, :status, :reason)
         # params.permit(submission[:title, :length, :link, :contact, :description])
+    end
+    
+    def require_login
+        unless logged_in?
+          flash[:error] = "You must be logged in to access this section"
+          redirect_to login_url # halts request cycle
+        end
     end
     
 end

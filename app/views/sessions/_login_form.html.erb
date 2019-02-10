@@ -1,6 +1,8 @@
 
-<div class="row">
-  <div class="col-md-12 col-md-offset-0">
+  <div class="col-md-12 col-md-offset-0 home--login-top">
+    <spam class="home--login-top--label text-center"><i class="fas fa-user"></i> Login</spam>
+  </div>
+  <div class="col-md-12 col-md-offset-0 home--login">
     <%= form_for(:session, url: login_path) do |f| %>
 
         <%= f.label :email %>
@@ -19,6 +21,5 @@
         <%= f.submit "Log in", class: "btn btn-primary btn-block" %>
     <% end %>
 
-    New user? <%= link_to "Sign up now!", signup_path %>
+   <div class="text-center"> New user? <%= link_to "Sign up now!", signup_path %> </div>
   </div>
-</div>

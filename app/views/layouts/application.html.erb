@@ -8,6 +8,7 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
   </head>
 
   <body>
@@ -23,12 +24,16 @@
           </button>
             <a href="https://curiouscomedy.org/" target="_blank"><img class="logo" src="http://curiouscomedy.org/images/logo.png" alt="Curious Comedy Theater" ></a>
         </div>
+        <div class="text-center">
+          <a href="#">Portland's Funniest Video</a>
+        </div>
         <div id="navbar" class="navbar-collapse collapse navbar-right">
           <ul class="nav navbar-nav">
             <li class="active"><%= link_to "Home", static_pages_home_path %></li>
             <li><%= link_to "About", static_pages_about_path %></li>
             <li><%= link_to "HowTo", static_pages_help_path %></li>            
             <li><%= link_to "Submit", new_submission_path %></li>
+
             <% if logged_in? %>
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">

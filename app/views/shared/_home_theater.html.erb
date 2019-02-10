@@ -1,15 +1,39 @@
 <div class="row home--top">
-    <div class="col-md-8">
-        <div class="flex-video widescreen"> 
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/OOmIcigpxHE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <section>
+        <div class="col-xs-12">
+            <span class="home--top-header">A Short Film Competition for Portland's Local Filmmakers</span>
+        </div>
+    </section>
+</div>
+
+<div class="row ">
+    <div class="col-md-8 home--top">
+        <div class="col-md-12 video--label">
+            The Funniest video
+        </div>
+        <div class="col-md-12">
+            <div class="flex-video widescreen"> 
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/OOmIcigpxHE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="video--info">
+                Here is where we will have a quick blurb
+            </div>
         </div>
     </div>
     <div class="col-md-4">
-         <div class="row">
+        <section>
+            <div class="home--top-dates">
+                <span class="home--top-screening"> <i class="far fa-calendar"></i> Next screening : February 20th</span>
+                <span class="home--top-deadline"><i class="fas fa-clock"></i> Submit By : February 18th</span>
+                <span class="home--top-tickets"><i class="fas fa-ticket-alt"></i> Buy Tickets</span>
+            </div>
+        </section>
+        <div class="row">
             <% if logged_in? %>
                 <%= render 'shared/user_info' %>
             <% else %>
-                <h2 class="text-center">Log in</h2>
                 <%= render '/sessions/login_form' %>
             <% end %>
         </div>
@@ -18,7 +42,7 @@
 </div>
 
 <div class="row">
-    <h2>First Place winners</h2>
+    <div class="video--first-place"><i class="fas fa-award"></i> First Place winners</div>
 
     <% @first.each do |first| %>
         <div class="col-md-4">
@@ -29,7 +53,7 @@
 </div>
 
 <div class=row>
-    <h2>Second Place winners</h2>
+    <div class="video--first-place"><i class="fas fa-award"></i> Second Place winners</div>
     <% @second.each do |second| %>
         <div class="col-md-4">
             <%= render "shared/player", submission: second %>
@@ -38,7 +62,7 @@
 </div>
 
 <div class="row">
-    <h2>Third Place winners</h2>
+    <div class="video--first-place"><i class="fas fa-award"></i> Third Place Place winners</div>
     <% @third.each do |third| %>
         <div class="col-md-4">
             <%= render "shared/player", submission: third %>
