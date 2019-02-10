@@ -247,7 +247,7 @@ class SubmissionsController < ApplicationController
     private
   
     def submit_params
-        params.require(:submission).permit(:title, :length, :link, :contact, :description, :reuse, :has_rights, :preferred_month, :password, :status, :reason)
+        params.require(:submission).permit(:title, :length, :link, :contact, :description, :reuse, :has_rights, :preferred_month, :password, :status, :reason, :winning_month, :winning_place, :best_of_month, :best_of_award)
         # params.permit(submission[:title, :length, :link, :contact, :description])
     end
     

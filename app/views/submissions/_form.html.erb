@@ -2,6 +2,44 @@
   <div class="col-md-8 col-md-offset-2">
     
     <%= form_for(@submission) do |f| %>
+    
+      <% if current_user.admin? %>
+      <div class="well">
+
+          <h3 class="text-center">Admin Board</h3>
+  
+          <%= f.label :contact, "Contact notes" %>
+          <%= f.text_field :contact, class: 'form-control', placeholder: "Any needed notes about person or submission" %>
+        
+          <%= f.label :status, "Status" %> <br>
+          <%= f.select :status, ['Being Reviewed', 'October','November','December','January','February','March', 'Rejected','Archive'], class: 'form-control' %>  <br>
+          
+          <%= f.label :reason %>
+          <%= f.text_field :reason, class: 'form-control' %>
+          
+          <%= f.label :contact, "Archived" %>
+          <%= f.select :archive, ['true', 'false' ]  %> <br>
+          
+          <hr>
+           <h3 class="text-center">Monthly Winner</h3>
+          
+          <%= f.label :winning_month, "Winning Month" %>
+          <%= f.select :winning_month, ['none','October','November','December','January','February','March','April','May', 'June', 'July', 'August', 'September'], class: 'form-control' %> <br>
+          
+          <%= f.label :winning_place, "Winning Place" %>
+          <%= f.select :winning_place,['none','1st','2nd','3rd'], class: 'form-control' %><br>
+          
+          <hr>
+          <h3 class="text-center">Best of Score</h3>
+          <%= f.label :best_of_month, "Best of Month" %>
+          <%= f.select :best_of_month, ['none','March','September'], class: 'form-control', placeholder: "best way to get in touch" %> <br>
+          
+          <%= f.label :best_of_award, "Best of Award" %>
+          <%= f.text_field :best_of_award, class: 'form-control', placeholder: "best way to get in touch" %>
+        </div>
+        
+      <%end%>
+    
       <%= render 'shared/error_messages', object: f.object %>
     
       <%= f.label :title, "Title" %>
@@ -23,26 +61,7 @@
       <%= f.select :preferred_month, ['Any Month', 'October','November','December','January','February','March'], class: 'form-control' %>  
       
       
-      <% if current_user.admin? %>
-      <div class="well">
-        <div class="row text-center">
-               <h4>Admin</h4>
-        </div>
-  
-          <%= f.label :contact, "Contact Details" %>
-          <%= f.text_field :contact, class: 'form-control', placeholder: "best way to get in touch" %>
-        
-          <%= f.label :status, "Status" %> <br>
-          <%= f.select :status, ['October','November','December','January','February','March', 'Rejected','Archive','Being Reviewed'], class: 'form-control' %>  <br>
-          
-          <%= f.label :reason %>
-          <%= f.text_field :reason, class: 'form-control' %>
-          
-          <%= f.label :contact, "Archived" %>
-          <%= f.select :archive, ['true', 'false' ]  %>
-        </div>
-        
-      <%end%>
+
       
       
       

@@ -10,7 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_21_065859) do
+ActiveRecord::Schema.define(version: 2019_02_10_050638) do
+
+  create_table "infos", force: :cascade do |t|
+    t.string "page"
+    t.text "body"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "microposts", force: :cascade do |t|
     t.text "content"
@@ -39,6 +46,10 @@ ActiveRecord::Schema.define(version: 2018_10_21_065859) do
     t.string "reason", default: "None"
     t.string "preferred_month", default: "None"
     t.boolean "has_rights", default: false
+    t.string "winning_month"
+    t.string "winning_place"
+    t.string "best_of_month"
+    t.string "best_of_award"
     t.index ["user_id"], name: "index_submissions_on_user_id"
   end
 
