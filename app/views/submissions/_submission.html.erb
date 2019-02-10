@@ -15,7 +15,16 @@
     <div class="row">
         <!--PLAYER-->
         <div class="col-md-7 video_player">
-            <%= render 'player', submission: submission %>
+            <div class="player--title"> 
+        <%= link_to submission.title, submission %> 
+            </div>
+            <div class="player--video">
+                <div class="flex-video widescreen"><%= get_video_iframe(submission.link) %>  </div>   
+            </div>
+            <div class="player--place">
+               <% if submission.winning_month %> <%= submission.winning_place %> in <%= submission.winning_month %> <%else %> Status: <%= submission.status %> <%end%>
+            </div>
+            
             <!--BREIF-->
             <div class="row">
         
