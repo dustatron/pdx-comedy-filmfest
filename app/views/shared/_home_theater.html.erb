@@ -1,0 +1,48 @@
+<div class="row home--top">
+    <div class="col-md-8">
+        <div class="flex-video widescreen"> 
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/OOmIcigpxHE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </div>
+    <div class="col-md-4">
+         <div class="row">
+            <% if logged_in? %>
+                <%= render 'shared/user_info' %>
+            <% else %>
+                <h2 class="text-center">Log in</h2>
+                <%= render '/sessions/login_form' %>
+            <% end %>
+        </div>
+    </div>
+    
+</div>
+
+<div class="row">
+    <h2>First Place winners</h2>
+
+    <% @first.each do |first| %>
+        <div class="col-md-4">
+            <%= render "shared/player", submission: first %>
+        </div>
+    <%end%>
+    
+</div>
+
+<div class=row>
+    <h2>Second Place winners</h2>
+    <% @second.each do |second| %>
+        <div class="col-md-4">
+            <%= render "shared/player", submission: second %>
+        </div>
+    <%end%>
+</div>
+
+<div class="row">
+    <h2>Third Place winners</h2>
+    <% @third.each do |third| %>
+        <div class="col-md-4">
+            <%= render "shared/player", submission: third %>
+        </div>
+    <%end%>
+</div>
+
