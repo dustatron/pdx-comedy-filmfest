@@ -1,12 +1,9 @@
-<div class="well <% if submission.status == "Rejected" %> reject 
-                <% elsif submission.status =="Being Reviewed" %> review
-                <% else %> approved
-                <%end%> ">
+<div class="row bottom-border">
     <div class="row">
     <!--TITLE-->
     <div class="col-md-7">
         <div class="text-center box simple-label">
-            <h3> <%= link_to submission.title, submission %></h3>   
+            
         </div>    
     </div>
     <div class="col-md-5 text-center simple-label">
@@ -18,14 +15,25 @@
     <div class="row">
         <!--PLAYER-->
         <div class="col-md-7 video_player">
+            <%= render 'player', submission: submission %>
+            <!--BREIF-->
             <div class="row">
-                <div class="flex-video widescreen"><%= get_video_iframe(submission.link) %>  </div>   
+        
+                <div class="col-md-12 ">
+                    <span class="submission--details-title"> Description : </span>  <%= submission.description %>
+                </div>
+
             </div>
-           
+        
         </div>
+        
         <div class="col-md-5 player-right">
+            <div class="well <% if submission.status == "Rejected" %> reject 
+                <% elsif submission.status =="Being Reviewed" %> review
+                <% else %> approved
+                <%end%>">
            <!--DETAILS-->
-           <div class="row sub-details">
+           <div class="row ">
               
                <!--POSTED BY-->
                <div class="row ">
@@ -97,14 +105,14 @@
                 
                </div>
                 <!--Winnings-->
-                <% if submission.winning_month %>
+                <% if submission.status != 'Being Reviewed' %>
                 <div class="row submission--bg-highlight">
                    <div class="col-xs-6 text-right">
-                       <strong>Winning Month: </strong> 
+                       <strong>Playing: </strong> 
                    </div>
                    <div class="col-xs-6 text-left">
-                       <%= submission.winning_place %> in  
-                       <%= submission.winning_month %>
+                        <%= submission.status %>  
+                       
                    </div>
                 </div>
                 <%end%>
@@ -144,16 +152,7 @@
                 </div>
             <% end  %>
            </div>
+           </div><!--END WELL-->
         </div><!--END ROW-->
-                    <!--BREIF-->
-            <div class="row">
-        
-                <div class="col-md-12 bottom-border">
-                    <h4> Description : </h4>  
-                </div>
-                <div class="col-md-12 box top-bump">
-                    
-                    <%= submission.description %>
-                </div>
-            </div>
-</div><!--END WELL-->
+            
+</div>
