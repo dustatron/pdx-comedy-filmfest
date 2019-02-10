@@ -93,16 +93,29 @@
                        <%= time_ago_in_words(submission.created_at) %> Ago.
                    </div>
                 </div>
+            
                 
                </div>
+                <!--Winnings-->
+                <% if submission.winning_month %>
+                <div class="row submission--bg-highlight">
+                   <div class="col-xs-6 text-right">
+                       <strong>Winning Month: </strong> 
+                   </div>
+                   <div class="col-xs-6 text-left">
+                       <%= submission.winning_place %> in  
+                       <%= submission.winning_month %>
+                   </div>
+                </div>
+                <%end%>
             <!--BUTTONS-->
             <div class="row pad-top">
                 <%= link_to "Full Details", submission, class: 'btn btn-warning btn-block' %>
-           </div>
-                       <% if current_user.admin? %>
+            </div>
+            <% if current_user.admin? %>
+                
                 <div class="row"> <!-- BUTTONS START-->
-                    
-                    
+                <%= link_to "Edit", edit_submission_path(submission), class: 'btn btn-info btn-block' %>
             <!-- Change Status -->
                 <div class="top-bump">
                     <div class="dropdown">
