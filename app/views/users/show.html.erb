@@ -7,7 +7,7 @@
       <%= @user.name %>
     </h3>
     A Member for <%= time_ago_in_words(@user.created_at) %></br>
-    <%= mail_to @user.email %>
+ 
   </div>
   <div class="col-md-4 top-bump">
     <%= link_to "Submit A Video", new_submission_path, class: "btn btn-primary btn-lg btn-block" %>

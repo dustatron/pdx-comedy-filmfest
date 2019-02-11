@@ -1,18 +1,22 @@
-<h2 class="text-center"><%= @users.count %> Users </h2>
-<div class="row text-center">
-  <%= will_paginate %>  
-</div>
-
-
-<div class="row">
-  <ul class="user--table">
-    <% @users.each do |user| %>
-      <li><%= render user %></li>
-          
-    <% end %>
-  </ul>
+<% if current_user.admin? %>
+  <h2 class="text-center"><%= @users.count %> Users </h2>
+  <div class="row text-center">
+    <%= will_paginate %>  
+  </div>
   
-</div>
-<div class="row text-center">
-  <%= will_paginate %>  
-</div>
+  
+  <div class="row">
+    <ul class="user--table">
+      <% @users.each do |user| %>
+        <li><%= render user %></li>
+            
+      <% end %>
+    </ul>
+    
+  </div>
+  <div class="row text-center">
+    <%= will_paginate %>  
+  </div>
+<% else %>
+  <h2>You much be an admin to see this page</h2>
+<%end%>
