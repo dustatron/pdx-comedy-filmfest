@@ -1,7 +1,8 @@
-<div class="row">
-  
-<div class="col-md-8 col-md-offset-2">
-  
+  <div class="col-md-12 col-md-offset-0 home--login-top">
+    <spam class="home--login-top--label text-center"><i class="fas fa-user"></i> Submit a Film</spam>
+  </div>
+
+<div class="col-md-12 col-md-offset-0 home--login">
   <%= form_for(@submit) do |f| %>
     <div class="form-group">
     <%= render 'shared/error_messages', object: f.object %>
@@ -95,7 +96,7 @@
     </div> 
         <br></br>
     <div class="row">
-      <div class="col-md-10 col-md-offset-2 top-bump">
+      <div class="col-md-10 col-md-offset-1 top-bump">
           <%= f.submit "Submit", class: "btn btn-primary btn-lg btn-block" %>
       </div>
       
@@ -104,5 +105,4 @@
   
     </div>
   <% end %>
-</div>
 </div>
