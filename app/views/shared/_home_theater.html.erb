@@ -3,6 +3,12 @@
         <div class="col-xs-12">
             <span class="home--top-header">A Short Film Competition for Portland's Local Filmmakers</span>
         </div>
+        <div class="col-xs-1">
+            <a href="https://curiouscomedy.org/" target="_blank"><img class="logo" src="http://curiouscomedy.org/images/logo.png" alt="Curious Comedy Theater" ></a>
+        </div>
+        <div class="col-xs-10">
+            <a href="https://curiouscomedy.org/" target="_blank" class="home--top-cc"> <i class="fas fa-play"></i> A Curious Comedy Event</a>
+        </div>
     </section>
 </div>
 
@@ -25,11 +31,11 @@
     <div class="col-md-4">
         <section>
             <div class="home--top-dates">
-                <a href="https://curiouscomedy.org/" target="_blank"><img class="logo" src="http://curiouscomedy.org/images/logo.png" alt="Curious Comedy Theater" ></a> <br>
-                <span class="home--top-screening">  A Curious Comedy Event</span>
-                <span class="home--top-screening"> <i class="far fa-calendar"></i> Next screening : February 20th</span>
-                <span class="home--top-deadline"><i class="fas fa-clock"></i> Submit By : February 18th</span>
-                <span class="home--top-tickets"><i class="fas fa-ticket-alt"></i> Buy Tickets</span>
+
+                
+                <a href="https://www.facebook.com/events/219120532365948/" target="_blank" class="home--top-screening"> <i class="far fa-calendar"></i> Next screening : February 20th</a>
+                <a href="/submissions/new" class="home--top-deadline"><i class="fas fa-clock"></i> Submit By : February 18th</a>
+                <a href="https://curiouscomedy.org/events/2019/02/20/1824-portland%2527s-funniest-videos" target="_blank" class="home--top-tickets"><i class="fas fa-ticket-alt"></i> Buy Tickets</a>
             </div>
         </section>
         <div class="row">
@@ -59,7 +65,7 @@
 
 
 <div class=row>
-    <div class="video--first-place"><i class="fas fa-award"></i> Second Place winners</div>
+    <div class="video--first-place">Second Place winners</div>
     <% @second.each do |second| %>
         <div class="col-md-4">
             <%= render "shared/player", submission: second %>
@@ -72,7 +78,7 @@
 </div>
 
 <div class="row">
-    <div class="video--first-place"><i class="fas fa-award"></i> Third Place Place winners</div>
+    <div class="video--first-place">Third Place Place winners</div>
     <% @third.each do |third| %>
         <div class="col-md-4">
             <%= render "shared/player", submission: third %>
