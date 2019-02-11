@@ -9,6 +9,7 @@
 @import "submissions";
 @import "player";
 @import "home";
+@import "navbar";
 
 $gray-medium-light: #eaeaea;
 
@@ -27,3 +28,14 @@ $gray-medium-light: #eaeaea;
   margin-top: 45px;
   @include box_sizing;
 }
+
+a {
+  text-decoration: none;
+  color:white;
+  
+  &:hover {
+    text-decoration: none;
+  }
+  
+}
+

@@ -1,0 +1,16 @@
+.navbar {
+    &--pfv-brand {
+        a {
+            text-decoration: none!important;
+        }
+
+        
+        font-size: 1.8rem;
+        letter-spacing: 1.6px;
+        word-spacing: 1px;
+        font-style: normal;
+        font-variant: normal;
+        text-transform: uppercase;
+        font-weight: 600;
+    }
+}

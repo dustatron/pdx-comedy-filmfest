@@ -1,8 +1,4 @@
 .home {
-    a {
-        text-decoration: none!important;
-    }
-
     
     &--top {
         margin-top: 60px;
@@ -14,7 +10,7 @@
         padding: 15px 100px 15px 15px;
         line-height: 2.3;
         
-        font-size: 18px;
+        font-size: 2 rem;
         letter-spacing: 1.6px;
         word-spacing: 1px;
         font-style: normal;
@@ -45,6 +41,11 @@
         font-weight: 600;
         padding: 10px;
         margin: 15px 0px;
+        
+        &:hover {
+            color: grey;
+        }
+
 
     }
     
@@ -66,7 +67,7 @@
 
         max-width: 350px;
         
-        font-size: 14px;
+        font-size: 1 rem;
         letter-spacing: 1.6px;
         word-spacing: 1px;
         font-style: normal;
@@ -92,9 +93,26 @@
         font-weight: 600;
         padding: 10px;
         margin: 15px 0;
+        
+        &:hover {
+            color: grey;
+        }
     }
     
     &--top-tickets {
+        &a {
+            color:white;
+            text-decoration: none;
+        }
+
+        &:hover {
+            color:grey;
+            text-decoration: none;
+        }
+        &:active {
+            color:white;
+        }
+        
         background-color: blue;
         display: block;
         max-width: 350px;
