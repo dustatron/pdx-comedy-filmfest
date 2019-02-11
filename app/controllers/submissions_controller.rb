@@ -1,6 +1,5 @@
 class SubmissionsController < ApplicationController
     before_action :logged_in_user, only: [:create, :destroy]
-    before_action :require_login
     include VideosHelper
     
     def index
@@ -182,15 +181,8 @@ class SubmissionsController < ApplicationController
     private
   
     def submit_params
-        params.require(:submission).permit(:title, :length, :link, :contact, :description, :reuse, :has_rights, :preferred_month, :password, :status, :reason)
+        params.require(:submission).permit(:title, :length, :link, :contact, :description, :reuse, :has_rights, :preferred_month, :password, :status, :reason, :winning_month, :winning_place, :best_of_month, :best_of_award)
         # params.permit(submission[:title, :length, :link, :contact, :description])
-    end
-    
-    def require_login
-        unless logged_in?
-          flash[:error] = "You must be logged in to access this section"
-          redirect_to login_url # halts request cycle
-        end
     end
     
 end

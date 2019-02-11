@@ -13,7 +13,7 @@
         </div>
         <div class="col-md-12">
             <div class="flex-video widescreen"> 
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/OOmIcigpxHE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/OOmIcigpxHE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
             </div>
         </div>
         <div class="col-md-12">
@@ -25,6 +25,8 @@
     <div class="col-md-4">
         <section>
             <div class="home--top-dates">
+                <a href="https://curiouscomedy.org/" target="_blank"><img class="logo" src="http://curiouscomedy.org/images/logo.png" alt="Curious Comedy Theater" ></a> <br>
+                <span class="home--top-screening">  A Curious Comedy Event</span>
                 <span class="home--top-screening"> <i class="far fa-calendar"></i> Next screening : February 20th</span>
                 <span class="home--top-deadline"><i class="fas fa-clock"></i> Submit By : February 18th</span>
                 <span class="home--top-tickets"><i class="fas fa-ticket-alt"></i> Buy Tickets</span>
@@ -49,8 +51,12 @@
             <%= render "shared/player", submission: first %>
         </div>
     <%end%>
-    
+
 </div>
+<div class="row">
+    <span class="video--award-button"><%= link_to "All 1st Winners", static_pages_awards_path(:category => 'First Place', :place => '1st') %></span>
+</div>
+
 
 <div class=row>
     <div class="video--first-place"><i class="fas fa-award"></i> Second Place winners</div>
@@ -59,6 +65,10 @@
             <%= render "shared/player", submission: second %>
         </div>
     <%end%>
+
+</div>
+<div class="row">
+    <span class="video--award-button"><%= link_to "All 2nd Winners", static_pages_awards_path(:category => 'Second Place', :place => '2nd') %></span>
 </div>
 
 <div class="row">
@@ -68,5 +78,10 @@
             <%= render "shared/player", submission: third %>
         </div>
     <%end%>
+
+</div>
+<div class="row">
+    <span class="video--award-button"><%= link_to "All 3rd Winners", static_pages_awards_path(:category => 'Second Place', :place => '2nd') %></span>
+
 </div>
 

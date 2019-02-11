@@ -42,8 +42,27 @@
 
     }
     
-    &--top-deadline {
+    &--top-cc {
         background-color: red;
+        color: black;
+        display: block;
+
+        max-width: 350px;
+        
+        font-size: 14px;
+        letter-spacing: 1.6px;
+        word-spacing: 1px;
+        font-style: normal;
+        font-variant: normal;
+        text-transform: uppercase;
+        font-weight: 600;
+        padding: 10px;
+        margin: 15px 0px;
+    }
+    
+    &--top-deadline {
+        background-color: white;
+        color: black;
         display: block;
         max-width: 350px;
         
@@ -102,8 +121,8 @@
 
 .video {
     &--label {
-        background-color: red;
-        color: white;
+        background-color: white;
+        color: black;
         
         max-width: 96%;
         
@@ -119,7 +138,7 @@
     }
     
     &--first-place {
-        background-color: blue;
+        background-color: black;
         color: white;
         
         // max-width: 350px;
@@ -142,6 +161,33 @@
         margin-top: 10px;
         border: solid grey 1px;
         padding: 5px;
+    }
+    
+    &--award-button {
+        
+        
+        background-color: black;
+        border: 1px solid white;
+        color: white;
+        max-width: 300px;
+        max-height: 41px;
+        padding: 10px 15px;
+        margin: 15px auto;
+        display: block;
+        text-align: center;
+        
+        font-size: 14px;
+        letter-spacing: 1.6px;
+        word-spacing: 1px;
+        font-style: normal;
+        font-variant: normal;
+        text-transform: uppercase;
+        font-weight: 600;
+        
+        a {
+            color: white;
+            text-decoration: none!important;
+        }
     }
     
 }
