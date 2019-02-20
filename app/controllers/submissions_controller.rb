@@ -138,6 +138,73 @@ class SubmissionsController < ApplicationController
                 flash[:error] = @approve.errors.full_messages
                 redirect_to @approve
             end
+        elsif status == 'apr'
+            @approve.status = 'April'
+            @approve.approved = true
+       
+            if @approve.save
+                flash[:success] = "#{@approve.title} has been approved for March"
+                redirect_to @approve
+            else
+                flash[:error] = @approve.errors.full_messages
+                redirect_to @approve
+            end
+        elsif status == 'may'
+            @approve.status = 'May'
+            @approve.approved = true
+       
+            if @approve.save
+                flash[:success] = "#{@approve.title} has been approved for March"
+                redirect_to @approve
+            else
+                flash[:error] = @approve.errors.full_messages
+                redirect_to @approve
+            end
+        elsif status == 'jun'
+            @approve.status = 'June'
+            @approve.approved = true
+       
+            if @approve.save
+                flash[:success] = "#{@approve.title} has been approved for March"
+                redirect_to @approve
+            else
+                flash[:error] = @approve.errors.full_messages
+                redirect_to @approve
+            end
+        elsif status == 'jul'
+            @approve.status = 'July'
+            @approve.approved = true
+       
+            if @approve.save
+                flash[:success] = "#{@approve.title} has been approved for March"
+                redirect_to @approve
+            else
+                flash[:error] = @approve.errors.full_messages
+                redirect_to @approve
+            end
+        elsif status == 'aug'
+            @approve.status = 'August'
+            @approve.approved = true
+       
+            if @approve.save
+                flash[:success] = "#{@approve.title} has been approved for March"
+                redirect_to @approve
+            else
+                flash[:error] = @approve.errors.full_messages
+                redirect_to @approve
+            end
+        elsif status == 'sep'
+            @approve.status = 'September'
+            @approve.approved = true
+       
+            if @approve.save
+                flash[:success] = "#{@approve.title} has been approved for March"
+                redirect_to @approve
+            else
+                flash[:error] = @approve.errors.full_messages
+                redirect_to @approve
+            end
+
         elsif status == 'reject'
             @approve.status = 'Rejected'
             @approve.approved = false
