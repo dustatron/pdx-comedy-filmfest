@@ -53,6 +53,16 @@
                        <%= submission.user.name %>
                    </div>
                </div>
+               
+                <div class="row ">
+                   <div class="col-xs-6 text-right top-bump">
+                       <strong>Email :</strong>  
+                   </div>
+                   <div class="col-xs-6 text-left top-bump">
+                       <%= submission.user.email %>
+                   </div>
+               </div>
+              
                <!--RUNTIME-->
                <div class="row">
                    <div class="col-xs-6 text-right">
@@ -122,6 +132,28 @@
                    <div class="col-xs-6 text-left">
                         <%= submission.status %>  
                        
+                   </div>
+                </div>
+                <%end%>
+                
+                <% if submission.winning_month %>
+                <div class="row submission--bg-highlight">
+                   <div class="col-xs-6 text-right">
+                       <strong>Placed: </strong> 
+                   </div>
+                   <div class="col-xs-6 text-left">
+                        <%= submission.winning_place %>  in  <%= submission.winning_month %> 
+                   </div>
+                </div>
+                <%end%>
+                
+                <% if submission.best_of_month %>
+                <div class="row submission--bg-highlight">
+                   <div class="col-xs-6 text-right">
+                       <strong>Best of Award: </strong> 
+                   </div>
+                   <div class="col-xs-6 text-left">
+                        <%= submission.best_of_award  %> award for  <%= submission.best_of_month %> 
                    </div>
                 </div>
                 <%end%>
