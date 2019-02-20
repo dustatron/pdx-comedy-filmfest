@@ -29,6 +29,18 @@
                  </div> 
             </div>
             
+            <% if current_user.admin? %>
+            <!--EMAIL-->
+            <div class="row">
+                <div class="col-xs-4 text-right simple-label">
+                    Email :
+                </div>
+                 <div class="col-xs-8 text-left simple-label">
+                     <%= mail_to @user.email %> 
+                 </div> 
+            </div>                
+            <%end%>
+            
             <!--RUN TIME-->
             <div class="row">
                 <div class="col-xs-4 text-right simple-label">
@@ -48,6 +60,18 @@
                     <a href= "<%= @submission.link %>" target = "blank"><%= @submission.title %> </a>  
                 </div>
             </div>
+            
+            <% if current_user.admin? %>
+            <!--LINK-->
+            <div class="row">
+                <div class="col-xs-4 text-right simple-label">
+                    Password: 
+                </div>
+                <div class="col-xs-8 text-left simple-label">
+                    <%= @submission.password %> 
+                </div>
+            </div>            
+            <%end%>
             
             
             <!--Re-Play True-->
