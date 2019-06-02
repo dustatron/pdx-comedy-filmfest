@@ -12,13 +12,6 @@
 
 ActiveRecord::Schema.define(version: 2019_02_10_050638) do
 
-  create_table "infos", force: :cascade do |t|
-    t.string "page"
-    t.text "body"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "microposts", force: :cascade do |t|
     t.text "content"
     t.integer "user_id"
@@ -51,17 +44,6 @@ ActiveRecord::Schema.define(version: 2019_02_10_050638) do
     t.string "best_of_month"
     t.string "best_of_award"
     t.index ["user_id"], name: "index_submissions_on_user_id"
-  end
-
-  create_table "sumbissions", force: :cascade do |t|
-    t.string "title"
-    t.string "length"
-    t.string "link"
-    t.string "contact"
-    t.text "description"
-    t.boolean "reuse", default: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
