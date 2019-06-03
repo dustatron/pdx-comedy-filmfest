@@ -25,3 +25,17 @@
     border-bottom: 2px solid grey;
   }
   
+.alert{
+  &--box {
+    margin: auto;
+    border: 0.5rem $color-red solid;
+    background-color: $color-light-red;
+    border-radius: 15px;
+    width: 60%;
+  }
+  &--message {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: bolder;
+  }
+}

@@ -3,6 +3,11 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+//abstracts
+@import "abstracts/functions";
+@import "abstracts/mixins";
+@import "abstracts/variables";
+
 
 //pages
 @import "pages/home";
@@ -34,7 +39,4 @@
 @import "base/typography";
 @import "base/utilities";
 
-//abstracts
-@import "abstracts/functions";
-@import "abstracts/mixins";
-@import "abstracts/variables";
+

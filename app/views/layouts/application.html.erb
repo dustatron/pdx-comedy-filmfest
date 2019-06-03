@@ -26,7 +26,10 @@
       <div class="col-md-12 ">
       
           <% flash.each do |message_type, message| %>
-            <%= content_tag(:div, message, class: "home--top alert alert-#{message_type}") %>
+            <div class="alert--box">
+              <%= content_tag(:div, message, class: "home--top alert--message alert-#{message_type}") %> 
+            </div>
+            
           <% end %>
           
           <%= yield %>
