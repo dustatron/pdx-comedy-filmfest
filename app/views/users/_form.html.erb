@@ -1,18 +1,23 @@
-<%= form_for(@user) do |f| %>
-  <%= render 'shared/error_messages', object: f.object %>
+<div class="col-md-12 col-md-offset-0 home--login-top">
+  <spam class="home--login-top--label text-center"><i class="fas fa-user"></i> Create A New Account</spam>
+</div>
+<div class="col-md-12 col-md-offset-0 home--login">
+  <%= form_for(@user) do |f| %>
+    <%= render 'shared/error_messages', object: f.object %>
 
-  <%= f.label :name %>
-  <%= f.text_field :name, class: 'form-control' %>
+    <%= f.label :name %>
+    <%= f.text_field :name, class: 'form-control' %>
 
-  <%= f.label :email %>
-  <%= f.email_field :email, class: 'form-control' %>
+    <%= f.label :email %>
+    <%= f.email_field :email, class: 'form-control' %>
 
-  <%= f.label :password %>
-  <%= f.password_field :password, class: 'form-control' %>
+    <%= f.label :password %>
+    <%= f.password_field :password, class: 'form-control' %>
 
-  <%= f.label :password_confirmation %>
-  <%= f.password_field :password_confirmation, class: 'form-control' %>
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation, class: 'form-control' %>
 
-  <%= f.submit "Submit", class: "btn btn-primary btn-lg btn-block" %>
-  <p>Have an Account <%= link_to "Login now!", login_path %></p>
-<% end %>
+    <%= f.submit "Submit", class: "btn btn-primary btn-lg btn-block" %>
+    <div class="text-center">Already Have an Account?  <%= link_to "Login now!", login_path %></div>
+  <% end %>
+</div>
