@@ -19,7 +19,7 @@ body{
   background: linear-gradient(to bottom, rgba(107,107,107,1) 0%,rgba(76,76,76,1) 37%,rgba(40,52,59,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6b6b6b', endColorstr='#28343b',GradientType=0 ); /* IE6-9 */
   background-repeat:no-repeat;
-  color: white;
+  color: $gray-medium-light;
   height: 100%;
   background-attachment: fixed;
   font-size: 16px;

@@ -1,6 +1,5 @@
 
-
-<div class="row">
+<div class="row home--top">
   <div class="col-md-4">
     <%= gravatar_for @user %>
     <h3>
@@ -29,11 +28,13 @@
         
       </div>
     <% else %>
+    
       <h3 class= "text-center">Submissions</h3>
       <div class="well text-center">
         <h4> You Have No Submissions Yet </h4>
 
-      </div>  
+      </div> 
+
     <% end %>
 </div>
 
