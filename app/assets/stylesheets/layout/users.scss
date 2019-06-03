@@ -2,6 +2,15 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .user{
+
+    list-style: none;
+    margin: 0;
+    li {
+      overflow: auto;
+      padding: 10px 0;
+      border-bottom: 1px solid $gray-lighter;
+    }
+
     &--list-items{
         font-size: 14px;
         letter-spacing: 0.4px;

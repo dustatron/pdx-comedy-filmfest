@@ -1,0 +1,16 @@
+.award {
+    &--title {
+        background-color:black;
+        color: white;
+        margin: 32px 14px 0px 14px;
+        padding: 10px 10px;
+        
+        font-size: 20px;
+        letter-spacing: 1.6px;
+        word-spacing: 1px;
+        font-style: normal;
+        font-variant: normal;
+        text-transform: uppercase;
+        font-weight: 600;
+    }
+}

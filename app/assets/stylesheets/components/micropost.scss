@@ -1,0 +1,82 @@
+
+.microposts {
+    list-style: none;
+    padding: 0;
+    li {
+      padding: 10px 0;
+      border-top: 1px solid #e8e8e8;
+    }
+    .user {
+      margin-top: 5em;
+      padding-top: 0;
+    }
+    .content {
+      display: block;
+      margin-left: 60px;
+      img {
+        display: block;
+        padding: 5px 0;
+      }
+    }
+    .timestamp {
+      color: $gray-light;
+      display: block;
+      margin-left: 60px;
+    }
+    .gravatar {
+      float: left;
+      margin-right: 10px;
+      margin-top: 5px;
+    }
+  }
+
+  aside {
+    textarea {
+      height: 100px;
+  ft {
+    margin-left: 20px;
+  }
+  
+  .pad-top {
+    margin-top: 30px;
+  }
+  
+  .simple-label {
+    font-weight: bold;
+  }
+  
+  .logo {
+    width: 90px;
+    height: auto;
+  }
+  
+  @media only screen and (max-device-width: 800px), only screen and (device-width: 1024px) and (device-height: 600px), only screen and (width: 1280px) and (orientation: landscape), only screen and (device-width: 800px), only screen and (max-width: 767px) {
+    .pad-small { padding-left: 10px; }
+    .pad-top {padding-top: 30px;}
+  }
+  
+  .portland {
+    font-weight:bold;
+    text-transform:uppercase;
+    letter-spacing:0pt;
+    word-spacing:0pt;
+    font-size:26px;
+    text-align:left;
+    font-family:lucida sans unicode, lucida grande, sans-serif;
+    display: block;
+    line-height: 1;
+    padding-bottom: 0;
+    margin-bottom: 0;
+  
+  }
+  
+  .face {
+    height: auto;
+    width: 100%;
+  }
+  
+  .top-bump {
+     margin-top: 10px;
+  }
+  }
+}

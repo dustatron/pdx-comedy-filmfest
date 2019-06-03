@@ -1,0 +1,28 @@
+
+input, textarea, select, .uneditable-input {
+    color: black;
+    border: 1px solid #bbb;
+    // hwidth: 100%;
+    margin-bottom: 15px;
+    // @include box_sizing;
+  }
+  
+  input {
+    height: auto !important;
+  }
+  
+  #error_explanation {
+    color: red;
+    ul {
+      color: red;
+      margin: 0 0 30px 0;
+    }
+  }
+  
+  .field_with_errors {
+    @extend .has-error;
+    .form-control {
+      color: $state-danger-text;
+    }
+  }
+  

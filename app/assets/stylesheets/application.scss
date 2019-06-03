@@ -1,41 +1,40 @@
 // "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
 
-
 @import "bootstrap-sprockets";
 @import "bootstrap";
-@import "custom";
-@import "users";
-@import "admin";
-@import "submissions";
-@import "player";
-@import "home";
-@import "navbar";
-
-$gray-medium-light: #eaeaea;
-
-@mixin box_sizing {
-  margin-topUs: 120px;
-  -moz-box-sizing:    border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing:         border-box;
-}
 
 
-.debug_dump {
-  clear: both;
-  float: left;
-  width: 100%;
-  margin-top: 45px;
-  @include box_sizing;
-}
+//pages
+@import "pages/home";
+@import "pages/password_resets.scss";
+@import "pages/sessions.scss";
+@import "pages/static_pages.scss";
+@import "pages/submissions.scss";
 
-a {
-  text-decoration: none;
-  color:white;
-  
-  &:hover {
-    text-decoration: none;
-  }
-  
-}
+//layout
+@import "layout/admin";
+@import "layout/custom";
+@import "layout/microposts";
+@import "layout/users";
 
+//components
+@import "components/account_activations.scss";
+@import "components/navbar.scss";
+@import "components/player.scss";
+@import "components/video.scss";
+@import "components/award.scss";
+@import "components/micropost.scss";
+@import "components/sidebar.scss";
+@import "components/jumbotron.scss";
+@import "components/portrait.scss";
+
+//base
+@import "base/animations";
+@import "base/base";
+@import "base/typography";
+@import "base/utilities";
+
+//abstracts
+@import "abstracts/functions";
+@import "abstracts/mixins";
+@import "abstracts/variables";
