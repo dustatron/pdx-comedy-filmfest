@@ -8,19 +8,11 @@
 @import "abstracts/mixins";
 @import "abstracts/variables";
 
-
-//pages
-@import "pages/home";
-@import "pages/password_resets.scss";
-@import "pages/sessions.scss";
-@import "pages/static_pages.scss";
-@import "pages/submissions.scss";
-
-//layout
-@import "layout/admin";
-@import "layout/custom";
-@import "layout/microposts";
-@import "layout/users";
+//base
+@import "base/animations";
+@import "base/base";
+@import "base/typography";
+@import "base/utilities";
 
 //components
 @import "components/account_activations.scss";
@@ -33,10 +25,17 @@
 @import "components/jumbotron.scss";
 @import "components/portrait.scss";
 
-//base
-@import "base/animations";
-@import "base/base";
-@import "base/typography";
-@import "base/utilities";
+
+//layout
+@import "layout/admin";
+@import "layout/custom";
+@import "layout/microposts";
+@import "layout/users";
 
 
+//pages
+@import "pages/home";
+@import "pages/password_resets";
+@import "pages/sessions";
+@import "pages/static_pages";
+@import "pages/submissions";

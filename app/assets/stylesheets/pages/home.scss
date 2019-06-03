@@ -44,6 +44,7 @@
         
         &:hover {
             color: grey;
+            text-decoration: none!important;
         }
 
 
@@ -96,24 +97,26 @@
         
         &:hover {
             color: grey;
+            text-decoration: none!important;
         }
     }
     
     &--top-tickets {
-        &a {
-            color:white;
-            text-decoration: none;
+        a {
+            color: $gray-medium-light;
+            text-decoration: none!important;
+         
         }
-
         &:hover {
-            color:grey;
-            text-decoration: none;
+            color: $color-grey-dark;
+            text-decoration: none!important;
         }
         &:active {
-            color:white;
+            color: $gray-medium-light;
+            text-decoration: none;
         }
         
-        background-color: blue;
+        background-color: white;
         display: block;
         max-width: 350px;
         
