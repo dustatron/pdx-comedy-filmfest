@@ -205,6 +205,54 @@ class SubmissionsController < ApplicationController
                 redirect_to @approve
             end
 
+        elsif status == 'oct2019'
+            @approve.status = 'October 2019'
+            @approve.approved = true
+       
+            if @approve.save
+                flash[:success] = "#{@approve.title} has been approved for March"
+                redirect_to @approve
+            else
+                flash[:error] = @approve.errors.full_messages
+                redirect_to @approve
+            end
+
+        elsif status == 'nov2019'
+            @approve.status = 'November 2019'
+            @approve.approved = true
+       
+            if @approve.save
+                flash[:success] = "#{@approve.title} has been approved for March"
+                redirect_to @approve
+            else
+                flash[:error] = @approve.errors.full_messages
+                redirect_to @approve
+            end
+
+        elsif status == 'Dec2019'
+            @approve.status = 'December 2019'
+            @approve.approved = true
+       
+            if @approve.save
+                flash[:success] = "#{@approve.title} has been approved for March"
+                redirect_to @approve
+            else
+                flash[:error] = @approve.errors.full_messages
+                redirect_to @approve
+            end
+
+        elsif status == 'Jan2020'
+            @approve.status = 'January 2020'
+            @approve.approved = true
+       
+            if @approve.save
+                flash[:success] = "#{@approve.title} has been approved for March"
+                redirect_to @approve
+            else
+                flash[:error] = @approve.errors.full_messages
+                redirect_to @approve
+            end
+
         elsif status == 'reject'
             @approve.status = 'Rejected'
             @approve.approved = false
@@ -216,6 +264,7 @@ class SubmissionsController < ApplicationController
                 flash[:error] = @approve.errors.full_messages
                 redirect_to @approve
             end
+
         elsif status == 'archive'
             @approve.status = 'Archive'
             @approve.approved = true
