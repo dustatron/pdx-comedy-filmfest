@@ -1,1 +1,94 @@
-//all the code was moved to video.
+.player{ 
+    background-color: $color-grey-dark-3;
+    padding: 2rem 3rem 2rem 2rem;
+    margin-bottom: 3rem;
+    border-radius: 5px;
+  
+    
+
+    &--title {
+          a {
+              color: $gray-medium-light;
+              text-decoration: none!important;
+          }
+          
+      font-size: 20px;
+      letter-spacing: 2.6px;
+      word-spacing: 2px;
+      font-style: normal;
+      font-variant: normal;
+      text-transform: uppercase;
+      font-weight: 400;
+      color: black;
+      background-color: $color-black;
+      
+      padding: 0 15px;
+      // margin-bottom: 5px;
+    }
+
+    &--buttons {
+        margin-bottom: 2rem;
+    }
+    
+    &--video {
+        margin: 0;
+        padding: 0;
+    }
+    &--details-title {
+      color: $gray-medium-light;
+      font-weight: 600;
+    }
+
+    &--right {
+        overflow: hidden;
+     
+    }
+
+    &--clip{
+        overflow: hidden;
+        
+    }
+  
+    &--details {
+      color: $gray-medium-light;
+    }
+    &--place {
+      font-size: 18px;
+      letter-spacing: 2.6px;
+      word-spacing: 2px;
+      font-style: normal;
+      font-variant: normal;
+      font-weight: 400;
+      text-transform: uppercase;
+      color: $gray-medium-light;
+      background-color: $color-black;
+      padding: 0 15px;
+      margin-bottom: 5px;
+    }
+
+    &--info-title{
+        font-weight: 400;
+        text-transform: capitalize;
+        text-align: right;
+    }
+
+    &--info-data{
+        font-weight: 300;
+
+    }
+
+    &--info-status{
+        background-color: $color-secondary-dark;
+        
+    }
+
+    &--info-description-title {
+       margin-top: 3rem;
+       background-color: $color-grey-dark;
+    }
+
+    &--info-description-full {
+       background-color: $color-grey-dark-2;
+       height: 12rem;
+    }
+  }
