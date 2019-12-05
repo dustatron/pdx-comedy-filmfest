@@ -1,101 +1,149 @@
-<div class="row">
+<div class="row submit-edit">
   <div class="col-md-8 col-md-offset-2">
     
     <%= form_for(@submission) do |f| %>
-    
-      <% if current_user.admin? %>
-      <div class="well">
-
-          <h3 class="text-center">Admin Board</h3>
-  
-          <%= f.label :contact, "Contact notes" %>
-          <%= f.text_field :contact, class: 'form-control', placeholder: "Any needed notes about person or submission" %>
-        
-          <%= f.label :status, "Status" %> <br>
-          <%= f.select :status, ['Being Reviewed', 'October','November','December','January','February','March', 'April','May', 'June', 'July', 'August', 'September', 'Rejected','Archive'], class: 'form-control' %>  <br>
-          
-          <%= f.label :reason %>
-          <%= f.text_field :reason, class: 'form-control' %>
-          
-          <%= f.label :contact, "Archived" %>
-          <%= f.select :archive, ['true', 'false' ]  %> <br>
-          
-          <hr>
-           <h3 class="text-center">Monthly Winner</h3>
-          
-          <%= f.label :winning_month, "Winning Month" %>
-          <%= f.select :winning_month, ['none','October','November','December','January','February','March','April','May', 'June', 'July', 'August', 'September'], class: 'form-control' %> <br>
-          
-          <%= f.label :winning_place, "Winning Place" %>
-          <%= f.select :winning_place,['none','1st','2nd','3rd'], class: 'form-control' %><br>
-          
-          <hr>
-          <h3 class="text-center">Best of Score</h3>
-          <%= f.label :best_of_month, "Best of Month" %>
-          <%= f.select :best_of_month, ['none','March','September'], class: 'form-control', placeholder: "best way to get in touch" %> <br>
-          
-          <%= f.label :best_of_award, "Best of Award" %>
-          <%= f.text_field :best_of_award, class: 'form-control', placeholder: "best way to get in touch" %>
-        </div>
-        
-      <%end%>
-    
       <%= render 'shared/error_messages', object: f.object %>
-    
-      <%= f.label :title, "Title" %>
-      <%= f.text_field :title, class: 'form-control' %>
-    
-      <%= f.label :length, "Runtime in minutes" %>
-      <%= f.select :length, ['1','2','3','4','5','6', '7','8','9','10'], class: 'form-control' %>  <span class="pad-left">Round up.</span> <br>
-      
-      <%= f.label :Link, 'Vimeo or Youtube Link' %>
-      <%= f.text_field :link, class: 'form-control' %>
-      
-      <%= f.label :password, 'Vimeo Password' %>
-      <%= f.text_field :password, class: 'form-control' %>
-    
-      <%= f.label :description, "Brief Synopsis" %>
-      <%= f.text_area :description, class: 'form-control', rows: '4', placeholder: "Tell us about your film in to lines." %>
-      
-      <%= f.label :preferred_month, "Preferred Month " %>
-      <%= f.select :preferred_month, ['Any Month', 'October','November','December','January','February','March'], class: 'form-control' %>  
-      
-      
 
-      
-      
+      <% if current_user.admin? %>
+        <div class="submit-edit--admin">
+          <div class="row">
+            <div class="submit-edit--title-bar">
+                <h3 class="submit-edit--title">Admin Board</h3>
+            </div>
+
+            <div class="col-sm-3 ">
+              <%= f.label :contact, "Contact Notes" %>
+            </div>
+            <div class="col-sm-9 submit-edit--input" >
+              <%= f.text_field :contact, class: '', placeholder: "Any needed notes about person or submission" %>
+            </div>
+
+            <div class="col-sm-3 ">
+              <%= f.label :status, "Status" %> 
+            </div>
+            <div class="col-sm-9">
+              <%= f.select :status, ['Being Reviewed', 'October','November','December','January','February','March', 'April','May', 'June', 'July', 'August', 'September', 'Oct2019', 'Nov2019', 'Dec2019'], class: 'submit-edit--form-text' %>  
+            </div>
+              
+            <div class="col-sm-3 ">
+              <%= f.label :reason %>
+            </div>
+            <div class="col-sm-9">
+              <%= f.text_field :reason, class: '' %>
+            </div>
+              
+            <div class="col-sm-3 ">
+              <%= f.label :contact, "Archived" %>
+            </div>
+            <div class="col-sm-9">
+              <%= f.select :archive, ['true', 'false' ]  %>
+            </div>
+          
+            <div class="col-sm-3  submit-edit--winner">
+              <%= f.label :winning_month, "Winning Month" %>
+            </div>
+            <div class="col-sm-9">
+              <%= f.select :winning_month, ['none','October','November','December','January','February','March','April','May', 'June', 'July', 'August', 'September', 'Oct2019', 'Nov2019', 'Dec2019'], class: '' %>
+            </div>
+          
+            <div class="col-sm-3  submit-edit--winner">
+              <%= f.label :winning_place, "Winning Place" %>
+            </div>
+            <div class="col-sm-9">
+              <%= f.select :winning_place,['none','1st','2nd','3rd'], class: '' %>
+            </div>
+              
+            <div class="col-sm-3  submit-edit--best">
+              <%= f.label :best_of_month, "Best of Month" %>
+            </div>
+            <div class="col-sm-9">
+              <%= f.select :best_of_month, ['none','March','September'], class: '', placeholder: "best way to get in touch" %>
+            </div>
+
+            <div class="col-sm-3  submit-edit--best">
+              <%= f.label :best_of_award, "Best of Award" %>
+            </div>
+            <div class="col-sm-9">
+              <%= f.text_field :best_of_award, class: '', placeholder: "best way to get in touch" %>
+            </div>
+          </div>
+        </div>
+   
+      <%end%>
       
       <div class="row">
-        <div class="col-md-1">
-          <%= f.check_box :reuse, class: 'text-right form-check-input'%> 
-        </div>
-        <div class="col-md-6">
-          <%= f.label :reuse, "Allow Curious Comedy to replay film at other events.", class: 'text-left' %>
-        </div>
-        
+      <div class="col-sm-3 ">
+        <%= f.label :title, "Title" %>
       </div>
-      <br>
-      <div class="row">
-        <div class="col-md-1">
-          <%= f.check_box :has_rights, class: 'text-right form-check-input'%> 
+      <div class="col-sm-9">
+        <%= f.text_field :title, class: '' %>
+      </div>
+    
+      <div class="col-sm-3 ">
+        <%= f.label :length, "Runtime" %>
+      </div>
+      <div class="col-sm-9">
+        <%= f.select :length, ['1','2','3','4','5','6', '7','8','9','10'] %>  
+      </div>
+
+      <div class="col-sm-3 ">
+        <%= f.label :Link, 'Link' %>
+      </div>
+      <div class="col-sm-9">
+        <%= f.text_field :link %>
+      </div>
+
+      <div class="col-sm-3 ">
+        <%= f.label :password, 'Password' %>
+      </div>
+      <div class="col-sm-9">
+        <%= f.text_field :password, class: '' %>
+      </div>
+
+      <div class="col-sm-3">
+        <%= f.label :description, "Brief Synopsis" %>
+      </div>
+      <div class="col-sm-9 ">
+        <%= f.text_area :description, class: '', rows: '4', placeholder: "Tell us about your film in to lines." %>
+      </div>
+
+      <div class="col-sm-3">
+        <%= f.label :preferred_month, "Preferred Month " %>
+      </div>
+      <div class="col-sm-9">
+        <%= f.select :preferred_month, ['Any Month', 'October','November','December','January','February','March'], class: '' %>  
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-xs-2 text-right">
+        <%= f.check_box :reuse %> 
+      </div>
+      <div class="col-xs-10">
+        <%= f.label :reuse, "Allow Curious Comedy to replay film at other events.", class: 'text-left' %>
+      </div>
+        
+    </div>
+      
+    <div class="row">
+      <div class="col-xs-2 text-right">
+          <%= f.check_box :has_rights, class: ''%> 
         </div>
-        <div class="col-md-6">
+        <div class="col-xs-10">
           <%= f.label :has_rights, "You have all necessary right to play this video at Curious Comedy Theater.", class: 'text-left' %>
         </div>
-        
       </div>
-      <br></br>
-      <div class="col-md-8 col-md-offset-2">
-        <%= f.submit "Update", class: "btn btn-primary btn-lg btn-block" %>
+
+      <div class="col-sm-4 text-center top-spacer-md">
+        <%= link_to "Delete Submission", @submission, method: :delete, data: { confirm: "You sure?" }, class: 'btn btn-lg btn-danger top-bump' %>
       </div>
-      
-    
-        <div class="col-md-8 col-md-offset-2 top-bump">
-            <%= link_to "Delete Submission", @submission, method: :delete, data: { confirm: "You sure?" }, class: 'btn btn-danger btn-block top-bump' %>
-        </div>
+      <div class="col-sm-4 col-sm-offset-4 text-center top-spacer-md">
+        <%= f.submit "Update", class: "btn btn-primary btn-lg" %>
+      </div>
     </div> 
-    <% end %>
+  </div>
+  <% end %>
     
 
   </div>
-</div>
+

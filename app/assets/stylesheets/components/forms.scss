@@ -1,10 +1,10 @@
 
 input, textarea, select, .uneditable-input {
-    color: black;
-    border: 1px solid #bbb;
-    // hwidth: 100%;
+    color: $color-black;
+    background-color: $gray-medium-light;
     margin-bottom: 15px;
-    // @include box_sizing;
+    width: 85%;
+ 
   }
   
   input {
@@ -22,7 +22,7 @@ input, textarea, select, .uneditable-input {
   .field_with_errors {
     @extend .has-error;
     .form-control {
-      color: $state-danger-text;
+      color: $color-light-red;
     }
   }
   

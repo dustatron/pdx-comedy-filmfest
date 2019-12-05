@@ -1,0 +1,42 @@
+.submit-edit{
+    &--form-text{
+        color: black;
+        
+    }
+    &--admin{
+        color: $color-grey-light-2;
+        background-color: $color-grey-dark-3;
+        display: block;
+        padding: 7rem 2rem 2rem 2rem;
+        margin-bottom: 3rem;
+        border-radius: 5px;
+        position: relative;
+    
+    }
+
+    &--title-bar {
+        // background-color: $color-tertiary-light;
+        color: $gray-medium-light;
+        text-align: center;
+        height: 6rem;
+        width: 50%;
+        position: absolute;
+        top: 0;
+        left: 25%;
+        border-radius: 0 0 5px 5px;
+    }
+
+    &--input{
+        
+    }
+
+    &--winner{
+        background-color: $color-secondary-light;
+        color: $color-grey-dark-3;
+    }
+
+    &--best{
+        background-color: $color-secondary-dark;
+        color: $color-grey-dark-3;
+    }
+}
