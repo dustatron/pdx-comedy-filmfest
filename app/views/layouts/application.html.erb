@@ -14,30 +14,38 @@
   </head>
 
   <body>
-    <%= render 'shared/navbar' %>
-      </div>
+    <nav>
+      <%= render 'shared/navbar' %>
     </nav>
-    <body>
-      <% if logged_in? && current_user.admin? %>
-        <%= render '/shared/admin_view'%>
-      <% end %>
-    <!--BODY-->
-    <div class="container pad-top">
-      <div class="col-md-12 ">
-      
-          <% flash.each do |message_type, message| %>
-            <div class="alert--box">
-              <%= content_tag(:div, message, class: "home--top alert--message alert-#{message_type}") %> 
-            </div>
-            
-          <% end %>
-          
-          <%= yield %>
-          
-          </br>
-          <%= debug(params) if Rails.env.development? %>
-       
-      </div>
+    <% if logged_in? && current_user.admin? %>
+    <div class="col-md-2">
+      <%= render '/shared/admin_view'%>
     </div>
+    <% end %>
+    <div class="col-md-10
+    <% if !logged_in? || !current_user.admin? %>
+      col-md-offset-1
+    <% end %>
+    ">
+    <main>
+    
+        <div class="col-md-12 ">
+        
+            <% flash.each do |message_type, message| %>
+              <div class="alert--box">
+                <%= content_tag(:div, message, class: "home--top alert--message alert-#{message_type}") %> 
+              </div>
+              
+            <% end %>
+            
+            <%= yield %>
+            
+            </br>
+            <%= debug(params) if Rails.env.development? %>
+        
+        </div>
+      </div>
+     </main>
+     </div> 
   </body>
 </html>

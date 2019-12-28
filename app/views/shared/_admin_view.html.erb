@@ -1,25 +1,30 @@
-
-<div class="row admin">
+<div class="admin-bar">
     <!--ALL USERS-->
-    <div class="col-sm-2 col-sm-offset-2 top-bump">
-      <%= link_to "Users", users_path, class: "btn btn-primary btn-block" %>  
+    <div class="col-sm-12 admin-bar--element">
+      <%= link_to "Users", users_path, class: "admin-bar--btn" %>  
     </div>
     
     <!--NEW SUBMISSIONS-->
-    <div class="col-sm-2 top-bump">
-        <p> <%= link_to "New Submissions", submissions_path, class: "btn btn-danger btn-block" %></p>
+    <div class="col-sm-12 admin-bar--element">
+        <%= link_to "New Submissions", submissions_path, class: "admin-bar--btn" %>
     </div>
     
     <!--All Submissions-->
-    <div class="col-sm-2 top-bump">
-        <p> <%= link_to "All Submissions", static_pages_all_path, class: "btn btn-warning btn-block" %></p>
+    <div class="col-sm-12 admin-bar--element">
+        <%= link_to "All Submissions", static_pages_all_path, class: "admin-bar--btn" %>
     </div>
-    
+  
+
+    <!--DATES AND LINKS-->
+    <div class="col-sm-12 admin-bar--element">
+        <a href="#" class="admin-bar--btn"> Home Page Links </a> 
+    </div>
+
     <!--APPROVED SUBMISSION-->
-    <div class="col-sm-2 top-bump">
+    <div class="col-sm-12 admin-bar--element">
        
             <div class="dropdown">
-                <button class="btn btn-success btn-block dropdown-toggle" type="button" data-toggle="dropdown">Approved
+                <button class="admin-bar--btn dropdown-toggle" type="button" data-toggle="dropdown">APPROVED MONTH
                   <span class="caret"></span></button>
                   <ul class="dropdown-menu">
                     <li><%= link_to "01 October", static_pages_approved_month_path(:month => 'October') %></li>
@@ -43,6 +48,8 @@
                   </ul>
             </div> 
     </div>
-       
+    
 </div>
+       
+
     

@@ -19,8 +19,11 @@
       font-variant: normal;
       text-transform: uppercase;
       font-weight: 400;
-      color: black;
+    //   color: black;
       background-color: $color-black;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
       
       padding: 0 15px;
       // margin-bottom: 5px;
