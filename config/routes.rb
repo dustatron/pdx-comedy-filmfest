@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   root :to => 'static_pages#home'
   # get 'password_resets/new'
   # get 'password_resets/edit'
@@ -26,6 +27,11 @@ Rails.application.routes.draw do
   get 'static_pages/approved_month', to: 'submissions#approved_month'
   get 'static_pages/archive', to: 'submissions#archive'
   get 'static_pages/all', to: 'submissions#get_all'
+
+  # get 'events/new', to: 'events#new', as: :events_new_path
+  # get 'events/show'
+  # get 'events/edit', to: 'events#edit', as: :events_edit_path
+
    
   
   get    '/login',   to: 'sessions#new'
@@ -36,6 +42,7 @@ Rails.application.routes.draw do
   resources :account_activations, only: [:edit]
   resources :password_resets,     only: [:new, :create, :edit, :update]
   resources :microposts,          only: [:create, :destroy]
+  resources :events
   
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

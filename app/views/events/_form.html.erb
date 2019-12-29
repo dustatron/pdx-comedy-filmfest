@@ -1,0 +1,38 @@
+<div class="col-md-12 col-md-offset-0 home--login-top">
+  <spam class="home--login-top--label text-center"><i class="fa fa-calendar"></i> Update Event Links</spam>
+</div>
+<div class="col-md-12 col-md-offset-0 home--login">
+  <%= form_for(@event) do |f| %>
+    <%= render 'shared/error_messages', object: f.object %>
+
+    <div class="col-sm-3 ">
+        <%= f.label :eventdate, "Next Event Date" %>
+    </div>
+    <div class="col-sm-9 submit-edit--input" >
+        <%= f.text_field :eventdate, class: '', placeholder: "When is the showing?" %>
+    </div>
+
+    <div class="col-sm-3 ">
+        <%= f.label :deadline, "Event Deadline" %>
+    </div>
+    <div class="col-sm-9 submit-edit--input" >
+        <%= f.text_field :deadline, class: '', placeholder: "What is the deadline?" %>
+    </div>
+
+    <div class="col-sm-3 ">
+        <%= f.label :facebook, "Facebook Event Link" %>
+    </div>
+    <div class="col-sm-9 submit-edit--input" >
+        <%= f.text_field :facebook, class: '', placeholder: "Link to the Facebook Event page" %>
+    </div>
+
+    <div class="col-sm-3 ">
+        <%= f.label :tickets, "Link to Buy Tickets" %>
+    </div>
+    <div class="col-sm-9 submit-edit--input" >
+        <%= f.text_field :tickets, class: '', placeholder: "Where to buy tickets" %>
+    </div>
+    
+    <%= f.submit "Submit", class: "btn btn-primary btn-lg btn-block" %>
+  <% end %>
+</div>

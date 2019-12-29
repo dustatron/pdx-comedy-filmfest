@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_10_050638) do
+ActiveRecord::Schema.define(version: 2019_12_29_193719) do
+
+  create_table "events", force: :cascade do |t|
+    t.string "eventdate"
+    t.string "deadline"
+    t.string "facebook"
+    t.string "tickets"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "microposts", force: :cascade do |t|
     t.text "content"

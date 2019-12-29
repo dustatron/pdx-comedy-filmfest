@@ -4,6 +4,7 @@ class StaticPagesController < ApplicationController
     @first = Submission.where(winning_place: '1st').last(3)
     @second = Submission.where(winning_place: '2nd').last(3)
     @third = Submission.where(winning_place: '3rd').last(3)
+    @event = Event.first
     
     if logged_in?
       @micropost = current_user.microposts.build

@@ -34,9 +34,9 @@
             <div class="home--top-dates">
 
                 
-                <a href="https://www.facebook.com/events/709152686160358/?active_tab=about" target="_blank" class="home--top-screening"> <i class="far fa-calendar"></i> Next screening : December 18th </a>
-                <a href="/submissions/new" class="home--top-deadline"><i class="fas fa-clock"></i> Submit By : December 16th </a>
-                <a href="https://tkts.to/e/portland-s-funniest-videos" target="_blank" class="home--top-tickets"><i class="fas fa-ticket-alt"></i> Buy Tickets</a>
+                <a href="<%= @event.facebook %>" target="_blank" class="home--top-screening"> <i class="far fa-calendar"></i> Next screening : <%= @event.eventdate %> </a>
+                <a href="/submissions/new" class="home--top-deadline"><i class="fas fa-clock"></i> Submit By : <%= @event.deadline %> </a>
+                <a href="<%= @event.tickets %>" target="_blank" class="home--top-tickets"><i class="fas fa-ticket-alt"></i> Buy Tickets</a>
             </div>
         </section>
         <div class="row">

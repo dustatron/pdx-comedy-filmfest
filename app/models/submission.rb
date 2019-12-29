@@ -11,9 +11,6 @@ class Submission < ApplicationRecord
     def send_new_submission_email
         UserMailer.submission_notification(self).deliver_now
     end
-    
-
- 
 
 end
 
