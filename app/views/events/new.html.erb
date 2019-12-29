@@ -1,6 +1,12 @@
-<div class="col-md-10 home--top"">
-    <div class="row"> <h2>Home Page Event Links<h2></div>
-    <div class="row"> 
-        <%= render 'form' %>
+<% if current_user.admin? %>
+    <div class="col-md-9 home--top"">
+        <div class="row"> <h2>Home Page Event Links<h2></div>
+        <div class="row"> 
+            <%= render 'form' %>
+        </div>
     </div>
-</div>
+<% else %>
+    <div class="col-md-10 home--top"">
+        <h2> You can not view this page </h2>
+    </div>
+<% end %>

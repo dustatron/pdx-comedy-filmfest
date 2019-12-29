@@ -41,4 +41,35 @@
         background-color: $color-secondary-dark;
         color: $color-grey-dark-3;
     }
+
+    &--btn {
+        font-weight: 600;
+        text-transform: uppercase;
+        width: 40%;
+        margin-left: 30%;
+        margin-right: 30%;
+        margin-bottom: 3rem;
+        margin-top: 1rem;
+        padding-top: 1.3rem;
+        padding-bottom: 1.3rem; 
+        background-color: $color-grey-dark-3;
+        color: $color-grey-light-1;
+        border-radius: 5px;
+        transition: all .4s;
+
+        &:hover{
+            color: $color-primary;
+            box-shadow: 0 1rem 2rem rgba($color-black, .4);
+            transform: scale(1.05);
+            cursor: pointer;
+        }
+
+        &:active {
+            outline: none;
+            box-shadow: 0 .5rem 2rem rgba($color-black, .4);
+            transform: scale(1);  
+        }
+
+
+    }
 }
