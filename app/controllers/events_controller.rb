@@ -42,5 +42,5 @@ end
 private
   
 def submit_params
-    params.require(:event).permit(:eventdate, :deadline, :facebook, :ticket)
+    params.require(:event).permit(:eventdate, :deadline, :facebook, :tickets)
 end
