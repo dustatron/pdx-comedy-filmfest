@@ -9,11 +9,6 @@
       <a href="/users" class="admin-bar--btn"> <i class="fas fa-users"></i> All Users </a> 
     </div>
 
-    <!--All Submissions-->
-    <div class="col-sm-12 admin-bar--element">
-    <%= link_to "@ All Submissions", static_pages_all_path, class: "admin-bar--btn" %>
-    </div>
-    
     <!--NEW SUBMISSIONS-->
     <div class="col-sm-12 admin-bar--element">
         <%= link_to "# New Submissions", submissions_path, class: "admin-bar--btn" %>
@@ -46,6 +41,11 @@
                     <li><%= link_to "Archive", static_pages_approved_month_path(:month => 'Archive') %></li>
                   </ul>
             </div> 
+    </div>
+
+    <!--All Submissions-->
+    <div class="col-sm-12 admin-bar--element">
+    <%= link_to "@ All Submissions", static_pages_all_path, class: "admin-bar--btn" %>
     </div>
     
 </div>

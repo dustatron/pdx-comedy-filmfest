@@ -5,47 +5,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+
     <meta name="Description" content="A free monthly short film competition that lets the audience decided which film is the funniest. Monthly winners are entered into the best of competition where Portland's Funniest Video is actually picked. ">
     <meta name="Keywords" content="Film, shorts, comedy, film fest, competition, portland, pdx, short film, filmmaking, filmmakers, theater, curious comedy, funny, laugh, screening. ">
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
   </head>
 
   <body>
     <nav>
       <%= render 'shared/navbar' %>
     </nav>
-    <% if logged_in? && current_user.admin? %>
-    <div class="col-md-2">
-      <%= render '/shared/admin_view'%>
-    </div>
-    <% end %>
-    <div class="col-md-10
-    <% if !logged_in? || !current_user.admin? %>
-      col-md-offset-1
-    <% end %>
-    ">
     <main>
-    
-        <div class="col-md-12 ">
-        
-            <% flash.each do |message_type, message| %>
-              <div class="alert--box">
-                <%= content_tag(:div, message, class: "home--top alert--message alert-#{message_type}") %> 
-              </div>
+
+      <div class="container">
+      <%# Alter Message  %>
+      <% flash.each do |message_type, message| %>
+        <div class="alert--box">
+          <%= content_tag(:div, message, class: "home--top alert--message alert-#{message_type}") %> 
+        </div>
+      <% end %>
+
+      <div class="row ">
+        <%# Admin Bar %>
+        <% if logged_in? && current_user.admin? %>
+          <div class="admin-container col-md-2">
+            <%= render '/shared/admin_view'%>
+          </div>
+          <%# Mak col with no offset if Admin  %>
+          <div class = "col-md-10">      
+        <% else %>
+          <%# Make col with offset if not Admin  %>
+          <div class = "col-md-10 col-md-offset-1">      
+        <% end %>
+         <%= yield %>
+        </div>
               
-            <% end %>
-            
-            <%= yield %>
-            
-            </br>
-            <%= debug(params) if Rails.env.development? %>
-        
+        </br>
+        <%= debug(params) if Rails.env.development? %>
+          
         </div>
       </div>
      </main>
-     </div> 
   </body>
 </html>
