@@ -1,46 +1,45 @@
 .admin-container {
-    float: left;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
 }
 
-.admin-bar{
-    margin-top: 10rem;
+.admin-bar {
+  margin-top: 10rem;
 
-    &--element{
-        margin-bottom: .6rem;
+  &--element {
+    margin-bottom: .6rem;
+  }
+
+  &--btn {
+    text-align: center;
+    color: $color-grey-light-1;
+    background-color: $color-grey-dark-3;
+    display: block;
+    padding: 1rem .5rem;
+    transition: all .25s;
+    box-shadow: 0 1rem 3rem rgba($color-black, .1);
+    width: 100%;
+
+    &:link,
+    &:visited {
+      text-decoration: none;
+      text-transform: uppercase;
     }
 
-    &--btn{
-        text-align: center;
-        color: $color-grey-light-1;
-        background-color: $color-grey-dark-3;
-        display: block;
-        padding-top: 1rem;
-        padding-bottom: 1rem;
-        transition: all .25s;
-        box-shadow: 0 1rem 3rem rgba($color-black, .1);
-
-        &:link,
-        &:visited {
-            text-decoration: none;
-            text-transform: uppercase;
-        }
-
-        &:hover{
-            outline: none;
-            color: $color-primary;
-            box-shadow: 0 1rem 2rem rgba($color-black, .4);
-            transform: scale(1.05);
-        }
-
-        &:active {
-            outline: none;
-            box-shadow: 0 .5rem 2rem rgba($color-black, .4);
-            transform: scale(1);  
-        }
-
-        border: 1px solid $color-grey-dark-3;
-
-
-
+    &:hover {
+      outline: none;
+      color: $color-primary;
+      box-shadow: 0 1rem 2rem rgba($color-black, .4);
+      transform: scale(1.05);
     }
+
+    &:active {
+      outline: none;
+      box-shadow: 0 .5rem 2rem rgba($color-black, .4);
+      transform: scale(1);
+    }
+
+    border: 1px solid $color-grey-dark-3;
+  }
 }

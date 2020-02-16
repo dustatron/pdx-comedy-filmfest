@@ -1,50 +1,48 @@
 <div class="admin-bar">
     <!--DATES AND LINKS-->
-    <div class="col-sm-12 admin-bar--element">
+    <div class="admin-bar--element">
         <a href="/events/new" class="admin-bar--btn"> <i class="fas fa-link"></i> Home Page Links </a> 
     </div>
 
     <!--ALL USERS-->
-    <div class="col-sm-12 admin-bar--element">
+    <div class="admin-bar--element">
       <a href="/users" class="admin-bar--btn"> <i class="fas fa-users"></i> All Users </a> 
     </div>
 
     <!--NEW SUBMISSIONS-->
-    <div class="col-sm-12 admin-bar--element">
+    <div class="admin-bar--element">
         <%= link_to "# New Submissions", submissions_path, class: "admin-bar--btn" %>
     </div>
     
     <!--APPROVED SUBMISSION-->
-    <div class="col-sm-12 admin-bar--element">
+    <div class="admin-bar--element">
        
             <div class="dropdown">
-                <button class="admin-bar--btn dropdown-toggle" type="button" data-toggle="dropdown"><i class="fas fa-calendar-day"></i> APPROVED MONTH
+                <button class="admin-bar--btn dropdown-toggle" type="button" data-toggle="dropdown">
+                <i class="fas fa-calendar-day"></i> APPROVED MONTH
                   <span class="caret"></span></button>
                   <ul class="dropdown-menu">
-                    <li><%= link_to "01 October", static_pages_approved_month_path(:month => 'October') %></li>
-                    <li><%= link_to "02 November", static_pages_approved_month_path(:month => 'November') %></li>
-                    <li><%= link_to "03 December", static_pages_approved_month_path(:month => 'December') %></li>
-                    <li><%= link_to "04 January", static_pages_approved_month_path(:month => 'January') %></li>
-                    <li><%= link_to "05 February", static_pages_approved_month_path(:month => 'February') %></li>
-                    <li><%= link_to "06 March" , static_pages_approved_month_path(:month => 'March') %></li>
+                    <li><%= link_to "February 2020", static_pages_approved_month_path(:month => 'February 2020') %></li>
+                    <li><%= link_to "March 2020", static_pages_approved_month_path(:month => 'March 2020') %></li>
+                    <li><%= link_to "April 2020", static_pages_approved_month_path(:month => 'April 2020') %></li>
+                    <li><%= link_to "May 2020", static_pages_approved_month_path(:month => 'May 2020') %></li>
+                    <li><%= link_to "June 2020", static_pages_approved_month_path(:month => 'June 2020') %></li>
+                    <li><%= link_to "July 2020" , static_pages_approved_month_path(:month => 'July 2020"') %></li>
                     <li><%= link_to "07 April", static_pages_approved_month_path(:month => 'April') %></li>
-                    <li><%= link_to "08 May", static_pages_approved_month_path(:month => 'May') %></li>
-                    <li><%= link_to "09 June", static_pages_approved_month_path(:month => 'June') %></li>
-                    <li><%= link_to "10 July", static_pages_approved_month_path(:month => 'July') %></li>
-                    <li><%= link_to "11 August", static_pages_approved_month_path(:month => 'August') %></li>
-                    <li ><%= link_to "12 September", static_pages_approved_month_path(:month => 'September') %></li>
-                    <li ><%= link_to "13 October", static_pages_approved_month_path(:month => 'October 2019') %></li>
-                    <li ><%= link_to "14 November", static_pages_approved_month_path(:month => 'November 2019') %></li>
-                    <li ><%= link_to "15 December", static_pages_approved_month_path(:month => 'December 2019') %></li>
-                    <li ><%= link_to "16 January", static_pages_approved_month_path(:month => 'January 2020') %></li>
+                    <li><%= link_to "August 2020", static_pages_approved_month_path(:month => 'August 2020') %></li>
+                    <li><%= link_to "September 2020", static_pages_approved_month_path(:month => 'September 2020') %></li>
+                    <li><%= link_to "November 2020", static_pages_approved_month_path(:month => 'November 2020') %></li>
+                    <li><%= link_to "December 2020", static_pages_approved_month_path(:month => 'December 2020') %></li>
+                    <li ><%= link_to "January 2021", static_pages_approved_month_path(:month => 'January 2021') %></li>
                     <li><%= link_to "Rejected", static_pages_approved_month_path(:month => 'Rejected') %></li>
                     <li><%= link_to "Archive", static_pages_approved_month_path(:month => 'Archive') %></li>
                   </ul>
             </div> 
     </div>
 
+
     <!--All Submissions-->
-    <div class="col-sm-12 admin-bar--element">
+    <div class="admin-bar--element">
     <%= link_to "@ All Submissions", static_pages_all_path, class: "admin-bar--btn" %>
     </div>
     

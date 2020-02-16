@@ -9,22 +9,19 @@
             <button class="btn btn-success btn-block dropdown-toggle" type="button" data-toggle="dropdown"><%= submission.status %>
             <span class="caret"></span></button>
             <ul class="dropdown-menu">
-                <li><%= link_to "October", submission_path(:id => submission, :status => 'oct'), method: :status_change %></li>
-                <li><%= link_to "November", submission_path(:id => submission, :status => 'nov'), method: :status_change %></li>
-                <li><%= link_to "December", submission_path(:id => submission, :status => 'dec'), method: :status_change %></li>
-                <li><%= link_to "January", submission_path(:id => submission, :status => 'jan'), method: :status_change %></li>
-                <li><%= link_to "February", submission_path(:id => submission, :status => 'feb'), method: :status_change %></li>
-                <li><%= link_to "March", submission_path(:id => submission, :status => 'mar'), method: :status_change %></li>
-                <li><%= link_to "April", submission_path(:id => submission, :status => 'apr'), method: :status_change %></li>
-                <li><%= link_to "May", submission_path(:id => submission, :status => 'may'), method: :status_change %></li>
-                <li><%= link_to "June", submission_path(:id => submission, :status => 'jun'), method: :status_change %></li>
-                <li><%= link_to "July", submission_path(:id => submission, :status => 'jul'), method: :status_change %></li>
-                <li><%= link_to "August", submission_path(:id => submission, :status => 'aug'), method: :status_change %></li>
-                <li><%= link_to "September", submission_path(:id => submission, :status => 'sep'), method: :status_change %></li>
-                <li><%= link_to "October 2019", submission_path(:id => submission, :status => 'oct2019'), method: :status_change %></li>
-                <li><%= link_to "November 2019", submission_path(:id => submission, :status => 'nov2019'), method: :status_change %></li>
-                <li><%= link_to "December 2019", submission_path(:id => submission, :status => 'Dec2019'), method: :status_change %></li>
-                <li><%= link_to "January 2020", submission_path(:id => submission, :status => 'Jan2020'), method: :status_change %></li>
+                <li><%= link_to "February 2020", submission_path(:id => submission, :status => 'February 2020'), method: :status_change %></li>
+                <li><%= link_to "March 2020", submission_path(:id => submission, :status => 'March 2020'), method: :status_change %></li>
+                <li><%= link_to "April 2020", submission_path(:id => submission, :status => 'April 2020'), method: :status_change %></li>
+                <li><%= link_to "March 2020", submission_path(:id => submission, :status => 'March 2020'), method: :status_change %></li>
+                <li><%= link_to "April 2020", submission_path(:id => submission, :status => 'April 2020'), method: :status_change %></li>
+                <li><%= link_to "May 2020", submission_path(:id => submission, :status => 'May 2020'), method: :status_change %></li>
+                <li><%= link_to "June 2020", submission_path(:id => submission, :status => 'June 2020'), method: :status_change %></li>
+                <li><%= link_to "July 2020", submission_path(:id => submission, :status => 'July 2020'), method: :status_change %></li>
+                <li><%= link_to "August 2020", submission_path(:id => submission, :status => 'August 2020'), method: :status_change %></li>
+                <li><%= link_to "September 2020", submission_path(:id => submission, :status => 'September 2020'), method: :status_change %></li>
+                <li><%= link_to "November 2020", submission_path(:id => submission, :status => 'November 2020'), method: :status_change %></li>
+                <li><%= link_to "December 2020", submission_path(:id => submission, :status => 'December 2020'), method: :status_change %></li>
+                <li><%= link_to "January 2021", submission_path(:id => submission, :status => 'January 2021'), method: :status_change %></li>
                 <li class="admin--reject"><%= link_to "Reject", submission_path(:id => submission, :status => 'reject'), method: :status_change %></li>
                 <li class="admin--archive"><%= link_to "Archive", submission_path(:id => submission, :status => 'archive'), method: :status_change %></li>
                 <li class="admin--review"><%= link_to "Being Reviewed", submission_path(:id => submission, :status => 'review'), method: :status_change %></li>
