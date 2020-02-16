@@ -1,12 +1,12 @@
 <% if current_user.admin? %>
 
-  <div class="row">
-    <% @approval.each do |accept| %>
-      <%= render accept %>
-    <% end %>
-  </div>
+ 
+  <% @approval.each do |accept| %>
+    <%= render accept %>
+  <% end %>
+
   
-  <% else %>
+<% else %>
   <div class="row text-center">
       <h3>You do not have permission to view this page</h3>
   </div>
