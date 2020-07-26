@@ -1,0 +1,19 @@
+.header-home {
+  height: 350px;
+  &-title {
+    font-size: 4.6rem;
+    line-height: 40px;
+    text-transform: uppercase;
+  }
+  &-red-bar {
+    background-color: $color-c-red;
+    height: 6px;
+    width: 362px;
+  }
+  &-subtitle {
+    font-weight: 400;
+    font-weight: 300;
+    font-size: 1.7rem;
+    margin-top: 10px;
+  }
+}

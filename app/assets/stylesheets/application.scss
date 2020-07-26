@@ -1,46 +1,45 @@
 // "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
 
-@import "bootstrap-sprockets";
-@import "bootstrap";
+@import 'bootstrap-sprockets';
+@import 'bootstrap';
 
 //abstracts
-@import "abstracts/functions";
-@import "abstracts/mixins";
-@import "abstracts/variables";
+@import 'abstracts/functions';
+@import 'abstracts/mixins';
+@import 'abstracts/variables';
 
 //base
-@import "base/animations";
-@import "base/base";
-@import "base/typography";
-@import "base/utilities";
+@import 'base/animations';
+@import 'base/base';
+@import 'base/typography';
+@import 'base/utilities';
 
 //components
-@import "components/account_activations";
-@import "components/navbar";
-@import "components/player";
-@import "components/video";
-@import "components/award";
-@import "components/micropost";
-@import "components/sidebar";
-@import "components/jumbotron";
-@import "components/portrait";
-@import "components/submit-edit";
-@import "components/forms";
-@import "components/flex-box.scss";
-@import "components/player.scss";
-@import "components/admin-bar.scss";
-
+@import 'components/account_activations';
+@import 'components/navbar';
+@import 'components/player';
+@import 'components/video';
+@import 'components/award';
+@import 'components/micropost';
+@import 'components/sidebar';
+@import 'components/jumbotron';
+@import 'components/portrait';
+@import 'components/submit-edit';
+@import 'components/forms';
+@import 'components/flex-box.scss';
+@import 'components/player.scss';
+@import 'components/admin-bar.scss';
+@import 'components/header.scss';
 
 //layout
-@import "layout/admin";
-@import "layout/custom";
-@import "layout/microposts";
-@import "layout/users";
-
+@import 'layout/admin';
+@import 'layout/custom';
+@import 'layout/microposts';
+@import 'layout/users';
 
 //pages
-@import "pages/home";
-@import "pages/password_resets";
-@import "pages/sessions";
-@import "pages/static_pages";
-@import "pages/submissions";
+@import 'pages/home';
+@import 'pages/password_resets';
+@import 'pages/sessions';
+@import 'pages/static_pages';
+@import 'pages/submissions';

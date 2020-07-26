@@ -1,16 +1,30 @@
 .navbar {
-    &--pfv-brand {
-        a {
-            text-decoration: none!important;
-        }
-
-        
-        font-size: 1.8rem;
-        letter-spacing: 1.6px;
-        word-spacing: 1px;
-        font-style: normal;
-        font-variant: normal;
-        text-transform: uppercase;
-        font-weight: 600;
+  &--pfv-brand {
+    a {
+      text-decoration: none !important;
     }
+
+    font-size: 1.8rem;
+    letter-spacing: 1.6px;
+    word-spacing: 1px;
+    font-style: normal;
+    font-variant: normal;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+}
+
+.c-brand {
+  &-title {
+    // position: absolute;
+    color: white;
+    // top: 20px;
+    // left: auto;
+    // margin-left: 15px;
+    z-index: 9999;
+    // width: 63px;
+    height: auto;
+    font-size: 18px;
+    line-height: 12px;
+  }
 }

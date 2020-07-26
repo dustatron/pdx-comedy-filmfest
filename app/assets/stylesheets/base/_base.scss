@@ -1,26 +1,14 @@
 html {
-
-    // This defines what 1rem is
-    font-size: 62.5%;
-    height: 100%;
+  // This defines what 1rem is
+  font-size: 62.5%;
+  height: 100%;
 }
 
-body{
-  // background:
-  // radial-gradient(black 15%, transparent 16%) 0 0,
-  // radial-gradient(black 15%, transparent 16%) 8px 8px,
-  // radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 0 1px,
-  // radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 8px 9px;
-  // Needs latest Compass, add '@import "compass"' to your scss
-  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#6b6b6b+0,4c4c4c+37,28343b+100 */
-  background: rgb(107,107,107); /* Old browsers */
-  background: -moz-linear-gradient(top, rgba(107,107,107,1) 0%, rgba(76,76,76,1) 37%, rgba(40,52,59,1) 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(top, rgba(107,107,107,1) 0%,rgba(76,76,76,1) 37%,rgba(40,52,59,1) 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom, rgba(107,107,107,1) 0%,rgba(76,76,76,1) 37%,rgba(40,52,59,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6b6b6b', endColorstr='#28343b',GradientType=0 ); /* IE6-9 */
-  background-repeat:no-repeat;
+body {
+  background: #060606;
   color: $gray-medium-light;
   height: 100%;
   background-attachment: fixed;
   font-size: 16px;
+  font-family: 'Roboto', sans-serif;
 }

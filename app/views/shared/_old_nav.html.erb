@@ -1,0 +1,46 @@
+<!-- Fixed navbar -->
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+        aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <%= link_to "Portland's Funniest Video", static_pages_home_path, class: "navbar-brand navbar--pfv-brand" %>
+      <!--<a href="https://curiouscomedy.org/" target="_blank"><img class="logo" src="http://curiouscomedy.org/images/logo.png" alt="Curious Comedy Theater" ></a>-->
+    </div>
+
+    <div id="navbar" class="navbar-collapse collapse navbar-right">
+      <ul class="nav navbar-nav">
+        <li class="active"><%= link_to "Home", static_pages_home_path %></li>
+        <li><%= link_to "About", static_pages_about_path %></li>
+        <li><%= link_to "HowTo", static_pages_help_path %></li>
+        <li><%= link_to "Submit", new_submission_path %></li>
+
+        <% if logged_in? %>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+            Account <b class="caret"></b>
+          </a>
+          <ul class="dropdown-menu">
+            <li><%= link_to "Profile", current_user %></li>
+            <li><%= link_to "Settings", edit_user_path(current_user) %></li>
+            <li class="divider"></li>
+            <li>
+              <%= link_to "Log out", logout_path, method: :delete %>
+            </li>
+          </ul>
+        </li>
+        <% else %>
+        <li><%= link_to "Signup", signup_path %></li>
+        <% end %>
+
+
+
+    </div>
+  </div>
+  <!--/.nav-collapse -->
+</nav>
