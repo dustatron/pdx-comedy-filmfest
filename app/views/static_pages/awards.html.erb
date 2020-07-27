@@ -1,11 +1,12 @@
-<div class = "home--top">
-<div class="row">
-   <h2 class="text-center award--title"><%= @category %></h2> 
-</div>
-<div class="row">
-    <% @award.each do |award| %>
+<div class="award">
+    <div class="row">
+        <h2 class="text-center award--title"><%= @category %></h2>
+    </div>
+    <div class="row">
+        <% @award.each do |award| %>
         <div class="col-md-4">
             <%= render "shared/player", submission: award %>
         </div>
-    <%end%>    
+        <%end%>
+    </div>
 </div>
