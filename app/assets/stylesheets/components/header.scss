@@ -31,7 +31,7 @@
     // width: 2.3rem;
     // height: 5.3rem;
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
     @include respond(tab-land) {
       justify-content: center;
     }
