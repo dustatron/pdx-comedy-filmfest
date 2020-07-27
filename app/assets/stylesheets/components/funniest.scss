@@ -1,0 +1,25 @@
+.funniest {
+  background: white;
+  min-height: 550px;
+  color: $color-new-black;
+  padding: 10px;
+  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.15);
+  @include respond(tab-port) {
+    min-height: 100%;
+  }
+  &-title {
+    text-transform: uppercase;
+    font-size: 3.6rem;
+    font-weight: 900;
+    width: 30%;
+    line-height: 30px;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  }
+  &-video {
+    padding: 4rem 17rem;
+    text-align: center;
+    @include respond(tab-land) {
+      padding: 2rem 0;
+    }
+  }
+}

@@ -1,44 +1,58 @@
+<div class="video">
+    <div class="row">
+        <div class="video--section grey-bg">
+            <div class='video--section-top'>
 
+                <div class="video--title">
+                    First Place <br>
+                    winners
+                </div>
+                <div class="video--view-all-btn">
+                    <%= link_to "View All", static_pages_awards_path(:category => 'First Place', :place => '1st') %>
+                </div>
+            </div>
 
-<div class="row">
-<div class="video--first-place"><i class="fas fa-award"></i> First Place winners</div>
-
-<% @first.each do |first| %>
-    <div class="col-md-4">
-        <%= render "shared/player", submission: first %>
+            <% @first.each do |first| %>
+            <div class="col-md-4">
+                <%= render "shared/player", submission: first %>
+            </div>
+            <%end%>
+        </div>
     </div>
-<%end%>
 
-</div>
-<div class="row">
-<span class="video--award-button"><%= link_to "All 1st Winners", static_pages_awards_path(:category => 'First Place', :place => '1st') %></span>
-</div>
+    <div class=row>
+        <div class="video--section white-bg">
+            <div class='video--section-top'>
 
+                <div class="video--title black">Second Place <br> winners</div>
+                <div class="video--view-all-btn">
+                    <%= link_to "View All", static_pages_awards_path(:category => 'Second Place', :place => '2nd') %>
+                </div>
+            </div>
+            <% @second.each do |second| %>
+            <div class="col-md-4">
+                <%= render "shared/player", submission: second %>
+            </div>
+            <%end%>
+        </div>
 
-<div class=row>
-<div class="video--first-place">Second Place winners</div>
-<% @second.each do |second| %>
-    <div class="col-md-4">
-        <%= render "shared/player", submission: second %>
     </div>
-<%end%>
 
-</div>
-<div class="row">
-<span class="video--award-button"><%= link_to "All 2nd Winners", static_pages_awards_path(:category => 'Second Place', :place => '2nd') %></span>
-</div>
 
-<div class="row">
-<div class="video--first-place">Third Place Place winners</div>
-<% @third.each do |third| %>
-    <div class="col-md-4">
-        <%= render "shared/player", submission: third %>
+    <div class="row">
+        <div class="video--section grey-bg">
+            <div class='video--section-top'>
+                <div class="video--title">Third Place Place winners</div>
+                <div class="video--view-all-btn">
+                    <%= link_to "View All", static_pages_awards_path(:category => 'Third Place', :place => '3rd') %>
+                </div>
+            </div>
+            <% @third.each do |third| %>
+            <div class="col-md-4">
+                <%= render "shared/player", submission: third %>
+            </div>
+            <%end%>
+        </div>
+
     </div>
-<%end%>
-
 </div>
-<div class="row">
-<span class="video--award-button"><%= link_to "All 3rd Winners", static_pages_awards_path(:category => 'Third Place', :place => '3rd') %></span>
-
-</div>
-

@@ -1,6 +1,8 @@
 .header-home {
-  height: 350px;
+  margin-bottom: 2rem;
+  position: relative;
   &-title {
+    font-weight: 700;
     font-size: 4.6rem;
     line-height: 40px;
     text-transform: uppercase;
@@ -8,12 +10,56 @@
   &-red-bar {
     background-color: $color-c-red;
     height: 6px;
-    width: 362px;
+    width: 365px;
   }
   &-subtitle {
     font-weight: 400;
     font-weight: 300;
     font-size: 1.7rem;
     margin-top: 10px;
+  }
+  &-next {
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin-left: auto;
+    margin-right: 0;
+    // width: 100%;
+  }
+
+  &-paused {
+    // width: 2.3rem;
+    // height: 5.3rem;
+    display: flex;
+    justify-content: end;
+    @include respond(tab-land) {
+      justify-content: center;
+    }
+    &-button {
+      background: $color-c-red;
+      padding: 10px;
+      border-radius: 11px;
+      display: flex;
+      justify-content: center;
+      width: 290px;
+      &-text {
+        width: 58%;
+        font-size: 1.6rem;
+        text-transform: uppercase;
+        font-weight: 700;
+        line-height: 1.6rem;
+      }
+    }
+    &-icon {
+      display: flex;
+      width: 40%;
+      justify-content: center;
+      &-bar {
+        background: white;
+        width: 7px;
+        height: 50%;
+        margin: auto 5px;
+      }
+    }
   }
 }
